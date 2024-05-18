@@ -7,68 +7,51 @@ body {
     padding: 0;
 }
 
+
+
+#aqui vem tudo da pagina de Login
+//* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+.login-container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
 .login-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="password"] {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    max-width: 400px;
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.menu-container {
-    margin-top: 20px;
     text-align: center;
 }
 
-.menu {
-    list-style: none;
-    padding: 0;
+.login-container h1 {
+    margin-bottom: 1.5rem;
 }
 
-.menu li {
-    display: inline-block;
-    margin-right: 10px;
+.login-container form input {
+    margin-bottom: 1rem;
 }
 
-.menu li a {
-    color: #333;
-    text-decoration: none;
-    padding: 5px 10px;
+.login-container .social-login {
+    margin-top: 1.5rem;
 }
 
-.content {
-    display: none;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.login-container a {
+    display: block;
+    margin-top: 0.5rem;
 }
+

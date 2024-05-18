@@ -49,6 +49,8 @@ app.post('/register', async (req, res) => {
         await client.query(sqlInsertQuery, values);
         client.release();
         res.status(200).json({ message: 'Usuário registrado com sucesso!' });
+        window.location.href = '\login';
+
     } catch (error) {
         console.error('Erro ao inserir usuário:', error);
         res.status(500).json({ error: 'Ocorreu um erro ao processar sua solicitação.' });

@@ -1,8 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const registrationForm = document.getElementById('registration-form');
+    const buttonregister = document.getElementById('buttonRegister');
+    const redirectAccountGoogle = document.getElementById('redirectAccountGoogle');
+    const buttonBacktoLogin = document.getElementById('buttonBacktoLogin');
+    
+
+
     if (registrationForm) {
         registrationForm.addEventListener('submit', handleRegistration);
     }
+
+    if(buttonBacktoLogin) {
+        buttonBacktoLogin.onclick = function(){
+        window.location.href = 'login.html';
+        }
+    
+    }
+
+    if(buttonregister){
+        buttonregister.onclick = function(){
+        window.location.href = 'login.html';
+    }  
+}
+        
+
+if(redirectAccountGoogle){
+    redirectAccountGoogle.onclick = function(){
+        window.location.href = 'https://accounts.google.com/login';
+        
+    }
+}
+
+
+
+
+
+
 });
 
 async function handleRegistration(event) {
@@ -10,7 +44,7 @@ async function handleRegistration(event) {
 
     const formData = getFormData();
     if (!isFormValid(formData)) {
-        alert('Por favor, preencha todos os campos do formulário corretamente.');
+        alert('Tem certeza que deseja sair do formulário? Perderá todos os dados inseridos.');
         return;
     }
 
@@ -58,7 +92,6 @@ async function sendRegistrationRequest(formData) {
 function handleRegistrationSuccess() {
     alert('Usuário registrado com sucesso!');
     document.getElementById('registration-form').reset();
-    window.location.href = '/login'; //redirecionamento para a página de login
 }
 
 function handleRegistrationError(error) {
