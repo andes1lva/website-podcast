@@ -125,7 +125,7 @@ app.post('/register', async(req, res)=>{
     }
 });
 
-client.release();// Liberar o cliente da conexão
+//client.release();// Liberar o cliente da conexão
 
 
 app.use((err, req, res, next) => {
