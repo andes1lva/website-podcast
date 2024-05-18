@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const registrationForm = document.getElementById('registration-form');
-
     if (registrationForm) {
         registrationForm.addEventListener('submit', handleRegistration);
     }
@@ -9,58 +8,57 @@ document.addEventListener('DOMContentLoaded', () => {
 async function handleRegistration(event) {
     event.preventDefault();
 
-    // Verificar se o formulário foi preenchido corretamente
-    if (!isFormValid()) {
-        // Se o formulário não estiver válido, exibir uma mensagem de erro e não enviar a requisição
+    const formData = getFormData();
+    if (!isFormValid(formData)) {
         alert('Por favor, preencha todos os campos do formulário corretamente.');
         return;
     }
 
-    const userName = document.getElementById('registration_form_user_name').value;
-    const password = document.getElementById('registration_form_password').value;
-    const confirmPassword = document.getElementById('registration_form_confirm_password').value;
-    const email = document.getElementById('registration_form_email').value;
-    const address = document.getElementById('registration_form_address').value;
-
     try {
-        const response = await fetch('/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                user_name: userName,
-                password: password,
-                confirm_password: confirmPassword,
-                email: email,
-                address: address
-            })
-        });
+        const response = await sendRegistrationRequest(formData);
 
-        if (response.ok) {
-            handleRegistrationSuccess();
-        } else {
-            throw new Error('Erro ao registrar usuário.');
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Erro ao registrar usuário.');
         }
+
+        const data = await response.json();
+        console.log('Resposta do servidor:', data);
+
+        handleRegistrationSuccess();
     } catch (error) {
         handleRegistrationError(error);
     }
 }
 
-function isFormValid() {
-    // Verificar se todos os campos obrigatórios do formulário foram preenchidos
-    const userName = document.getElementById('registration_form_user_name').value;
-    const password = document.getElementById('registration_form_password').value;
-    const confirmPassword = document.getElementById('registration_form_confirm_password').value;
-    const email = document.getElementById('registration_form_email').value;
-    const address = document.getElementById('registration_form_address').value;
+function getFormData() {
+    return {
+        user_name: document.getElementById('registration_form_user_name').value,
+        password: document.getElementById('registration_form_password').value,
+        confirm_password: document.getElementById('registration_form_confirm_password').value,
+        email: document.getElementById('registration_form_email').value,
+        address: document.getElementById('registration_form_address').value
+    };
+}
 
-    return userName && password && confirmPassword && email && address;
+function isFormValid(formData) {
+    return Object.values(formData).every(value => value);
+}
+
+async function sendRegistrationRequest(formData) {
+    return await fetch('http://localhost:3000/register', { // Certifique-se de que a URL está correta
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    });
 }
 
 function handleRegistrationSuccess() {
     alert('Usuário registrado com sucesso!');
     document.getElementById('registration-form').reset();
+    window.location.href = '/login'; //redirecionamento para a página de login
 }
 
 function handleRegistrationError(error) {
