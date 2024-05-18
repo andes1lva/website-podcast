@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const registrationForm = document.querySelector('#registration-form');
+    const registrationForm = document.getElementById('registration-form');
 
     if (registrationForm) {
         registrationForm.addEventListener('submit', handleRegistration);
@@ -9,11 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
 async function handleRegistration(event) {
     event.preventDefault();
 
-    const userName = document.querySelector('#registration_form_user_name').value;
-    const password = document.querySelector('#registration_form_password').value;
-    const confirmPassword = document.querySelector('#registration_form_confirm_password').value;
-    const email = document.querySelector('#registration_form_email').value;
-    const address = document.querySelector('#registration_form_address').value;
+    // Verificar se o formulário foi preenchido corretamente
+    if (!isFormValid()) {
+        // Se o formulário não estiver válido, exibir uma mensagem de erro e não enviar a requisição
+        alert('Por favor, preencha todos os campos do formulário corretamente.');
+        return;
+    }
+
+    const userName = document.getElementById('registration_form_user_name').value;
+    const password = document.getElementById('registration_form_password').value;
+    const confirmPassword = document.getElementById('registration_form_confirm_password').value;
+    const email = document.getElementById('registration_form_email').value;
+    const address = document.getElementById('registration_form_address').value;
 
     try {
         const response = await fetch('/register', {
@@ -21,7 +28,13 @@ async function handleRegistration(event) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ user_name: userName, password, confirm_password: confirmPassword, email, address })
+            body: JSON.stringify({
+                user_name: userName,
+                password: password,
+                confirm_password: confirmPassword,
+                email: email,
+                address: address
+            })
         });
 
         if (response.ok) {
@@ -34,9 +47,20 @@ async function handleRegistration(event) {
     }
 }
 
+function isFormValid() {
+    // Verificar se todos os campos obrigatórios do formulário foram preenchidos
+    const userName = document.getElementById('registration_form_user_name').value;
+    const password = document.getElementById('registration_form_password').value;
+    const confirmPassword = document.getElementById('registration_form_confirm_password').value;
+    const email = document.getElementById('registration_form_email').value;
+    const address = document.getElementById('registration_form_address').value;
+
+    return userName && password && confirmPassword && email && address;
+}
+
 function handleRegistrationSuccess() {
     alert('Usuário registrado com sucesso!');
-    document.querySelector('#registration-form').reset();
+    document.getElementById('registration-form').reset();
 }
 
 function handleRegistrationError(error) {
