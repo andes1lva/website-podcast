@@ -55,3 +55,80 @@ body {
     margin-top: 0.5rem;
 }
 
+
+
+#menu principal do wibsite
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar styling */
+.navbar {
+    padding: 20px;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #ddd;
+    transform: scale(1.1);
+}
+
+.dropdown-menu {
+    background-color: #444;
+    border: none;
+}
+
+.dropdown-item {
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #555;
+}
+
+/* Content styling */
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.content h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.content p {
+    color: #666;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+}

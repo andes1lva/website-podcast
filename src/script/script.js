@@ -1,42 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const registrationForm = document.getElementById('registration-form');
-    const buttonregister = document.getElementById('buttonRegister');
+    const buttonRegister = document.getElementById('buttonRegister');
     const redirectAccountGoogle = document.getElementById('redirectAccountGoogle');
     const buttonBacktoLogin = document.getElementById('buttonBacktoLogin');
-    
-
+    const logInValidation = document.getElementById('logInValidation');
 
     if (registrationForm) {
         registrationForm.addEventListener('submit', handleRegistration);
     }
 
-    if(buttonBacktoLogin) {
-        buttonBacktoLogin.onclick = function(){
-        window.location.href = 'login.html';
+    if (buttonBacktoLogin) {
+        buttonBacktoLogin.onclick = function() {
+            window.location.href = 'login.html';
         }
-    
     }
 
-    if(buttonregister){
-        buttonregister.onclick = function(){
-        window.location.href = 'login.html';
-    }  
-}
-        
-
-if(redirectAccountGoogle){
-    redirectAccountGoogle.onclick = function(){
-        window.location.href = 'https://accounts.google.com/login';
-        
+    if (buttonRegister) {
+        buttonRegister.onclick = function() {
+            window.location.href = 'login.html';
+        }  
     }
-}
+
+    if (redirectAccountGoogle) {
+        redirectAccountGoogle.onclick = function() {
+            window.location.href = 'https://accounts.google.com/login';
+        }
+    }
+/*
+ if (logInValidation) {
+        logInValidation.onclick = function() {
+            window.location.href = 'menu.html';
+        }
+    }
 
 
-
-
-
-
+*/    
 });
 
 async function handleRegistration(event) {
@@ -44,7 +42,7 @@ async function handleRegistration(event) {
 
     const formData = getFormData();
     if (!isFormValid(formData)) {
-        alert('Tem certeza que deseja sair do formulário? Perderá todos os dados inseridos.');
+        alert('Por favor, preencha todos os campos corretamente.');
         return;
     }
 
@@ -76,7 +74,8 @@ function getFormData() {
 }
 
 function isFormValid(formData) {
-    return Object.values(formData).every(value => value);
+    const { user_name, password, confirm_password, email, address } = formData;
+    return user_name && password && confirm_password && email && address && password === confirm_password;
 }
 
 async function sendRegistrationRequest(formData) {
