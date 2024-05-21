@@ -134,8 +134,7 @@ app.post('/login', async(req, res)=>{
 
         if(rows.length === 1){
             if(rows[0].password === password){
-                res.status(200).send("User Autenticated Sucessfully!");
-
+                res.status(200).send({message: "User Autenticated Sucessfully!", redirectURL: 'http://localhost:5500/src/view/menu.html' });
             }else{
                 res.status(401).send("Autentication Fail.");
             }
@@ -144,7 +143,7 @@ app.post('/login', async(req, res)=>{
             res.status(404).send("User not found.");
         }
     } catch (error) {
-        console.error('Error to try autenticate user', err)
+        console.error('Error to try autenticate user', error)
         res.status(500).send('Error inside to server');
     }
 });

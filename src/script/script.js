@@ -1,3 +1,4 @@
+//const { application } = require("express");
 document.addEventListener('DOMContentLoaded', () => {
     const registrationForm = document.getElementById('registration-form');
     const buttonRegister = document.getElementById('buttonRegister');
@@ -26,15 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'https://accounts.google.com/login';
         }
     }
-/*
- if (logInValidation) {
-        logInValidation.onclick = function() {
-            window.location.href = 'menu.html';
-        }
-    }
 
 
-*/    
+   
 });
 
 async function handleRegistration(event) {
@@ -78,15 +73,52 @@ function isFormValid(formData) {
     return user_name && password && confirm_password && email && address && password === confirm_password;
 }
 
+
+
 async function sendRegistrationRequest(formData) {
-    return await fetch('http://localhost:3000/register', { // Certifique-se de que a URL está correta
+    try {
+        const response = await fetch('http://localhost:3000/register', { // Certifique-se de que a URL está correta
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
     });
+    return response;
+    } catch (error) {
+        console.error("Error after send a solicitation of register", error);
+        throw new Error("Error after send solicitation of register");
+    }
 }
+
+
+async function loginAuthenticatedUser() {
+    try {
+        const response = await fetch('/login',{
+        method: 'POST',
+        body: JSON.stringify({id: 'id_user', password: 'password' }),
+        headers: {
+            'Content-type': 'application/json'
+        },
+    });
+
+    const data = await response.json();
+
+    if(data.redirectURL) {
+        window.location.href = data.redirectURL;
+    }else{
+        console.log(data.message);
+    }
+    } catch (error) {
+        console.error("User not authenticated", error);
+        throw new("User not authenticated");
+    }
+    loginAuthenticatedUser();
+
+} 
+
+
+
 
 function handleRegistrationSuccess() {
     alert('Usuário registrado com sucesso!');
