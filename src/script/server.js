@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const bcrypt = require('bcrypt');
 const path = require('path'); // Importe o módulo 'path' para trabalhar com caminhos de arquivo
-
+const axios = require('axios');
 
 
 app.use(express.json());

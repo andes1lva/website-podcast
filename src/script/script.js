@@ -47,15 +47,20 @@ console.log(password)
 
     try {
         await loginAuthenticatedUser(email, password);
+        console.log(loginAuthenticatedUser)
     } catch (error) {
         console.error('Erro ao autenticar o usuário:', error);
         alert('Ocorreu um erro ao autenticar o usuário. Por favor, tente novamente.');  
     }
 }
 
+
+//const axiosAuthenticatedUserLoginData = require('axios');
+
 async function loginAuthenticatedUser(email, password) {
+    
     try {
-        const response = await fetch('http://localhost:3000/login', {
+        const response = await axios.get('http://localhost:3000/login', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -68,8 +73,7 @@ async function loginAuthenticatedUser(email, password) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = await response.json();
-        console.log(data);
+        const data = await response.json();        
         if (data.redirectURL) {
             console.log('Redirecionando para:', data.redirectURL);
             window.location.href = data.redirectURL;
@@ -80,6 +84,7 @@ async function loginAuthenticatedUser(email, password) {
         console.error('Erro durante a solicitação de login:', error);
     }
 }
+
 
 async function handleRegistration(event) {
     event.preventDefault();
