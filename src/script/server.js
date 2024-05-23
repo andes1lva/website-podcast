@@ -1,22 +1,20 @@
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
-
 const app = express();
 const PORT = process.env.PORT || 3000;
+const bcrypt = require('bcrypt');
+const path = require('path'); // Importe o módulo 'path' para trabalhar com caminhos de arquivo
 
 
 
-
-
-
+app.use(express.json());
 app.use(cors({
     methods: ['GET', 'POST'],
-    origin: ['http://localhost:5500'] // Ajuste conforme necessário
+    origin: ['http://localhost:5500',] // Ajuste conforme necessário
 }));
 
-app.use(express.static('src/view'));
-app.use(express.json());
+app.use(express.static(path.join(__dirname, 'src'))); // Servir arquivos estáticos da pasta 'src/view'
 app.use(express.urlencoded({ extended: true }));
 
 const pool = new Pool({
@@ -31,39 +29,39 @@ const pool = new Pool({
 
 
 
-
-
 // Rota principal para servir o arquivo HTML de registro
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/src/view/registrationform.html');
+    res.sendFile(path.join(__dirname, 'src/view/registrationform.html'));
 });
 
-// Rota para servir o arquivo HTML de login
 app.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/src/view/login.html'); // Certifique-se de que o caminho para o arquivo login.html está correto
+    res.sendFile(path.join(__dirname, 'src/view/login.html'));
 });
 
 app.get('/menu', (req, res) => {
-    res.sendFile(__dirname + '/src/view/menu.html'); // Certifique-se de que o caminho para o arquivo login.html está correto
+    res.sendFile(path.join(__dirname, 'src/view/menu.html'));
 });
-
-
-
 
 
 
 // Rota para lidar com o envio do formulário de registro
 app.post('/register', async (req, res) => {
     const { user_name, password, confirm_password, email, address } = req.body;
+
+    if(password !== confirm_password){
+        return res.status(400).json({error: 'Password do not match.'});
+    }
+
     try {
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         const client = await pool.connect();
         const sqlInsertQuery = 'INSERT INTO USR_USER (USERNAME, PASSWORD, CONFIRM_PASSWORD, EMAIL, ADDRESS) VALUES ($1, $2, $3, $4, $5)';
         const values = [user_name, password, confirm_password, email, address];
         await client.query(sqlInsertQuery, values);
         client.release();
-        res.status(200).json({ message: 'Usuário registrado com sucesso!' });
-        window.location.href = '\login';
 
+        res.status(200).json({ message: 'Usuário registrado com sucesso!' });
     } catch (error) {
         console.error('Erro ao inserir usuário:', error);
         res.status(500).json({ error: 'Ocorreu um erro ao processar sua solicitação.' });
@@ -73,16 +71,32 @@ app.post('/register', async (req, res) => {
 
 
 
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
 
+    try {
+        const { rows } = await pool.query('SELECT id_user, password FROM usr_user WHERE email = $1', [email]);
 
+        if (rows.length === 1) {
+            const user = rows[0];
+            const passwordMatch = await bcrypt.compare(password, user.password);
 
-
-app.get('/register', async(req, res) => {
-  
-
-
+            if (passwordMatch) {
+                res.status(200).json({ 
+                    message: "User authenticated successfully!", 
+                    redirectURL: 'http://localhost:5500/src/view/menu.html' 
+                });
+            } else {
+                res.status(401).json("Authentication failed.");
+            }
+        } else {
+            res.status(404).json("User not found.");
+        }
+    } catch (error) {
+        console.error('Error trying to authenticate user', error);
+        res.status(500).json({error: 'Server error'});
+    }
 });
-    
 
 
 
@@ -90,16 +104,6 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ error: 'Algo deu errado!' });
 });
-
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
-
-
-
-
-
-
 
 
 
@@ -121,32 +125,16 @@ async function connectAndQuery() {
 
 
 
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
 
 
 //criar validação de Login baseado no ID do usuário, 
 //estrutura para verificar no banco de o login e a senha informada é válida
-app.post('/login', async(req, res)=>{
-    const {id, password} = req.body;
 
-    try {
-        const {rows} = await pool.query('SELECT id, password FROM usr_user WHERE id = $1', [id]);
 
-        if(rows.length === 1){
-            if(rows[0].password === password){
-                res.status(200).send({message: "User Autenticated Sucessfully!", redirectURL: 'http://localhost:5500/src/view/menu.html' });
-            }else{
-                res.status(401).send("Autentication Fail.");
-            }
-
-        }else{
-            res.status(404).send("User not found.");
-        }
-    } catch (error) {
-        console.error('Error to try autenticate user', error)
-        res.status(500).send('Error inside to server');
-    }
-});
 
 
 

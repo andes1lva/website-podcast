@@ -1,10 +1,17 @@
-//const { application } = require("express");
 document.addEventListener('DOMContentLoaded', () => {
     const registrationForm = document.getElementById('registration-form');
     const buttonRegister = document.getElementById('buttonRegister');
     const redirectAccountGoogle = document.getElementById('redirectAccountGoogle');
     const buttonBacktoLogin = document.getElementById('buttonBacktoLogin');
-    const logInValidation = document.getElementById('logInValidation');
+    const loginForm = document.getElementById('loginForm');
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            handleLogin();
+            
+        });
+    }
 
     if (registrationForm) {
         registrationForm.addEventListener('submit', handleRegistration);
@@ -13,24 +20,66 @@ document.addEventListener('DOMContentLoaded', () => {
     if (buttonBacktoLogin) {
         buttonBacktoLogin.onclick = function() {
             window.location.href = 'login.html';
-        }
+        };
     }
 
     if (buttonRegister) {
         buttonRegister.onclick = function() {
             window.location.href = 'login.html';
-        }  
+        };
     }
 
     if (redirectAccountGoogle) {
         redirectAccountGoogle.onclick = function() {
             window.location.href = 'https://accounts.google.com/login';
-        }
+        };
+    }
+});
+
+async function handleLogin() {
+    const email = document.getElementById('login_email').value;
+    const password = document.getElementById('password').value;
+console.log(password)
+    if (!email || !password) {
+        console.log("Email or password not found");
+        return;
     }
 
+    try {
+        await loginAuthenticatedUser(email, password);
+    } catch (error) {
+        console.error('Erro ao autenticar o usuário:', error);
+        alert('Ocorreu um erro ao autenticar o usuário. Por favor, tente novamente.');  
+    }
+}
 
-   
-});
+async function loginAuthenticatedUser(email, password) {
+    try {
+        const response = await fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+        if (data.redirectURL) {
+            console.log('Redirecionando para:', data.redirectURL);
+            window.location.href = data.redirectURL;
+        } else {
+            console.log('Redirecionamento não configurado.');
+        }
+    } catch (error) {
+        console.error('Erro durante a solicitação de login:', error);
+    }
+}
 
 async function handleRegistration(event) {
     event.preventDefault();
@@ -73,52 +122,21 @@ function isFormValid(formData) {
     return user_name && password && confirm_password && email && address && password === confirm_password;
 }
 
-
-
 async function sendRegistrationRequest(formData) {
     try {
-        const response = await fetch('http://localhost:3000/register', { // Certifique-se de que a URL está correta
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-    });
-    return response;
+        const response = await fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+        return response;
     } catch (error) {
-        console.error("Error after send a solicitation of register", error);
-        throw new Error("Error after send solicitation of register");
+        console.error("Error after sending a registration request", error);
+        throw new Error("Error after sending registration request");
     }
 }
-
-
-async function loginAuthenticatedUser() {
-    try {
-        const response = await fetch('/login',{
-        method: 'POST',
-        body: JSON.stringify({id: 'id_user', password: 'password' }),
-        headers: {
-            'Content-type': 'application/json'
-        },
-    });
-
-    const data = await response.json();
-
-    if(data.redirectURL) {
-        window.location.href = data.redirectURL;
-    }else{
-        console.log(data.message);
-    }
-    } catch (error) {
-        console.error("User not authenticated", error);
-        throw new("User not authenticated");
-    }
-    loginAuthenticatedUser();
-
-} 
-
-
-
 
 function handleRegistrationSuccess() {
     alert('Usuário registrado com sucesso!');
@@ -129,3 +147,13 @@ function handleRegistrationError(error) {
     console.error('Erro durante o registro:', error);
     alert('Ocorreu um erro durante o registro. Por favor, tente novamente.');
 }
+
+
+
+//document.getElementById('loginForm').addEventListener('submit', function(event) {
+  //  event.preventDefault(); //block evento anterior
+    //handleLogin(event);
+    //loginAuthenticatedUser();
+    
+//});
+
