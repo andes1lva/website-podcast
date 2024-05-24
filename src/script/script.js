@@ -63,7 +63,7 @@ async function loginAuthenticatedUser(email, password) {
 	try {
 		const response = await axios.post("http://localhost:3000/login", {
 			email,
-			password,
+			password
 		});
 
 		const data = response.data;
