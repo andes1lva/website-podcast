@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	);
 	const buttonBacktoLogin = document.getElementById("buttonBacktoLogin");
 	const loginForm = document.getElementById("loginForm");
+	//const mediaURL = document.getElementById("media-iframe");
+
 
 	if (loginForm) {
 		loginForm.addEventListener("submit", function (event) {
@@ -13,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			handleLogin();
 		});
 	}
+
+	
 
 	if (registrationForm) {
 		registrationForm.addEventListener("submit", handleRegistration);
@@ -164,6 +168,30 @@ function handleRegistrationError(error) {
 	console.error("Erro durante o registro:", error);
 	alert("Ocorreu um erro durante o registro. Por favor, tente novamente.");
 }
+
+document.getElementById("media-container").addEventListener('click', mediaURL());
+
+function mediaURL(){
+	const mediaURL = "https://www.youtube.com/embed/mB4_od2susc?si=dEaHlYmAOdxhFr8A";
+
+	const iframe = document.createElement("iframe");
+	iframe.src = mediaURL;
+	iframe.width = "560";
+	iframe.height = "315";
+	iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+	iframe.allowFullscreen = true;
+
+
+	const mediaContainer = document.getElementById("media-container");
+	mediaContainer.innerHTML = '';
+	mediaContainer.appendChild(iframe);
+}
+//Add event to button for load video
+
+
+
+
+
 
 //document.getElementById('loginForm').addEventListener('submit', function(event) {
 //  event.preventDefault(); //block evento anterior
