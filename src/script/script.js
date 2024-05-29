@@ -186,13 +186,15 @@ function mediaURL(){
 	mediaContainer.innerHTML = '';
 	mediaContainer.appendChild(iframe);
 }
-//Add event to button for load video
 
-async function axiosPushVideos() {
-	const response = axios.get('http://localhost:3000/videos');
-	
+
+//function para verificar se o formulário de vídeo existe
+if(videoForm) {
+	videoForm.addEventListener("submit", async(event)=>{
+	event.preventDefault();
+	const videoUrl = Document.getElementById("videoUrl").value
+	});
 }
-
 
 
 

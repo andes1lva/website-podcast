@@ -7,6 +7,7 @@ const bcrypt = require("bcrypt");
 const path = require("path"); // Importe o módulo 'path' para trabalhar com caminhos de arquivo
 const axios = require("axios");
 
+
 app.use(express.json());
 app.use(
 	cors({
@@ -15,9 +16,11 @@ app.use(
 	})
 );
 
+
 app.use(express.static(path.join(__dirname, "src"))); // Servir arquivos estáticos da pasta 'src/view'
 app.use(express.static(path.join(__dirname, 'client/build'))); // Servir arquivos estáticos do react
 app.use(express.urlencoded({ extended: true }));
+
 
 const pool = new Pool({
 	user: "postgres",
@@ -26,6 +29,7 @@ const pool = new Pool({
 	password: "A1b2c3d4e5",
 	port: 5432,
 });
+
 
 // Rota principal para servir o arquivo HTML de registro
 app.get("/", (req, res) => {
@@ -41,20 +45,24 @@ app.get("/menu", (req, res) => {
 });
 
 
+
 let videoStack = [];
 app.post("/add-video", (req, res) => {
-	const {videoUrl} = req.body;
+	const {videoUrl, adminToken} = req.body;
 	
+	// Verifica se o token de administrador é válido
+	if(adminToken !== "admin-secret-token") {
+		return res.status(403).send({message: 'Permission Negade'});
+	}
+
 	videoStack.push(videoUrl); //faz um push e adiciona vídeo da URL à pilha
 
 	res.status(201).send({message: 'Vídeo added successfully' });
 });
 
-
 app.get("/videos", (req, res) =>{
 	res.send(videoStack);
 });
-
 
 
 
@@ -85,6 +93,7 @@ app.post("/register", async (req, res) => {
 			.json({ error: "Ocorreu um erro ao processar sua solicitação." });
 	}
 });
+
 
 app.post("/login", async (req, res) => {
 	const { email, password } = req.body;
@@ -125,6 +134,7 @@ app.use((err, req, res, next) => {
 	res.status(500).json({ error: "Algo deu errado!" });
 });
 
+
 // Função para conectar-se ao PostgreSQL e executar uma consulta
 async function connectAndQuery() {
 	try {
@@ -140,6 +150,8 @@ async function connectAndQuery() {
 		console.error("Erro ao conectar ou executar consulta:", error);
 	}
 }
+
+
 
 app.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}`);
