@@ -157,3 +157,8 @@ main #loadMediaVideo {
     font-size: 16px;
     cursor: pointer;
 }
+
+.container-socialmedia .nav-link {
+    display: inline-block;
+
+}

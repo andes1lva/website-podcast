@@ -39,6 +39,16 @@ app.get("/menu", (req, res) => {
 	res.sendFile(path.join(__dirname, "src/view/menu.html"));
 });
 
+
+let videoStack = [];
+app.post("/add-video", (req, res) => {
+	const {videoUrl} = req.body;
+	res.status(201).send({message: 'Vídeo added successfully' });
+});
+
+
+
+
 // Rota para lidar com o envio do formulário de registro
 app.post("/register", async (req, res) => {
 	const { user_name, password, confirm_password, email, address } = req.body;
