@@ -188,6 +188,10 @@ function mediaURL(){
 }
 //Add event to button for load video
 
+async function axiosPushVideos() {
+	const response = axios.get('http://localhost:3000/videos');
+	
+}
 
 
 

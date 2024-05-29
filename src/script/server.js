@@ -16,6 +16,7 @@ app.use(
 );
 
 app.use(express.static(path.join(__dirname, "src"))); // Servir arquivos estáticos da pasta 'src/view'
+app.use(express.static(path.join(__dirname, 'client/build'))); // Servir arquivos estáticos do react
 app.use(express.urlencoded({ extended: true }));
 
 const pool = new Pool({
@@ -43,8 +44,17 @@ app.get("/menu", (req, res) => {
 let videoStack = [];
 app.post("/add-video", (req, res) => {
 	const {videoUrl} = req.body;
+	
+	videoStack.push(videoUrl); //faz um push e adiciona vídeo da URL à pilha
+
 	res.status(201).send({message: 'Vídeo added successfully' });
 });
+
+
+app.get("/videos", (req, res) =>{
+	res.send(videoStack);
+});
+
 
 
 
