@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	);
 	const buttonBacktoLogin = document.getElementById("buttonBacktoLogin");
 	const loginForm = document.getElementById("loginForm");
-	//const mediaURL = document.getElementById("media-iframe");
+	const videoForm = document.getElementById("videoForm");
 
 
 	if (loginForm) {
@@ -42,17 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function handleLogin() {
+
 	const email = document.getElementById("login_email").value;
 	const password = document.getElementById("password").value;
-	console.log(password);
+
 	if (!email || !password) {
 		console.log("Email or password not found");
 		return;
 	}
 
+	
 	try {
 		await loginAuthenticatedUser(email, password);
 		console.log(loginAuthenticatedUser);
+	
+
 	} catch (error) {
 		console.error("Erro ao autenticar o usuário:", error);
 		alert(
@@ -67,9 +71,13 @@ async function loginAuthenticatedUser(email, password) {
 	try {
 		const response = await axios.post("http://localhost:3000/login", {
 			email,
-			password
+			password,
+			token
+
 		});
 
+		localStorage.setItem('token', token);
+		console.log('User Authenticated sucessfully');
 		const data = response.data;
 
 		// if (!response.ok) {
@@ -169,6 +177,32 @@ function handleRegistrationError(error) {
 	alert("Ocorreu um erro durante o registro. Por favor, tente novamente.");
 }
 
+//função para autenticar o Token nas inserções de vídeo em posso do usuário administrador
+async function handleVideoRequest(videoUrl) {
+	const token = localStorage.getItem('token');
+
+	if(!token){
+		console.error('Token not found. User not authenticated');
+		return;
+	}
+
+	try {
+		const response = await axios.get(videoUrl,{
+			headers:{
+				Authorization: `Bearer ${token}`
+			}
+		});
+
+		const videoData = response.data;
+		console.log(videoData);
+
+	} catch (error) {
+		console.error('Error to request the video:', error);
+	}
+
+}
+
+
 document.getElementById("media-container").addEventListener('click', mediaURL());
 
 function mediaURL(){
@@ -189,12 +223,16 @@ function mediaURL(){
 
 
 //function para verificar se o formulário de vídeo existe
-if(videoForm) {
-	videoForm.addEventListener("submit", async(event)=>{
-	event.preventDefault();
-	const videoUrl = Document.getElementById("videoUrl").value
-	});
+
+async function videoForm(){
+	if(videoForm) {
+		videoForm.addEventListener("submit", async(event)=>{
+		event.preventDefault();
+		const videoUrl = Document.getElementById("videoUrl").value
+		});
+	}
 }
+
 
 
 

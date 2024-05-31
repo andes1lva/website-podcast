@@ -6,7 +6,12 @@ const PORT = process.env.PORT || 3000;
 const bcrypt = require("bcrypt");
 const path = require("path"); // Importe o módulo 'path' para trabalhar com caminhos de arquivo
 const axios = require("axios");
+const bodyParser = require('body-parser');
+const {generateToken, authenticateToken} = require('./auth');
+const routes = require('./routes');
 
+app.use(bodyParser.json());
+app.use('/',routes);
 
 app.use(express.json());
 app.use(
@@ -103,26 +108,9 @@ app.post("/login", async (req, res) => {
 			message: "User authenticated successfully!",
 			redirectURL: "http://localhost:5500/src/view/menu.html",
 		});
-		// const { rows } = await pool.query(
-		// 	"SELECT id_user, password FROM usr_user WHERE email = $1",
-		// 	[email]
-		// );
+	
 
-		// if (rows.length === 1) {
-		// 	const user = rows[0];
-		// 	const passwordMatch = await bcrypt.compare(password, user.password);
 
-		// 	if (passwordMatch) {
-		// 		res.status(200).json({
-		// 			message: "User authenticated successfully!",
-		// 			redirectURL: "http://localhost:5500/src/view/menu.html",
-		// 		});
-		// 	} else {
-		// 		res.status(401).json("Authentication failed.");
-		// 	}
-		// } else {
-		// 	res.status(404).json("User not found.");
-		// }
 	} catch (error) {
 		console.error("Error trying to authenticate user", error);
 		res.status(500).json({ error: "Server error" });
