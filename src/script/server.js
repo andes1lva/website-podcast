@@ -7,12 +7,9 @@ const bcrypt = require("bcrypt");
 const path = require("path"); // Importe o módulo 'path' para trabalhar com caminhos de arquivo
 const axios = require("axios");
 const bodyParser = require('body-parser');
-const {generateToken, authenticateToken} = require('./auth');
-const routes = require('./routes');
+const {generateToken, authenticateToken} = require('./auth.js');
 
 app.use(bodyParser.json());
-app.use('/',routes);
-
 app.use(express.json());
 app.use(
 	cors({

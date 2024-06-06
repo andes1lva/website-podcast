@@ -5,14 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
 		"redirectAccountGoogle"
 	);
 	const buttonBacktoLogin = document.getElementById("buttonBacktoLogin");
-	const loginForm = document.getElementById("loginForm");
 	const videoForm = document.getElementById("videoForm");
+	const loginForm = document.getElementById("loginForm");
 
 
 	if (loginForm) {
 		loginForm.addEventListener("submit", function (event) {
 			event.preventDefault();
 			handleLogin();
+		});
+	}
+
+	if(videoForm) {
+		videoForm.addEventListener("submit", (event)=>{
+		event.preventDefault();
+		handleVideoRequest()
 		});
 	}
 
@@ -67,25 +74,18 @@ async function handleLogin() {
 
 //const axiosAuthenticatedUserLoginData = require('axios');
 
-async function loginAuthenticatedUser(email, password) {
+async function loginAuthenticatedUser(email, password,token) {
 	try {
 		const response = await axios.post("http://localhost:3000/login", {
 			email,
-			password,
-			token
-
+			password
 		});
 
 		localStorage.setItem('token', token);
 		console.log('User Authenticated sucessfully');
 		const data = response.data;
 
-		// if (!response.ok) {
-		// 	const errorData = await response.json();
-		// 	throw new Error(`HTTP error! status: ${response.status}`);
-		// }
-		// const data = await response.json();
-
+		
 		if (data.redirectURL) {
 			console.log("Redirecionando para:", data.redirectURL);
 			window.location.href = data.redirectURL;
@@ -94,9 +94,7 @@ async function loginAuthenticatedUser(email, password) {
 		}
 	} catch (error) {
 		console.error(
-			"Erro durante a solicitação de login:",
-			error.response.status,
-			error.response.data
+			"Erro durante a solicitação de login:"//,//error.response.status,//error.response.data
 		);
 	}
 }
@@ -203,7 +201,7 @@ async function handleVideoRequest(videoUrl) {
 }
 
 
-document.getElementById("media-container").addEventListener('click', mediaURL());
+document.getElementById("media-container").addEventListener('click', mediaURL);
 
 function mediaURL(){
 	const mediaURL = "https://www.youtube.com/embed/mB4_od2susc?si=dEaHlYmAOdxhFr8A";
@@ -224,14 +222,8 @@ function mediaURL(){
 
 //function para verificar se o formulário de vídeo existe
 
-async function videoForm(){
-	if(videoForm) {
-		videoForm.addEventListener("submit", async(event)=>{
-		event.preventDefault();
-		const videoUrl = Document.getElementById("videoUrl").value
-		});
-	}
-}
+
+	
 
 
 
