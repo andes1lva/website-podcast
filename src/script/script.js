@@ -176,7 +176,7 @@ function handleRegistrationError(error) {
 }
 
 //função para autenticar o Token nas inserções de vídeo em posso do usuário administrador
-async function handleVideoRequest(videoUrl) {
+/**async function handleVideoRequest(videoUrl) {
 	const token = localStorage.getItem('token');
 
 	if(!token){
@@ -198,7 +198,7 @@ async function handleVideoRequest(videoUrl) {
 		console.error('Error to request the video:', error);
 	}
 
-}
+}**/
 
 
 document.getElementById("media-container").addEventListener('click', mediaURL);
