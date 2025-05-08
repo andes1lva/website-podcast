@@ -1,149 +1,217 @@
-const express = require("express");
-const { Pool } = require("pg");
-const cors = require("cors");
-const app = express();
+const http = require('http');
+const fs = require('fs').promises;
+const path = require('path');
+const url = require('url');
+const querystring = require('querystring');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const { pool } = require('./config/db');
+const { registerSchema, loginSchema } = require('./utils/validator');
+const sanitizeHtml = require('sanitize-html');
+
 const PORT = process.env.PORT || 3000;
-const bcrypt = require("bcrypt");
-const path = require("path"); // Importe o módulo 'path' para trabalhar com caminhos de arquivo
-const axios = require("axios");
-const bodyParser = require('body-parser');
-const {generateToken, authenticateToken} = require('./auth.js');
+const JWT_SECRET = process.env.JWT_SECRET || 'As_Esferas_Do_Dragão';
 
-app.use(bodyParser.json());
-app.use(express.json());
-app.use(
-	cors({
-		methods: ["GET", "POST"],
-		origin: ["http://localhost:5500", "http://127.0.0.1:5500"], // Adicione a origem permitida aqui
-	})
-);
-
-
-app.use(express.static(path.join(__dirname, "src"))); // Servir arquivos estáticos da pasta 'src/view'
-app.use(express.static(path.join(__dirname, 'client/build'))); // Servir arquivos estáticos do react
-app.use(express.urlencoded({ extended: true }));
-
-
-const pool = new Pool({
-	user: "postgres",
-	host: "localhost",
-	database: "postgres",
-	password: "A1b2c3d4e5",
-	port: 5432,
-});
-
-
-// Rota principal para servir o arquivo HTML de registro
-app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname, "src/view/registrationform.html"));
-});
-
-app.get("/login", (req, res) => {
-	res.sendFile(path.join(__dirname, "src/view/login.html"));
-});
-
-app.get("/menu", (req, res) => {
-	res.sendFile(path.join(__dirname, "src/view/menu.html"));
-});
-
-
-
-let videoStack = [];
-app.post("/add-video", (req, res) => {
-	const {videoUrl, adminToken} = req.body;
-	
-	// Verifica se o token de administrador é válido
-	if(adminToken !== "admin-secret-token") {
-		return res.status(403).send({message: 'Permission Negade'});
-	}
-
-	videoStack.push(videoUrl); //faz um push e adiciona vídeo da URL à pilha
-
-	res.status(201).send({message: 'Vídeo added successfully' });
-});
-
-app.get("/videos", (req, res) =>{
-	res.send(videoStack);
-});
-
-
-
-
-// Rota para lidar com o envio do formulário de registro
-app.post("/register", async (req, res) => {
-	const { user_name, password, confirm_password, email, address } = req.body;
-
-	if (password !== confirm_password) {
-		return res.status(400).json({ error: "Password do not match." });
-	}
-
-	try {
-		const hashedPassword = await bcrypt.hash(password, 10);
-
-		const client = await pool.connect();
-		const sqlInsertQuery =
-			"INSERT INTO USR_USER (USERNAME, PASSWORD, CONFIRM_PASSWORD, EMAIL, ADDRESS) VALUES ($1, $2, $3, $4, $5)";
-		const values = [user_name, password, confirm_password, email, address];
-		await client.query(sqlInsertQuery, values);
-		client.release();
-
-		res.status(200).json({ message: "Usuário registrado com sucesso!" });
-	} catch (error) {
-		console.error("Erro ao inserir usuário:", error);
-		res
-			.status(500)
-			.json({ error: "Ocorreu um erro ao processar sua solicitação." });
-	}
-});
-
-
-app.post("/login", async (req, res) => {
-	const { email, password } = req.body;
-
-	try {
-		res.status(200).json({
-			message: "User authenticated successfully!",
-			redirectURL: "http://localhost:5500/src/view/menu.html",
-		});
-	
-
-
-	} catch (error) {
-		console.error("Error trying to authenticate user", error);
-		res.status(500).json({ error: "Server error" });
-	}
-});
-
-app.use((err, req, res, next) => {
-	console.error(err.stack);
-	res.status(500).json({ error: "Algo deu errado!" });
-});
-
-
-// Função para conectar-se ao PostgreSQL e executar uma consulta
-async function connectAndQuery() {
-	try {
-		const client = await pool.connect();
-		console.log("Conectado ao PostgreSQL");
-
-		const sqlQuery = "SELECT * FROM USR_USER";
-		const { rows } = await client.query(sqlQuery);
-		console.log("Resultados da consulta:");
-		console.table(rows);
-		client.release();
-	} catch (error) {
-		console.error("Erro ao conectar ou executar consulta:", error);
-	}
+// Verificar token JWT
+function verifyToken(token) {
+  try {
+    return jwt.verify(token, JWT_SECRET);
+  } catch (err) {
+    return null;
+  }
 }
 
+const server = http.createServer(async (req, res) => {
+  const parsedUrl = url.parse(req.url, true);
+  const pathname = parsedUrl.pathname;
 
+  // Configurar CORS
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5500,http://127.0.0.1:5500,http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
 
-app.listen(PORT, () => {
-	console.log(`Server running on port ${PORT}`);
+  // Servir arquivos estáticos
+  if (req.method === 'GET') {
+    let filePath;
+    if (pathname === '/' || pathname === '/register') {
+      filePath = path.join(__dirname, 'view', 'register.html');
+    } else if (pathname === '/login') {
+      filePath = path.join(__dirname, 'view', 'login.html');
+    } else if (pathname === '/menu') {
+      const token = req.headers['authorization']?.split(' ')[1];
+      if (!token || !verifyToken(token)) {
+        res.writeHead(401, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Acesso negado. Faça login.' }));
+        return;
+      }
+      filePath = path.join(__dirname, 'view', 'menu.html');
+    } else if (pathname === '/script/client.js') {
+      filePath = path.join(__dirname, 'script', 'client.js');
+      try {
+        const content = await fs.readFile(filePath);
+        res.writeHead(200, { 'Content-Type': 'application/javascript' });
+        res.end(content);
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Erro interno do servidor' }));
+      }
+      return;
+    } else {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Página não encontrada' }));
+      return;
+    }
+
+    try {
+      const content = await fs.readFile(filePath);
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(content);
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Erro interno do servidor' }));
+    }
+  }
+
+  // Processar formulários
+  else if (req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
+    req.on('end', async () => {
+      let data;
+      try {
+        // Tentar parsear como JSON
+        data = JSON.parse(body);
+        console.log('Dados recebidos (JSON):', data);
+      } catch {
+        // Fallback para URL-encoded
+        data = querystring.parse(body);
+        console.log('Dados recebidos (URL-encoded):', data);
+      }
+
+      try {
+        // Registro
+        if (pathname === '/register') {
+          const { error } = registerSchema.validate(data);
+          if (error) {
+            console.log('Erro de validação:', error.details[0].message);
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: error.details[0].message }));
+            return;
+          }
+
+          const { username, password, email, address } = data;
+          const sanitizedUsername = sanitizeHtml(username);
+          const sanitizedAddress = address ? sanitizeHtml(address) : null;
+
+          console.log('Tentando inserir:', { sanitizedUsername, email, address });
+
+          // Verificar unicidade
+          const [existingUser] = await pool.query(
+            'SELECT id FROM Users WHERE username = ? OR email = ?',
+            [sanitizedUsername, email]
+          );
+          if (existingUser.length > 0) {
+            console.log('Usuário ou email já existe');
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Nome de usuário ou email já registrado' }));
+            return;
+          }
+
+          // Hash da senha
+          const hashedPassword = await bcrypt.hash(password, 10);
+
+          // Inserir usuário
+          const sqlInsertQuery =
+            'INSERT INTO Users (username, password, email, address) VALUES (?, ?, ?, ?)';
+          await pool.query(sqlInsertQuery, [sanitizedUsername, hashedPassword, email, sanitizedAddress]);
+          console.log('Usuário inserido com sucesso:', sanitizedUsername);
+
+          res.writeHead(201, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ message: 'Usuário registrado com sucesso!' }));
+        }
+
+        // Login
+        else if (pathname === '/login') {
+          const { error } = loginSchema.validate(data);
+          if (error) {
+            console.log('Erro de validação:', error.details[0].message);
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: error.details[0].message }));
+            return;
+          }
+
+          const { email, password } = data;
+          console.log('Tentando login:', email);
+
+          const [users] = await pool.query(
+            'SELECT id, username, password, is_active FROM Users WHERE email = ?',
+            [email]
+          );
+          if (users.length === 0) {
+            console.log('Usuário não encontrado:', email);
+            res.writeHead(401, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Email ou senha inválidos' }));
+            return;
+          }
+
+          const user = users[0];
+          if (!user.is_active) {
+            console.log('Conta desativada:', email);
+            res.writeHead(403, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Conta desativada' }));
+            return;
+          }
+
+          const isPasswordValid = await bcrypt.compare(password, user.password);
+          if (!isPasswordValid) {
+            console.log('Senha inválida:', email);
+            res.writeHead(401, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Email ou senha inválidos' }));
+            return;
+          }
+
+          const token = jwt.sign(
+            { id: user.id, username: user.username },
+            JWT_SECRET,
+            { expiresIn: '1h' }
+          );
+
+          console.log('Login bem-sucedido:', user.username);
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({
+            message: 'Usuário autenticado com sucesso!',
+            token,
+            userId: user.id,
+            redirectURL: 'http://localhost:5500/src/view/menu.html'
+          }));
+        }
+
+        else {
+          res.writeHead(404, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Rota não encontrada' }));
+        }
+      } catch (error) {
+        console.error('Erro no servidor:', error.message);
+        console.error('Stack:', error.stack);
+        if (error.code === 'ER_DUP_ENTRY') {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Nome de usuário ou email já registrado' }));
+        } else {
+          res.writeHead(500, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Erro interno do servidor' }));
+        }
+      }
+    });
+  }
+
+  else {
+    res.writeHead(405, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'Método não permitido' }));
+  }
 });
 
-//criar validação de Login baseado no ID do usuário,
-//estrutura para verificar no banco de o login e a senha informada é válida
-
-// Chamar a função para conectar-se ao PostgreSQL e executar a consulta
-// connectAndQuery();
+server.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
