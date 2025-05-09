@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (registerForm) {
     registerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      console.log('[CLIENTE] Formulário de registro enviado');
       const error = document.getElementById('error');
+      error.classList.add('hidden');
       const data = {
         username: document.getElementById('username').value,
         password: document.getElementById('password').value,
@@ -13,41 +15,41 @@ document.addEventListener('DOMContentLoaded', () => {
         address: document.getElementById('address').value || null
       };
 
-      console.log('Dados capturados do formulário:', data);
+      console.log('[CLIENTE] Dados capturados do formulário:', data);
 
       if (data.password !== data.confirm_password) {
-        console.log('Validação falhou: senhas não coincidem');
+        console.log('[CLIENTE] Validação falhou: senhas não coincidem');
         error.textContent = 'As senhas não coincidem';
         error.classList.remove('hidden');
         return;
       }
       if (!data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-        console.log('Validação falhou: email inválido');
+        console.log('[CLIENTE] Validação falhou: email inválido');
         error.textContent = 'Email inválido';
         error.classList.remove('hidden');
         return;
       }
 
       try {
-        console.log('Enviando requisição POST para http://localhost:3000/register...');
-        const response = await fetch('http://localhost:3000/register', {
+        console.log('[CLIENTE] Iniciando fetch para http://localhost:3002/register');
+        const response = await fetch('http://localhost:3002/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
-        console.log('Status da resposta:', response.status);
+        console.log('[CLIENTE] Resposta recebida, status:', response.status);
         const result = await response.json();
-        console.log('Resposta do servidor:', result);
+        console.log('[CLIENTE] Resposta do servidor:', result);
         if (!response.ok) {
-          console.log('Erro na resposta:', result.error);
+          console.log('[CLIENTE] Erro na resposta:', result.error);
           throw new Error(result.error);
         }
-        console.log('Registro bem-sucedido:', result.message);
+        console.log('[CLIENTE] Registro bem-sucedido:', result.message);
         alert(result.message);
-        window.location.href = '/login';
+        window.location.href = 'login.html';
       } catch (err) {
-        console.error('Erro no cliente:', err.message);
-        error.textContent = err.message;
+        console.error('[CLIENTE] Erro no cliente:', err.message);
+        error.textContent = 'Erro ao conectar ao servidor. Verifique se o servidor está rodando na porta 3002.';
         error.classList.remove('hidden');
       }
     });
@@ -58,42 +60,44 @@ document.addEventListener('DOMContentLoaded', () => {
   if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      console.log('[CLIENTE] Formulário de login enviado');
       const error = document.getElementById('error');
+      error.classList.add('hidden');
       const data = {
         email: document.getElementById('email').value,
         password: document.getElementById('password').value
       };
 
-      console.log('Dados capturados do formulário:', data);
+      console.log('[CLIENTE] Dados capturados do formulário:', data);
 
       if (!data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-        console.log('Validação falhou: email inválido');
+        console.log('[CLIENTE] Validação falhou: email inválido');
         error.textContent = 'Email inválido';
         error.classList.remove('hidden');
         return;
       }
 
       try {
-        console.log('Enviando requisição POST para http://localhost:3000/login...');
-        const response = await fetch('http://localhost:3000/login', {
+        console.log('[CLIENTE] Iniciando fetch para http://localhost:3002/login');
+        const response = await fetch('http://localhost:3002/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
-        console.log('Status da resposta:', response.status);
+        console.log('[CLIENTE] Resposta recebida, status:', response.status);
         const result = await response.json();
-        console.log('Resposta do servidor:', result);
+        console.log('[CLIENTE] Resposta do servidor:', result);
         if (!response.ok) {
-          console.log('Erro na resposta:', result.error);
+          console.log('[CLIENTE] Erro na resposta:', result.error);
           throw new Error(result.error);
         }
-        console.log('Login bem-sucedido:', result.message);
+        console.log('[CLIENTE] Login bem-sucedido:', result.message);
         localStorage.setItem('jwt', result.token);
         alert(result.message);
         window.location.href = result.redirectURL;
       } catch (err) {
-        console.error('Erro no cliente:', err.message);
-        error.textContent = err.message;
+        console.error('[CLIENTE] Erro no cliente:', err.message);
+        error.textContent = 'Erro ao conectar ao servidor. Verifique se o servidor está rodando na porta 3002.';
         error.classList.remove('hidden');
       }
     });
@@ -103,38 +107,37 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('podcasts')) {
     async function loadPodcasts() {
       const token = localStorage.getItem('jwt');
-      console.log('Token para /menu:', token ? 'Token presente' : 'Sem token');
+      console.log('[CLIENTE] Token para /menu:', token ? 'Token presente' : 'Sem token');
       if (!token) {
-        console.log('Redirecionando para login: sem token');
-        window.location.href = '/login';
+        console.log('[CLIENTE] Redirecionando para login: sem token');
+        window.location.href = 'login.html';
         return;
       }
 
       try {
-        console.log('Enviando requisição GET para http://localhost:3000/menu...');
-        const response = await fetch('http://localhost:3000/menu', {
+        console.log('[CLIENTE] Iniciando fetch para http://localhost:3002/menu');
+        const response = await fetch('http://localhost:3002/menu', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
-        console.log('Status da resposta:', response.status);
+        console.log('[CLIENTE] Resposta recebida, status:', response.status);
         if (!response.ok) {
-          console.log('Erro na resposta: acesso negado');
+          console.log('[CLIENTE] Erro na resposta: acesso negado');
           throw new Error('Acesso negado');
         }
-        console.log('Menu carregado com sucesso');
+        console.log('[CLIENTE] Menu carregado com sucesso');
         document.getElementById('podcasts').innerHTML = '<p>Lista de podcasts em breve!</p>';
       } catch (err) {
-        console.error('Erro no cliente:', err.message);
+        console.error('[CLIENTE] Erro no cliente:', err.message);
         document.getElementById('podcasts').innerHTML = `<p class="text-red-600">${err.message}</p>`;
       }
     }
 
     loadPodcasts();
 
-    // Logout
-    document.getElementById('logout').addEventListener('click', () => {
-      console.log('Executando logout: removendo token');
+    document.getElementById('logout')?.addEventListener('click', () => {
+      console.log('[CLIENTE] Executando logout: removendo token');
       localStorage.removeItem('jwt');
-      window.location.href = '/login';
+      window.location.href = 'login.html';
     });
   }
 });
