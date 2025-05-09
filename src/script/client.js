@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        console.log('[CLIENTE] Iniciando fetch para http://localhost:3002/register');
-        const response = await fetch('http://localhost:3002/register', {
+        console.log('[CLIENTE] Iniciando fetch para http://localhost:3000/register');
+        const response = await fetch('http://localhost:3000/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'login.html';
       } catch (err) {
         console.error('[CLIENTE] Erro no cliente:', err.message);
-        error.textContent = 'Erro ao conectar ao servidor. Verifique se o servidor está rodando na porta 3002.';
+        error.textContent = 'Erro ao conectar ao servidor. Verifique se o servidor está rodando na porta 3000.';
         error.classList.remove('hidden');
       }
     });
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        console.log('[CLIENTE] Iniciando fetch para http://localhost:3002/login');
-        const response = await fetch('http://localhost:3002/login', {
+        console.log('[CLIENTE] Iniciando fetch para http://localhost:3000/login');
+        const response = await fetch('http://localhost:3000/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = result.redirectURL;
       } catch (err) {
         console.error('[CLIENTE] Erro no cliente:', err.message);
-        error.textContent = 'Erro ao conectar ao servidor. Verifique se o servidor está rodando na porta 3002.';
+        error.textContent = 'Erro ao conectar ao servidor. Verifique se o servidor está rodando na porta 3001.';
         error.classList.remove('hidden');
       }
     });
@@ -115,8 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        console.log('[CLIENTE] Iniciando fetch para http://localhost:3002/menu');
-        const response = await fetch('http://localhost:3002/menu', {
+        console.log('[CLIENTE] Iniciando fetch para http://localhost:3000/menu');
+        const response = await fetch('http://localhost:3000/menu', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         console.log('[CLIENTE] Resposta recebida, status:', response.status);

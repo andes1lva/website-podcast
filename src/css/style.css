@@ -1,21 +1,30 @@
-/* public/styles.css */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('/images/background.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-
+    position: relative;
+    overflow: hidden;
 }
 
-
-
-/*aqui vem tudo da pagina de Login*/
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/podcast_technology.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    filter: brightness(70%);
+    z-index: -1;
+}
 
 .login-container-wrapper {
     display: flex;
@@ -33,6 +42,8 @@ body {
     max-width: 400px;
     width: 100%;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .login-container h1 {
@@ -52,10 +63,6 @@ body {
     margin-top: 0.5rem;
 }
 
-
-
-/*menu principal do wibsite
-
 /* Reset CSS */
 * {
     margin: 0;
@@ -64,15 +71,14 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Body styling */
-body {
+/* Body styling for other pages */
+body:not(.login-container-wrapper) {
     background-color: #f4f4f4;
     color: #333;
 }
 
 main {
     width: 100%;
-
 }
 
 /* Navbar styling */
@@ -135,7 +141,7 @@ main {
     }
 }
 
-/* media podcast - videos*/
+/* Media podcast - videos */
 main #media-container {
     display: flex;
     justify-content: center;
@@ -144,21 +150,5 @@ main #media-container {
     background-color: #f4f4f4;
     position: relative;
     left: 450px;
-
 }
 
-iframe {
-    border: none;
-}
-
-main #loadMediaVideo {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.container-socialmedia .nav-link {
-    display: inline-block;
-
-}

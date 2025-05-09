@@ -5,11 +5,11 @@ const url = require('url');
 const querystring = require('querystring');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { pool } = require('./config/db');
-const { registerSchema, loginSchema } = require('./utils/validator');
+const { pool } = require('../config/db');
+const { registerSchema, loginSchema } = require('../utils/validator');
 const sanitizeHtml = require('sanitize-html');
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'As_Esferas_Do_Dragão';
 
 console.log('[SERVIDOR] Configurando servidor...');
