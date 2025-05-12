@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('[CLIENTE] Formulário de registro enviado');
       const error = document.getElementById('error');
       error.classList.add('hidden');
+
       const data = {
         username: document.getElementById('username').value,
         password: document.getElementById('password').value,
@@ -139,5 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.removeItem('jwt');
       window.location.href = 'login.html';
     });
+
+   
   }
 });

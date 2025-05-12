@@ -8,9 +8,9 @@
 /* Global body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     color: #333;
     min-height: 100vh;
+    background-image:url("/images/podcast_technology.jpg");
 }
 
 /* Navbar styling */
@@ -147,14 +147,107 @@ body {
     background-color: #555;
 }
 
+.initial-menu-apr{
+    margin: 60px auto 20px; /* Margem para evitar sobreposição com navbar fixa */
+    max-width: 100%;
+    width: 100%;
+}
+.initial-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffffee;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 92px;
+    text-align: left;
+    min-height: 200px; /* Altura mínima para acomodar a imagem */
+    background-image: linear-gradient(to right, #ffffffee 50%, url('/images/initial-img-menu.jpg') 50%);
+    background-size: auto 100%, cover; /* Texto à esquerda, imagem à direita */
+    background-repeat: no-repeat;
+    background-position: left, right;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    min-height: 150px;
+}
+
+.image-area {
+    width: 300px;
+    height: 100%;
+    background-image: url('/images/initial-img-menu.jpg'); /* Substitua por sua imagem */
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.25rem;
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 20px;
+    z-index: 1;
+}
+
+.initial-menu-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.initial-menu-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0px;
+}
+
+/* Anúncios */
+.announcement {
+    margin: 20px auto 19px; /* Margem para evitar sobreposição com navbar fixa */
+    max-width: 63%;
+    width: 63%;
+}
+
+.announcement-item {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.announcement-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.announcement-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.announcement-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+
+.announcement-btn:hover {
+    background-color: #0056b3;
+}
+
 /* Content styling */
 .content {
     text-align: center;
     padding: 20px;
-    margin-top: 70px; /* Ajuste para evitar sobreposição com a navbar fixa */
+    margin-top: 20px;
 }
 
-.content h1 {
+.content h2 {
     color: #333;
     margin-bottom: 10px;
 }
@@ -191,5 +284,23 @@ body {
 
     .search-input.active {
         width: 120px; /* Campo menor em telas pequenas */
+    }
+
+    .announcement {
+        margin: 60px auto 15px;
+        width: 95%;
+    }
+
+    .announcement-item h2 {
+        font-size: 1.25rem;
+    }
+
+    .announcement-item p {
+        font-size: 0.9rem;
+    }
+
+    .announcement-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }
