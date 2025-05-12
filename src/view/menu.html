@@ -1,83 +1,84 @@
 <!DOCTYPE html>
-<html lang="pt-ba">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Vertical Menu</title>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		/>
-		<link rel="stylesheet" href="../css/style.css" />
-	</head>
-	<body>
-		<nav class="navbar navbar-dark bg-dark fixed-top">
-			<button
-				class="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarNav"
-				aria-controls="navbarNav"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="container-socialmedia">
-				<a class="nav-link" href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
-				<a class="nav-link" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-			  </div>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav flex-column">
-					<li class="nav-item">
-						<a class="nav-link" href="menu.html">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Tech Conferences</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="navbarDropdown"
-							role="button"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-						>
-							Store Tech
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="techstore.html">Tech Shop</a>
-							<a class="dropdown-item" href="#">Tech NFT's</a>
-							<a class="dropdown-item" href="#">Accessories</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="mediatech.html">Vídeos</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="audiocasts.html">Audiocasts</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Vídeos</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">About Us</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<div class="content text-center mt-4">
-			<h1>Welcome to our Website</h1>
-			<p>This is a website to our Podcast</p>
-		</div>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	</body>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertical Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <!-- Toggler para o menu colapsável -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contêiner para ícones sociais e busca (alinhados horizontalmente) -->
+        <div class="nav-right">
+            <div class="social-icons">
+                <a class="social-link" href="https://web.whatsapp.com/" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a class="social-link" href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <div class="search-container">
+                <span class="search-icon" aria-label="Abrir campo de pesquisa">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </span>
+                <input type="text" class="search-input" placeholder="Pesquisar..." aria-label="Campo de pesquisa">
+            </div>
+        </div>
+
+        <!-- Menu colapsável -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tech Conferences</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Store Tech
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="techstore.html">Tech Shop</a>
+                        <a class="dropdown-item" href="#">Tech NFT's</a>
+                        <a class="dropdown-item" href="#">Accessories</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mediatech.html">Vídeos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="audiocasts.html">Audiocasts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content text-center mt-4">
+        <h1>Welcome to our Website</h1>
+        <p>This is a website to our Podcast</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
