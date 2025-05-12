@@ -11,6 +11,8 @@ body {
     color: #333;
     min-height: 100vh;
     background-image:url("/images/podcast_technology.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 /* Navbar styling */
@@ -63,6 +65,10 @@ body {
     align-items: center;
     gap: 12px;
 }
+.social-icons .icon {
+    width: 18px;
+    height: 18px;
+}
 
 .social-link {
     display: inline-flex;
@@ -80,6 +86,13 @@ body {
     color: #ddd;
     transform: scale(1.1);
 }
+
+.social-link:focus i,
+.search-icon:focus svg {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
 
 /* Campo de busca */
 .search-container {
@@ -154,28 +167,24 @@ body {
 }
 .initial-menu-item {
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: space-between;
     background-color: #ffffffee;
     border-radius: 0.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 92px;
+    padding: 20px;
     text-align: left;
     min-height: 200px; /* Altura mínima para acomodar a imagem */
-    background-image: linear-gradient(to right, #ffffffee 50%, url('/images/initial-img-menu.jpg') 50%);
-    background-size: auto 100%, cover; /* Texto à esquerda, imagem à direita */
     background-repeat: no-repeat;
     background-position: left, right;
     position: relative;
     overflow: hidden;
-    flex-direction: column;
-    min-height: 150px;
+    flex-direction: row;
 }
 
 .image-area {
-    width: 300px;
+    width: 400px;
     height: 100%;
-    background-image: url('/images/initial-img-menu.jpg'); /* Substitua por sua imagem */
     background-size: cover;
     background-position: center;
     border-radius: 0.25rem;
@@ -210,7 +219,7 @@ body {
     background-color: #fff;
     border-radius: 0.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -303,4 +312,91 @@ body {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
+      .footer {
+        padding: 15px;
+    }
+
+    .footer-content {
+        gap: 8px;
+    }
+
+    .footer-social {
+        gap: 10px;
+    }
+
+     .video-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .video-grid iframe {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+.att-content-item {
+    display: inline;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10%;
+    background-repeat: no-repeat;
+    background-position: left, right;
+    overflow: hidden;
+    flex-direction: row;
+}
+
+.video-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.video-grid iframe {
+    width: 400px;
+    height: 315px;
+}
+
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed; /* Fixa o rodapé na parte inferior */
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que o rodapé fique acima de outros elementos */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social .social-link i {
+    font-size: 18px;
+    color: #fff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-social .social-link:hover i {
+    color: #ddd;
+    transform: scale(1.1);
 }
