@@ -42,6 +42,16 @@ body::before {
 /* Garante que o conteúdo fique acima do overlay */
 .login-container, .initial-menu-item, .announcement-item, .att-content-item, .content, .navbar, .footer {
     position: relative;
+    z-index: 2;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Garante que o conteúdo fique acima do overlay */
+.login-container, .initial-menu-item, .announcement-item, .att-content-item, .content, .navbar, .footer {
+    position: relative;
     z-index: 2; /* Coloca o conteúdo acima do overlay */
 }
 
