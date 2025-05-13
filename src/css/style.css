@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
     min-height: 100vh;
-    background-image:url("/images/podcast_technology.jpg");
+    background-image: url("/images/podcast_technology.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -65,9 +65,12 @@ body {
     align-items: center;
     gap: 12px;
 }
+
 .social-icons .icon {
-    width: 18px;
-    height: 18px;
+    width: 24px; /* Aumentado para melhor visibilidade */
+    height: 24px;
+    fill: #fff; /* Cor controlada via CSS */
+    transition: fill 0.3s, transform 0.3s;
 }
 
 .social-link {
@@ -76,23 +79,16 @@ body {
     text-decoration: none;
 }
 
-.social-link i {
-    font-size: 18px;
-    color: #fff;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.social-link:hover i {
-    color: #ddd;
+.social-link:hover .icon {
+    fill: #ddd; /* Cor ao passar o mouse */
     transform: scale(1.1);
 }
 
-.social-link:focus i,
+.social-link:focus .icon,
 .search-icon:focus svg {
     outline: 2px solid #fff;
     outline-offset: 2px;
 }
-
 
 /* Campo de busca */
 .search-container {
@@ -160,11 +156,12 @@ body {
     background-color: #555;
 }
 
-.initial-menu-apr{
+.initial-menu-apr {
     margin: 60px auto 20px; /* Margem para evitar sobreposição com navbar fixa */
     max-width: 100%;
     width: 100%;
 }
+
 .initial-menu-item {
     display: flex;
     align-items: left;
@@ -312,7 +309,8 @@ body {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
-      .footer {
+
+    .footer {
         padding: 15px;
     }
 
@@ -324,15 +322,17 @@ body {
         gap: 10px;
     }
 
-     .video-grid {
+    .video-grid {
         flex-direction: column;
         align-items: center;
     }
+
     .video-grid iframe {
         width: 100%;
         max-width: 400px;
     }
 }
+
 .att-content-item {
     display: inline;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -349,11 +349,11 @@ body {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .video-grid iframe {
     width: 400px;
     height: 315px;
 }
-
 
 .visually-hidden {
     position: absolute;
