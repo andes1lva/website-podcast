@@ -5,14 +5,77 @@
     box-sizing: border-box;
 }
 
+/* Definir altura total para html e body */
+html, body {
+    height: 100%; /* Garante que o body ocupe toda a altura da página */
+    margin: 0;
+    padding: 0;
+}
+
 /* Global body styling */
 body {
     font-family: Arial, sans-serif;
     color: #333;
-    min-height: 100vh;
+    min-height: 100vh; /* Garante o mínimo de altura da viewport */
     background-image: url("/images/podcast_technology.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Mantém a imagem fixa */
+    position: relative; /* Necessário para o pseudoelemento */
+    display: flex;
+    flex-direction: column; /* Permite empilhar o conteúdo e o rodapé */
+}
+
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Cobertura total da altura da viewport */
+    background-color: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade aqui (0 a 1) */
+    z-index: 1; /* Coloca o overlay atrás do conteúdo */
+    height: calc(100vh + 900px); /* Adiciona a altura do rodapé fixo */
+}
+
+/* Garante que o conteúdo fique acima do overlay */
+.login-container, .initial-menu-item, .announcement-item, .att-content-item, .content, .navbar, .footer {
+    position: relative;
+    z-index: 2; /* Coloca o conteúdo acima do overlay */
+}
+
+/* Ajuste para o conteúdo principal ocupar o espaço disponível */
+main {
+    flex: 1 0 auto; /* Permite que o conteúdo cresça, mas não force o rodapé */
+}
+
+/* Resto do seu CSS permanece o mesmo */
+.login-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 1.5rem;
+}
+
+.login-container form input {
+    margin-bottom: 1rem;
+}
+
+.login-container .social-login {
+    margin-top: 1.5rem;
+}
+
+.login-container a {
+    display: block;
+    margin-top: 0.5rem;
 }
 
 /* Navbar styling */
@@ -23,6 +86,7 @@ body {
     align-items: center;
     justify-content: space-between;
     min-width: 100%;
+    z-index: 3; /* Garante que a navbar fique acima do overlay */
 }
 
 /* Menu colapsável */
@@ -67,9 +131,9 @@ body {
 }
 
 .social-icons .icon {
-    width: 24px; /* Aumentado para melhor visibilidade */
+    width: 24px;
     height: 24px;
-    fill: #fff; /* Cor controlada via CSS */
+    fill: #fff;
     transition: fill 0.3s, transform 0.3s;
 }
 
@@ -80,7 +144,7 @@ body {
 }
 
 .social-link:hover .icon {
-    fill: #ddd; /* Cor ao passar o mouse */
+    fill: #ddd;
     transform: scale(1.1);
 }
 
@@ -95,8 +159,17 @@ body {
     position: relative;
     display: inline-flex;
     align-items: center;
-    width: 30px; /* Largura inicial para o ícone */
+    width: auto;
+    max-width: 150px;
+    transition: max-width 0.3s ease; /* Transição suave para a largura */
     z-index: 10;
+}
+
+.search-container .search-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 11;
 }
 
 .search-icon {
@@ -104,6 +177,11 @@ body {
     align-items: center;
     cursor: pointer;
     z-index: 11;
+}
+.search-container .search-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: #fff;
 }
 
 .search-icon svg {
@@ -126,13 +204,15 @@ body {
     transform: translateY(-50%);
     opacity: 0;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .search-input.active {
-    width: 150px; /* Largura fixa para o campo aberto */
+    width: 100px;
     padding: 0.5rem 2rem 0.5rem 0.75rem;
     border: 1px solid #ccc;
     opacity: 1;
+    overflow: hidden;
 }
 
 .search-input:focus {
@@ -157,7 +237,7 @@ body {
 }
 
 .initial-menu-apr {
-    margin: 60px auto 20px; /* Margem para evitar sobreposição com navbar fixa */
+    margin: 60px auto 20px;
     max-width: 100%;
     width: 100%;
 }
@@ -171,7 +251,7 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: left;
-    min-height: 200px; /* Altura mínima para acomodar a imagem */
+    min-height: 200px;
     background-repeat: no-repeat;
     background-position: left, right;
     position: relative;
@@ -207,7 +287,7 @@ body {
 
 /* Anúncios */
 .announcement {
-    margin: 20px auto 19px; /* Margem para evitar sobreposição com navbar fixa */
+    margin: 20px auto 19px;
     max-width: 63%;
     width: 63%;
 }
@@ -289,7 +369,7 @@ body {
     }
 
     .search-input.active {
-        width: 120px; /* Campo menor em telas pequenas */
+        width: 120px;
     }
 
     .announcement {
@@ -331,6 +411,11 @@ body {
         width: 100%;
         max-width: 400px;
     }
+
+    .mediatech-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
 }
 
 .att-content-item {
@@ -348,6 +433,7 @@ body {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .video-grid iframe {
@@ -366,16 +452,39 @@ body {
     border: 0;
 }
 
+.mediatech-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+    width: 8%;
+    min-width: 120px;
+    text-align: center;
+}
+
+.mediatech-btn:hover {
+    background-color: #0056b3;
+}
+
+.att-more-videos {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 /* Rodapé */
 .footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
-    position: fixed; /* Fixa o rodapé na parte inferior */
+    position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 1000; /* Garante que o rodapé fique acima de outros elementos */
+    z-index: 1000;
 }
 
 .footer-content {
