@@ -9,38 +9,86 @@
     <link rel="stylesheet" href="/src/css/style.css" />
 </head>
 <body>
+    <!-- Navbar Superior -->
     <nav class="navbar navbar-dark bg-dark fixed-top">
-        <!-- Toggler para o menu colapsável -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Contêiner para ícones sociais e busca (alinhados horizontalmente) -->
-        <div class="nav-right">
-            <div class="social-icons">
-                <a class="social-link" href="https://web.whatsapp.com/" target="_blank" aria-label="WhatsApp">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path d="M224 122.8c-72.7 0-132 59.2-132 132 0 32.8 12 62.8 31.8 86.2L112 480l139.2-35.5c22.2 12.2 47.2 19.2 74.8 19.2 72.7 0 132-59.2 132-132s-59.3-132-132-132zm85.5 216c-7.2 20.5-35.8 37-64.2 41.5-12 1.8-24.2 2.8-36.2-1.2-12.5-4.2-24.2-10.8-37.5-16.5-28.2-12-54.2-29.5-73.5-52.5-19.5-23-32.5-50.5-37.5-80.5-5-30 2-58.5 18.2-82.5 7.2-10.5 17.2-17.5 29.5-18.5 3.5 0 7 1 10.5 1.5 7.5 1 14.5 10.5 16.5 18 3.5 12 7 24 9.5 36 2 9.5 1.5 19.5-1 28.5-2 7.5-5 15-7.5 22.5-2 7.5 1 16.5 7.5 22 12 12 25.5 22 39.5 30.5 14.5 9 30 15.5 47 18.5 7.5 1.5 15-2 20-7.5 5-5 11.5-12 15-18.5 3-5 7.5-7 12.5-5 5 1.5 10 5 15 7.5 12 5 24 10 36 15 12 5 15 12 15 19z"/>
-                    </svg>
-                </a>
-                <a class="social-link" href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.8 9.9 67.6 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="search-container">
-                <span class="search-icon" aria-label="Abrir campo de pesquisa">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </span>
-                <input type="text" class="search-input" placeholder="Pesquisar..." aria-label="Campo de pesquisa">
+        <div class="container-fluid">
+            <!-- Ícones sociais e busca -->
+            <div class="nav-right">
+                <div class="social-icons">
+                    <a class="social-link" href="https://web.whatsapp.com/" target="_blank" aria-label="WhatsApp">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M224 122.8c-72.7 0-132 59.2-132 132 0 32.8 12 62.8 31.8 86.2L112 480l139.2-35.5c22.2 12.2 47.2 19.2 74.8 19.2 72.7 0 132-59.2 132-132s-59.3-132-132-132zm85.5 216c-7.2 20.5-35.8 37-64.2 41.5-12 1.8-24.2 2.8-36.2-1.2-12.5-4.2-24.2-10.8-37.5-16.5-28.2-12-54.2-29.5-73.5-52.5-19.5-23-32.5-50.5-37.5-80.5-5-30 2-58.5 18.2-82.5 7.2-10.5 17.2-17.5 29.5-18.5 3.5 0 7 1 10.5 1.5 7.5 1 14.5 10.5 16.5 18 3.5 12 7 24 9.5 36 2 9.5 1.5 19.5-1 28.5-2 7.5-5 15-7.5 22.5-2 7.5 1 16.5 7.5 22 12 12 25.5 22 39.5 30.5 14.5 9 30 15.5 47 18.5 7.5 1.5 15-2 20-7.5 5-5 11.5-12 15-18.5 3-5 7.5-7 12.5-5 5 1.5 10 5 15 7.5 12 5 24 10 36 15 12 5 15 12 15 19z"/>
+                        </svg>
+                    </a>
+                    <a class="social-link" href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.8 9.9 67.6 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="search-container">
+                    <span class="search-icon" aria-label="Abrir campo de pesquisa">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </span>
+                    <input type="text" class="search-input" placeholder="Pesquisar..." aria-label="Campo de pesquisa">
+                </div>
             </div>
         </div>
-        <!-- Menu colapsável -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav flex-column">
+    </nav>
+
+    <!-- Navbar Vertical Esquerda com Ícones -->
+    <nav class="sidebar-left">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <button class="navbar-toggler sidebar-toggler" type="button" id="sidebarToggle" aria-label="Toggle sidebar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="menu.html" title="Home">
+                    <i class="fas fa-home"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" title="Tech Conferences">
+                    <i class="fas fa-calendar-alt"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" title="Store Tech">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="mediatech.html" title="Vídeos">
+                    <i class="fas fa-video"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="audiocasts.html" title="Audiocasts">
+                    <i class="fas fa-podcast"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" title="About Us">
+                    <i class="fas fa-info-circle"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" title="Sair">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Painel Lateral Esquerdo com Informações -->
+    <div class="sidebar-panel" id="sidebarPanel">
+        <div class="sidebar-menu">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="menu.html">Home</a>
                 </li>
@@ -48,14 +96,14 @@
                     <a class="nav-link" href="#">Tech Conferences</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPanel" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Store Tech
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="techstore.html">Tech Shop</a>
-                        <a class="dropdown-item" href="#">Tech NFT's</a>
-                        <a class="dropdown-item" href="#">Accessories</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownPanel">
+                        <li><a class="dropdown-item" href="techstore.html">Tech Shop</a></li>
+                        <li><a class="dropdown-item" href="#">Tech NFT's</a></li>
+                        <li><a class="dropdown-item" href="#">Accessories</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="mediatech.html">Vídeos</a>
@@ -71,20 +119,33 @@
                 </li>
             </ul>
         </div>
-    </nav>
-    <main> <!-- Envolve o conteúdo principal -->
+        <div class="sidebar-info">
+            <h3>Informações</h3>
+            <p>Selecione um item do menu para ver detalhes:</p>
+            <div class="info-content">
+                <p><strong>Home:</strong> Volte para a página inicial do nosso canal de podcasts.</p>
+                <p><strong>Tech Conferences:</strong> Confira as próximas conferências de tecnologia.</p>
+                <p><strong>Store Tech:</strong> Explore nossa loja com produtos tecnológicos, NFTs e acessórios.</p>
+                <p><strong>Vídeos:</strong> Assista aos nossos vídeos mais recentes.</p>
+                <p><strong>Audiocasts:</strong> Ouça nossos podcasts exclusivos.</p>
+                <p><strong>About Us:</strong> Saiba mais sobre nossa equipe e missão.</p>
+                <p><strong>Sair:</strong> Encerre sua sessão.</p>
+            </div>
+        </div>
+    </div>
+
+    <main>
         <section class="initial-menu-apr">
             <div class="initial-menu-item" aria-labelledby="Welcome-heading">
                 <div class="text-content">
                     <h2 id="Welcome-heading">Olá! Seja bem vindo ao nosso maior Canal de PODCAST da América Latina!</h2>
-                    <p>Aqui você encontrará às mais recentes novidades de Tecnologia em nosso Canal 
-                    <p>Confira nossas novas atualizações da semana com vídeos, Audiocasts e </p>
+                    <p>Aqui você encontrará às mais recentes novidades de Tecnologia em nosso Canal</p>
+                    <p>Confira nossas novas atualizações da semana com vídeos, Audiocasts e</p>
                     <p>Notícias fresquinhas.</p>
                 </div>
-                <img src="/images/initial-img-podc.jpg" alt="Imagem do canal de podcasts" class="image-area">        
+                <img src="/images/initial-img-podc.jpg" alt="Imagem do canal de podcasts" class="image-area">
             </div>
         </section>
-        <!-- Seção de anúncios -->
         <section class="announcement">
             <div class="announcement-item">
                 <h2>Anúncios</h2>
@@ -92,13 +153,12 @@
                 <a href="techstore.html" class="announcement-btn">Comprar Agora</a>
             </div>
         </section>
-        <!-- Seção de mídias atualizadas -->
         <section class="att-content-media" aria-labelledby="media-heading">
             <h2 id="media-heading" class="visually-hidden">Vídeos Recentes</h2>
             <div class="att-content-item" aria-labelledby="Welcome-heading">
                 <div class="text-content">
                     <div class="video-grid">
-                        <iframe loading="lazy" width="400" height="315" src="https://www.youtube.com/embed/L87PAAejHPs?si=HH_FPf8zIaufWDOu" title="YouTube video player" frameborder="0" 
+                        <iframe loading="lazy" width="400" height="315" src="https://www.youtube.com/em bed/L87PAAejHPs?si=HH_FPf8zIaufWDOu" title="YouTube video player" frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
                         allowfullscreen></iframe>
                         <iframe loading="lazy" width="400" height="315" src="https://www.youtube.com/embed/E96YS8IQSHs?si=z-o-yuJ6aymyU-eL" title="YouTube video player" frameborder="0" 
@@ -118,13 +178,12 @@
     <footer class="footer">
         <div class="footer-content">
             <p>© 2025 Canal de Podcasts Tech. Todos os direitos reservados.</p>
-            <div class="footer-social">
-            </div>
+            <div class="footer-social"></div>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/src/script/menu.js"></script>
 </body>
 </html>

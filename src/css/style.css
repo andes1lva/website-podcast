@@ -7,7 +7,7 @@
 
 /* Definir altura total para html e body */
 html, body {
-    height: 100%; /* Garante que o body ocupe toda a altura da página */
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -16,127 +16,171 @@ html, body {
 body {
     font-family: Arial, sans-serif;
     color: #333;
-    min-height: 100vh; /* Garante o mínimo de altura da viewport */
+    min-height: 100vh;
     background-image: url("/images/podcast_technology.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Mantém a imagem fixa */
-    position: relative; /* Necessário para o pseudoelemento */
+    background-attachment: fixed;
+    position: relative;
     display: flex;
-    flex-direction: column; /* Permite empilhar o conteúdo e o rodapé */
+    flex-direction: column;
 }
-
 
 body::before {
     content: '';
-    position: absolute;
+    position: fixed; /* Fixar o overlay na viewport */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Cobertura total da altura da viewport */
-    background-color: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade aqui (0 a 1) */
-    z-index: 1; /* Coloca o overlay atrás do conteúdo */
-    height: calc(100vh + 900px); /* Adiciona a altura do rodapé fixo */
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-/* Garante que o conteúdo fique acima do overlay */
-.login-container, .initial-menu-item, .announcement-item, .att-content-item, .content, .navbar, .footer {
+/* Conteúdo acima do overlay */
+.navbar, .sidebar-left, .sidebar-panel, .initial-menu-item, .announcement-item, .att-content-item, .footer {
     position: relative;
     z-index: 2;
 }
 
 main {
     flex: 1 0 auto;
+    margin-left: 60px; /* Espaço para a sidebar esquerda */
 }
 
-/* Garante que o conteúdo fique acima do overlay */
-.login-container, .initial-menu-item, .announcement-item, .att-content-item, .content, .navbar, .footer {
-    position: relative;
-    z-index: 2; /* Coloca o conteúdo acima do overlay */
-}
-
-/* Ajuste para o conteúdo principal ocupar o espaço disponível */
-main {
-    flex: 1 0 auto; /* Permite que o conteúdo cresça, mas não force o rodapé */
-}
-
-/* Resto do seu CSS permanece o mesmo */
-.login-container {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-}
-
-.login-container h1 {
-    margin-bottom: 1.5rem;
-}
-
-.login-container form input {
-    margin-bottom: 1rem;
-}
-
-.login-container .social-login {
-    margin-top: 1.5rem;
-}
-
-.login-container a {
-    display: block;
-    margin-top: 0.5rem;
-}
-
-/* Navbar styling */
+/* Navbar Superior */
 .navbar {
-    padding: 10px 15px;
+    padding: 8px 15px; /* Reduzido para diminuir a altura */
     background-color: #333;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    min-width: 100%;
-    z-index: 3; /* Garante que a navbar fique acima do overlay */
+    justify-content: flex-end; /* Alinha ícones sociais e busca à direita */
+    z-index: 1000; /* Acima de tudo */
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
-/* Menu colapsável */
-.navbar-nav {
-    display: flex;
+/* Navbar Vertical Esquerda com Ícones */
+.sidebar-left {
+    position: fixed;
+    top: 40px; /* Abaixo da navbar superior, ajustado para nova altura (~40px) */
+    left: 0;
+    width: 60px;
+    height: calc(100vh - 40px); /* Ocupa a altura da viewport menos a navbar */
+    background-color: #444;
+    padding: 20px 10px;
+    z-index: 900; /* Abaixo da navbar superior */
+}
+
+.sidebar-left .navbar-nav {
     flex-direction: column;
-    gap: 5px;
+    gap: 20px;
+    align-items: center;
 }
 
-.nav-item {
-    display: block;
-}
-
-.nav-link {
+.sidebar-left .nav-link {
     color: #fff;
     text-decoration: none;
+    font-size: 1.5rem;
     transition: color 0.3s, transform 0.3s;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.sidebar-left .nav-link:hover,
+.sidebar-left .nav-link:focus {
     color: #ddd;
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
-/* Contêiner para ícones sociais e busca (alinhamento horizontal) */
+.sidebar-left .sidebar-toggler {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.sidebar-left .sidebar-toggler:hover,
+.sidebar-left .sidebar-toggler:focus {
+    color: #ddd;
+    transform: scale(1.2);
+}
+
+.sidebar-left .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Painel Lateral Esquerdo */
+.sidebar-panel {
+    position: fixed;
+    top: 40px; /* Abaixo da navbar superior */
+    left: -400px; /* Escondido inicialmente */
+    width: 400px;
+    height: calc(100vh - 40px); /* Ocupa a altura da viewport menos a navbar */
+    background-color: #555;
+    z-index: 950; /* Abaixo da navbar, acima da sidebar-left */
+    transition: left 0.3s ease;
+    display: flex;
+}
+
+.sidebar-panel.active {
+    left: 60px; /* Visível, alinhado à direita da sidebar-left */
+}
+
+.sidebar-menu {
+    width: 200px;
+    padding: 20px;
+}
+
+.sidebar-menu .navbar-nav {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-menu .nav-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.sidebar-menu .nav-link:hover,
+.sidebar-menu .nav-link:focus {
+    color: #ddd;
+}
+
+.sidebar-info {
+    width: 200px;
+    padding: 20px;
+    background-color: #666;
+    color: #fff;
+}
+
+.sidebar-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.sidebar-info p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.info-content p {
+    margin: 5px 0;
+}
+
+/* Ícones sociais e busca */
 .nav-right {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     align-items: center;
     gap: 12px;
 }
 
-/* Ícones sociais */
 .social-icons {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
     gap: 12px;
 }
 
@@ -147,54 +191,24 @@ main {
     transition: fill 0.3s, transform 0.3s;
 }
 
-.social-link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-}
-
 .social-link:hover .icon {
     fill: #ddd;
     transform: scale(1.1);
 }
 
-.social-link:focus .icon,
-.search-icon:focus svg {
-    outline: 2px solid #fff;
-    outline-offset: 2px;
-}
-
-/* Campo de busca */
 .search-container {
     position: relative;
     display: inline-flex;
     align-items: center;
     width: auto;
     max-width: 150px;
-    transition: max-width 0.3s ease; /* Transição suave para a largura */
-    z-index: 10;
 }
 
 .search-container .search-icon {
-    display: flex;
-    align-items: center;
     cursor: pointer;
-    z-index: 11;
 }
 
-.search-icon {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    z-index: 11;
-}
 .search-container .search-icon svg {
-    width: 18px;
-    height: 18px;
-    stroke: #fff;
-}
-
-.search-icon svg {
     width: 18px;
     height: 18px;
     stroke: #fff;
@@ -214,7 +228,6 @@ main {
     transform: translateY(-50%);
     opacity: 0;
     transition: all 0.3s ease;
-    box-sizing: border-box;
 }
 
 .search-input.active {
@@ -222,50 +235,41 @@ main {
     padding: 0.5rem 2rem 0.5rem 0.75rem;
     border: 1px solid #ccc;
     opacity: 1;
-    overflow: hidden;
 }
 
 .search-input:focus {
-    outline: none;
     border-color: #666;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Dropdown menu */
 .dropdown-menu {
-    background-color: #444;
+    background-color: #666;
     border: none;
 }
 
 .dropdown-item {
     color: #fff;
-    transition: background-color 0.3s;
 }
 
 .dropdown-item:hover {
-    background-color: #555;
+    background-color: #777;
 }
 
+/* Seção inicial */
 .initial-menu-apr {
-    margin: 60px auto 20px;
+    margin: 60px auto 20px; /* Ajustado para a nova altura da navbar (~40px) */
     max-width: 100%;
-    width: 100%;
 }
 
 .initial-menu-item {
     display: flex;
-    align-items: left;
     justify-content: space-between;
     background-color: #ffffffee;
     border-radius: 0.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    text-align: left;
     min-height: 200px;
-    background-repeat: no-repeat;
-    background-position: left, right;
-    position: relative;
-    overflow: hidden;
     flex-direction: row;
 }
 
@@ -280,7 +284,6 @@ main {
 .text-content {
     flex: 1;
     padding-right: 20px;
-    z-index: 1;
 }
 
 .initial-menu-item h2 {
@@ -292,14 +295,12 @@ main {
 .initial-menu-item p {
     font-size: 1rem;
     color: #666;
-    margin-bottom: 0px;
 }
 
 /* Anúncios */
 .announcement {
-    margin: 20px auto 19px;
+    margin: 20px auto;
     max-width: 63%;
-    width: 63%;
 }
 
 .announcement-item {
@@ -323,121 +324,18 @@ main {
 }
 
 .announcement-btn {
-    display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
     border-radius: 0.25rem;
-    transition: background-color 0.3s;
 }
 
 .announcement-btn:hover {
     background-color: #0056b3;
 }
 
-/* Content styling */
-.content {
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.content h2 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.content p {
-    color: #666;
-}
-
-/* Ajustes responsivos */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .navbar-nav {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .nav-right {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 8px;
-    }
-
-    .social-icons {
-        gap: 8px;
-    }
-
-    .search-container {
-        width: 30px;
-    }
-
-    .search-input.active {
-        width: 120px;
-    }
-
-    .announcement {
-        margin: 60px auto 15px;
-        width: 95%;
-    }
-
-    .announcement-item h2 {
-        font-size: 1.25rem;
-    }
-
-    .announcement-item p {
-        font-size: 0.9rem;
-    }
-
-    .announcement-btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    .footer {
-        padding: 15px;
-    }
-
-    .footer-content {
-        gap: 8px;
-    }
-
-    .footer-social {
-        gap: 10px;
-    }
-
-    .video-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .video-grid iframe {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .mediatech-btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-}
-
-.att-content-item {
-    display: inline;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 10%;
-    background-repeat: no-repeat;
-    background-position: left, right;
-    overflow: hidden;
-    flex-direction: row;
-}
-
+/* Vídeos */
 .video-grid {
     display: flex;
     gap: 20px;
@@ -451,26 +349,12 @@ main {
     height: 315px;
 }
 
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
 .mediatech-btn {
-    display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
     border-radius: 0.25rem;
-    transition: background-color 0.3s;
-    width: 8%;
     min-width: 120px;
     text-align: center;
 }
@@ -491,31 +375,53 @@ main {
     color: #fff;
     padding: 20px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
+    position: relative;
     width: 100%;
-    z-index: 1000;
+    z-index: 2;
 }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
+/* Responsividade */
+@media (max-width: 768px) {
+    .sidebar-left {
+        width: 50px;
+    }
 
-.footer-social {
-    display: flex;
-    gap: 15px;
-}
+    main {
+        margin-left: 50px;
+    }
 
-.footer-social .social-link i {
-    font-size: 18px;
-    color: #fff;
-    transition: color 0.3s, transform 0.3s;
-}
+    .sidebar-panel {
+        width: 300px;
+        left: -300px;
+    }
 
-.footer-social .social-link:hover i {
-    color: #ddd;
-    transform: scale(1.1);
+    .sidebar-panel.active {
+        left: 50px;
+    }
+
+    .sidebar-menu {
+        width: 150px;
+    }
+
+    .sidebar-info {
+        width: 150px;
+    }
+
+    .initial-menu-apr {
+        margin: 50px auto 15px;
+    }
+
+    .announcement {
+        width: 95%;
+    }
+
+    .video-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-grid iframe {
+        width: 100%;
+        max-width: 400px;
+    }
 }
