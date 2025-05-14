@@ -222,19 +222,18 @@ main {
     font-size: 1rem;
     color: #333;
     background-color: #fff;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    transform: translateY(0%);
     opacity: 0;
     transition: all 0.3s ease;
+
 }
 
 .search-input.active {
-    width: 100px;
-    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    width: 200px;
+    padding: 0.1rem 2rem 0.1rem 0.65rem;
     border: 1px solid #ccc;
-    opacity: 1;
+    opacity: 0.9;
 }
 
 .search-input:focus {
@@ -357,6 +356,7 @@ main {
     border-radius: 0.25rem;
     min-width: 120px;
     text-align: center;
+    transform: translateY(-10px);
 }
 
 .mediatech-btn:hover {
