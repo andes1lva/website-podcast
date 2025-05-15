@@ -28,6 +28,7 @@ function setupSidebarToggle() {
 
 // Função para configurar a busca
 function setupSearch() {
+    //verificação de existência de classes search-icon e search-input//
     const searchIcon = checkElement('.search-icon', 'Ícone de busca');
     const searchInput = checkElement('.search-input', 'Campo de busca');
 
