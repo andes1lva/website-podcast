@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Web Podcast Tech - Podcasts, vídeos e conferências sobre tecnologia">
-  <meta name="keywords" content="podcast, tecnologia, CES 2025, IA, cibersegurança">
-  <title>Web Podcast Tech</title>
-  <!-- Bootstrap 4.5.2 CSS (para estilos básicos) -->
+  <meta name="description" content="Podcasts sobre tecnologia, IA, cibersegurança e conferências como CES 2025">
+  <meta name="keywords" content="podcast, tecnologia, CES 2025, IA, cibersegurança, conferências">
+  <title>Podcasts - Web Podcast Tech</title>
+  <!-- Bootstrap 4.5.2 CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Font Awesome 6.4.0 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,14 +36,14 @@
     </div>
   </nav>
 
-  <!-- Sidebar à esquerda (com ícone de hambúrguer para toggle) -->
+  <!-- Sidebar à esquerda -->
   <nav class="sidebar-left">
     <button class="sidebar-toggler" id="sidebarToggle">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-nav">
-      <a class="nav-link active" href="/src/view/menu.html" data-tooltip="Home"><i class="fas fa-home"></i></a>
-      <a class="nav-link" href="/src/view/podcasts.html" data-tooltip="Podcasts"><i class="fas fa-podcast"></i></a>
+      <a class="nav-link" href="/src/view/menu.html" data-tooltip="Home"><i class="fas fa-home"></i></a>
+      <a class="nav-link active" href="/src/view/podcasts.html" data-tooltip="Podcasts"><i class="fas fa-podcast"></i></a>
       <a class="nav-link" href="/src/view/techconferences.html" data-tooltip="Tech Conferences"><i class="fas fa-calendar-alt"></i></a>
       <a class="nav-link" href="/src/view/blog.html" data-tooltip="Blog"><i class="fas fa-newspaper"></i></a>
       <a class="nav-link" href="/src/view/comunidade.html" data-tooltip="Comunidade"><i class="fas fa-users"></i></a>
@@ -58,11 +58,11 @@
       <h3>Navegação</h3>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="/src/view/menu.html">Home</a>
+          <a class="nav-link" href="/src/view/menu.html">Home</a>
           <p class="nav-description">Página inicial do Web Podcast Tech</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/src/view/podcasts.html">Podcasts</a>
+          <a class="nav-link active" href="/src/view/podcasts.html">Podcasts</a>
           <p class="nav-description">Episódios sobre IA, cibersegurança e mais</p>
         </li>
         <li class="nav-item">
@@ -99,27 +99,49 @@
 
   <!-- Conteúdo principal -->
   <main class="container mt-5">
-    <section class="initial-menu-apr">
-      <div class="initial-menu-item">
-        <div class="text-content">
-          <h2>Bem-vindo ao Web Podcast Tech</h2>
-          <p>Explore os melhores conteúdos sobre tecnologia, IA, cibersegurança e conferências como a CES 2025.</p>
+    <h1>Podcasts</h1>
+    <!-- Filtros -->
+    <div class="filters">
+      <button data-filter="all">Todos</button>
+      <button data-filter="IA">IA</button>
+      <button data-filter="Ciberseguranca">Cibersegurança</button>
+    </div>
+    
+    <!-- Grid de podcasts -->
+    <section class="podcast-grid">
+      <!-- Card de vídeo -->
+      <div class="podcast-card" data-tags="IA,CES2025">
+        <iframe src="https://www.youtube.com/embed/L87PAAejHPs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h3>Episódio 1: IA na CES 2025</h3>
+        <p>Exploramos as inovações de IA na maior conferência tech!</p>
+        <div class="tags">
+          <a href="/podcasts/ia">#IA</a>
+          <a href="/podcasts/ces2025">#CES2025</a>
         </div>
-        <div class="image-area" style="background-image: url('/images/tech_image.jpg');"></div>
+        <details>
+          <summary>Ver Transcrição</summary>
+          <p>[Transcrição do episódio, gerada pelo YouTube ou Descript]</p>
+        </details>
+        <a href="/podcasts/1" class="btn">Assistir Agora</a>
       </div>
-    </section>
-
-    <section class="announcement">
-      <div class="announcement-item">
-        <h2>Novos Episódios</h2>
-        <p>Confira os últimos podcasts sobre IA e cibersegurança!</p>
-        <a href="/src/view/podcasts.html" class="announcement-btn">Ouvir Agora</a>
+      <!-- Card de áudio -->
+      <div class="podcast-card" data-tags="Ciberseguranca,BlackHat">
+        <audio controls>
+          <source src="/audio/ep2.mp3" type="audio/mpeg">
+          Seu navegador não suporta áudio.
+        </audio>
+        <h3>Episódio 2: Cibersegurança</h3>
+        <p>Hacks éticos revelados na Black Hat 2025.</p>
+        <div class="tags">
+          <a href="/podcasts/ciberseguranca">#Cibersegurança</a>
+          <a href="/podcasts/blackhat">#BlackHat</a>
+        </div>
+        <details>
+          <summary>Ver Transcrição</summary>
+          <p>[Transcrição do episódio]</p>
+        </details>
+        <a href="/podcasts/2" class="btn">Ouvir Agora</a>
       </div>
-    </section>
-
-    <section class="video-grid">
-      <iframe src="https://www.youtube.com/embed/L87PAAejHPs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/another_video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
   </main>
 
@@ -130,7 +152,7 @@
 
   <!-- Script inline para teste básico -->
   <script>
-    console.log('menu.html carregado em', new Date().toLocaleString());
+    console.log('podcasts.html carregado em', new Date().toLocaleString());
   </script>
   <!-- Script externo -->
   <script defer src="../script/menu.js"></script>

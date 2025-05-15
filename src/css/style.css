@@ -1,3 +1,8 @@
+/* Debug: Confirmar que o CSS está carregando */
+body {
+    border: 2px solid red; /* Deve aparecer uma borda vermelha ao redor da página */
+}
+
 /* Reset CSS */
 * {
     margin: 0;
@@ -5,19 +10,19 @@
     box-sizing: border-box;
 }
 
-/* Definir altura total para html e body */
+/* Definir altura total */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-/* Global body styling */
+/* Body styling */
 body {
     font-family: Arial, sans-serif;
     color: #333;
     min-height: 100vh;
-    background-image: url("/images/podcast_technology.jpg");
+    background-image: url("/src/images/podcast_technology.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -28,7 +33,7 @@ body {
 
 body::before {
     content: '';
-    position: fixed; /* Fixar o overlay na viewport */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -38,39 +43,34 @@ body::before {
 }
 
 /* Conteúdo acima do overlay */
-.navbar, .sidebar-left, .sidebar-panel, .initial-menu-item, .announcement-item, .att-content-item, .footer {
+.navbar, .sidebar-left, .sidebar-panel, .initial-menu-item, .announcement-item, .footer, .podcast-grid, .podcast-card, .filters {
     position: relative;
     z-index: 2;
 }
 
-main {
-    flex: 1 0 auto;
-    margin-left: 60px; /* Espaço para a sidebar esquerda */
-}
-
-/* Navbar Superior */
+/* Navbar */
 .navbar {
-    padding: 8px 15px; /* Reduzido para diminuir a altura */
+    padding: 8px 15px;
     background-color: #333;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Alinha ícones sociais e busca à direita */
-    z-index: 1000; /* Acima de tudo */
+    justify-content: flex-start;
+    z-index: 1000;
     position: fixed;
     top: 0;
     width: 100%;
 }
 
-/* Navbar Vertical Esquerda com Ícones */
+/* Sidebar Esquerda */
 .sidebar-left {
     position: fixed;
-    top: 40px; /* Abaixo da navbar superior, ajustado para nova altura (~40px) */
+    top: 40px;
     left: 0;
     width: 60px;
-    height: calc(100vh - 40px); /* Ocupa a altura da viewport menos a navbar */
+    height: calc(100vh - 40px);
     background-color: #444;
     padding: 20px 10px;
-    z-index: 900; /* Abaixo da navbar superior */
+    z-index: 950;
 }
 
 .sidebar-left .navbar-nav {
@@ -112,26 +112,26 @@ main {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* Painel Lateral Esquerdo */
+/* Painel Lateral */
 .sidebar-panel {
     position: fixed;
-    top: 40px; /* Abaixo da navbar superior */
-    left: -400px; /* Escondido inicialmente */
+    top: 40px;
+    left: -400px;
     width: 400px;
-    height: calc(100vh - 40px); /* Ocupa a altura da viewport menos a navbar */
+    height: calc(100vh - 40px);
     background-color: #555;
-    z-index: 950; /* Abaixo da navbar, acima da sidebar-left */
+    z-index: 960;
     transition: left 0.3s ease;
-    display: flex;
 }
 
 .sidebar-panel.active {
-    left: 60px; /* Visível, alinhado à direita da sidebar-left */
+    left: 60px;
 }
 
 .sidebar-menu {
     width: 200px;
     padding: 20px;
+    overflow-y: auto;
 }
 
 .sidebar-menu .navbar-nav {
@@ -150,6 +150,12 @@ main {
     color: #ddd;
 }
 
+.sidebar-menu .nav-description {
+    color: #ccc;
+    font-size: 0.8rem;
+    margin: 5px 0 10px;
+}
+
 .sidebar-info {
     width: 200px;
     padding: 20px;
@@ -162,17 +168,8 @@ main {
     margin-bottom: 10px;
 }
 
-.sidebar-info p {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
-
-.info-content p {
-    margin: 5px 0;
-}
-
 /* Ícones sociais e busca */
-.nav-right {
+.container-socialmedia {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -200,8 +197,6 @@ main {
     position: relative;
     display: inline-flex;
     align-items: center;
-    width: auto;
-    max-width: 150px;
 }
 
 .search-container .search-icon {
@@ -222,11 +217,8 @@ main {
     font-size: 1rem;
     color: #333;
     background-color: #fff;
-    position: relative;
-    transform: translateY(0%);
     opacity: 0;
     transition: all 0.3s ease;
-
 }
 
 .search-input.active {
@@ -241,23 +233,9 @@ main {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Dropdown menu */
-.dropdown-menu {
-    background-color: #666;
-    border: none;
-}
-
-.dropdown-item {
-    color: #fff;
-}
-
-.dropdown-item:hover {
-    background-color: #777;
-}
-
 /* Seção inicial */
 .initial-menu-apr {
-    margin: 60px auto 20px; /* Ajustado para a nova altura da navbar (~40px) */
+    margin: 60px auto 20px;
     max-width: 100%;
 }
 
@@ -269,12 +247,10 @@ main {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     min-height: 200px;
-    flex-direction: row;
 }
 
 .image-area {
     width: 400px;
-    height: 100%;
     background-size: cover;
     background-position: center;
     border-radius: 0.25rem;
@@ -348,25 +324,119 @@ main {
     height: 315px;
 }
 
-.mediatech-btn {
-    padding: 10px 20px;
-    background-color: #007bff;
+/* Podcast Grid */
+.podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-left: 60px;
+    min-height: calc(100vh - 200px);
+}
+
+/* Estilo dos cards de podcast */
+.podcast-card {
+    background: #222;
+    border: 2px solid #00ffcc;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.podcast-card:hover {
+    transform: scale(1.05);
+}
+
+.podcast-card iframe {
+    width: 400px;
+    height: 315px;
+}
+
+.podcast-card audio {
+    width: 100%;
+    background: #333;
+}
+
+.podcast-card h3 {
     color: #fff;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.podcast-card p {
+    color: #ccc;
+    padding: 0 10px 10px;
+    font-size: 0.9rem;
+}
+
+.podcast-card .tags {
+    padding: 0 10px;
+}
+
+.podcast-card .tags a {
+    color: #00ffcc;
     text-decoration: none;
-    border-radius: 0.25rem;
-    min-width: 120px;
+    margin-right: 10px;
+    font-size: 0.8rem;
+}
+
+.podcast-card .tags a:hover {
+    color: #ff00ff;
+}
+
+.podcast-card details {
+    padding: 10px;
+    color: #ccc;
+}
+
+.podcast-card details summary {
+    cursor: pointer;
+    color: #00ffcc;
+}
+
+.podcast-card .btn {
+    display: block;
+    background: #00ffcc;
+    color: #000;
     text-align: center;
-    transform: translateY(-10px);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-.mediatech-btn:hover {
-    background-color: #0056b3;
+.podcast-card .btn:hover {
+    background: #ff00ff;
 }
 
-.att-more-videos {
-    display: flex;
-    justify-content: center;
+/* Filtros */
+.filters {
+    padding: 10px;
+    margin-left: 60px;
+    text-align: center;
+}
+
+.filters button {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #00ffcc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background: #00ffcc;
+    color: #000;
+}
+
+/* AdSense */
+.adsense-sidebar {
     margin-top: 20px;
+    text-align: center;
 }
 
 /* Rodapé */
@@ -375,9 +445,35 @@ main {
     color: #fff;
     padding: 20px;
     text-align: center;
-    position: relative;
     width: 100%;
-    z-index: 2;
+    margin-top: auto;
+}
+
+/* Tooltips */
+.nav-link[data-tooltip] {
+    position: relative;
+}
+
+.nav-link[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+.nav-link[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Responsividade */
@@ -387,6 +483,27 @@ main {
     }
 
     main {
+        margin-left: 50px;
+        margin-top: 100px;
+    }
+
+    .podcast-grid {
+        margin-left: 50px;
+        padding: 15px;
+        grid-template-columns: 1fr;
+    }
+
+    .podcast-card {
+        max-width: 100%;
+    }
+
+    .podcast-card iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+
+    .filters {
         margin-left: 50px;
     }
 
@@ -423,5 +540,13 @@ main {
     .video-grid iframe {
         width: 100%;
         max-width: 400px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .container-socialmedia {
+        margin-left: 10px;
     }
 }
