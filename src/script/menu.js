@@ -91,6 +91,44 @@ function setupFilters() {
     });
 }
 
+async function loadTranscript(videoId, container) {
+  try {
+    const response = await fetch(
+      `https://www.googleapis.com/youtube/v3/captions?part=snippet&videoId=${videoId}&key=AIzaSyDJhisJc1nIRttiF_O1HbIodRdfu_Mszy0`
+    );
+    const data = await response.json();
+    const captionTrack = data.items.find(item => item.snippet.language === 'pt');
+    if (!captionTrack) {
+      container.textContent = 'Transcrição não disponível.';
+      return;
+    }
+    const captionId = captionTrack.id;
+    const transcriptResponse = await fetch(
+      `https://www.googleapis.com/youtube/v3/captions/${captionId}?tfmt=srt&key=AIzaSyDJhisJc1nIRttiF_O1HbIodRdfu_Mszy0`
+    );
+    const transcriptText = await transcriptResponse.text();
+    container.textContent = transcriptText;
+  } catch (error) {
+    console.error('Erro ao carregar transcrição:', error);
+    container.textContent = 'Erro ao carregar transcrição.';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const podcastCards = document.querySelectorAll('.podcast-card');
+  podcastCards.forEach(card => {
+    const videoId = card.getAttribute('data-video-id');
+    const transcriptContainer = card.querySelector('.transcript');
+    if (videoId && transcriptContainer) {
+      card.querySelector('details').addEventListener('toggle', () => {
+        if (card.querySelector('details').open && !transcriptContainer.textContent) {
+          loadTranscript(videoId, transcriptContainer);
+        }
+      });
+    }
+  });
+});
+
 // Inicializar quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM carregado. Inicializando funcionalidades...');
@@ -98,3 +136,4 @@ document.addEventListener('DOMContentLoaded', function() {
     setupSearch();
     setupFilters();
 });
+

@@ -110,19 +110,17 @@
     <!-- Grid de podcasts -->
     <section class="podcast-grid">
       <!-- Card de vídeo -->
-      <div class="podcast-card" data-tags="IA,CES2025">
-        <iframe src="https://www.youtube.com/embed/L87PAAejHPs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h3>Episódio 1: IA na CES 2025</h3>
-        <p>Exploramos as inovações de IA na maior conferência tech!</p>
-        <div class="tags">
+        <div class="podcast-card" data-tags="IA,CES2025" data-video-id="L87PAAejHPs">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/9prLBRpwZ78?si=b7hW1IDZclg7MwCy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        
+          <div class="tags">
           <a href="/podcasts/ia">#IA</a>
           <a href="/podcasts/ces2025">#CES2025</a>
         </div>
         <details>
           <summary>Ver Transcrição</summary>
-          <p>[Transcrição do episódio, gerada pelo YouTube ou Descript]</p>
+            <div class="transcript" aria-live="polite"></div>        
         </details>
-        <a href="/podcasts/1" class="btn">Assistir Agora</a>
+        <!--<a href="/podcasts/1" class="btn">Assistir Agora</a>-->
       </div>
       <!-- Card de áudio -->
       <div class="podcast-card" data-tags="Ciberseguranca,BlackHat">
@@ -138,9 +136,9 @@
         </div>
         <details>
           <summary>Ver Transcrição</summary>
-          <p>[Transcrição do episódio]</p>
+          <div class="transcript" aria-live="polite"></div>
         </details>
-        <a href="/podcasts/2" class="btn">Ouvir Agora</a>
+        <!--<a href="/podcasts/2" class="btn">Ouvir Agora</a>-->
       </div>
     </section>
   </main>
