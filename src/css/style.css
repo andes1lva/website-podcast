@@ -1,6 +1,6 @@
-/* Debug: Confirmar que o CSS está carregando */
+/* Remova a borda vermelha em produção */
 body {
-    border: 2px solid red; /* Deve aparecer uma borda vermelha ao redor da página */
+    border: 2px solid red; /* Debug: Remova antes de publicar */
 }
 
 /* Reset CSS */
@@ -411,22 +411,33 @@ body::before {
     background: #ff00ff;
 }
 
+/* Estilo para transcrição */
 .transcript {
-  max-height: 200px;
-  overflow-y: auto;
-  padding: 10px;
-  background: #333;
-  color: #fff;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #333;
+    margin: 10px;
 }
+
+.transcript.loading::before {
+    content: 'Carregando transcrição...';
+    color: #00ffcc;
+    font-style: italic;
+}
+
 .transcript::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
+
 .transcript::-webkit-scrollbar-thumb {
-  background: #00ffcc;
-  border-radius: 4px;
+    background: #00ffcc;
+    border-radius: 4px;
 }
 
 /* Filtros */

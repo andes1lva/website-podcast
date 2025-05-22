@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Podcasts sobre tecnologia, IA, cibersegurança e conferências como CES 2025">
   <meta name="keywords" content="podcast, tecnologia, CES 2025, IA, cibersegurança, conferências">
+  <meta name="google-signin-client_id" content="410645476258-e647i57asbp21nd5jdtkqd5qg35civ93.apps.googleusercontent.com">
+
   <title>Podcasts - Web Podcast Tech</title>
-  <!-- Bootstrap 4.5.2 CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Font Awesome 6.4.0 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- CSS personalizado -->
   <link rel="stylesheet" href="/src/css/style.css">
 </head>
 <body>
-  <!-- Navbar (apenas ícones sociais e busca) -->
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-socialmedia">
       <div class="social-icons">
@@ -36,7 +34,6 @@
     </div>
   </nav>
 
-  <!-- Sidebar à esquerda -->
   <nav class="sidebar-left">
     <button class="sidebar-toggler" id="sidebarToggle">
       <span class="navbar-toggler-icon"></span>
@@ -52,7 +49,6 @@
     </div>
   </nav>
 
-  <!-- Painel lateral com todas as páginas -->
   <div class="sidebar-panel" id="sidebarPanel">
     <div class="sidebar-menu">
       <h3>Navegação</h3>
@@ -97,33 +93,29 @@
     </div>
   </div>
 
-  <!-- Conteúdo principal -->
   <main class="container mt-5">
     <h1>Podcasts</h1>
-    <!-- Filtros -->
     <div class="filters">
       <button data-filter="all">Todos</button>
       <button data-filter="IA">IA</button>
       <button data-filter="Ciberseguranca">Cibersegurança</button>
     </div>
     
-    <!-- Grid de podcasts -->
     <section class="podcast-grid">
-      <!-- Card de vídeo -->
-        <div class="podcast-card" data-tags="IA,CES2025" data-video-id="L87PAAejHPs">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/9prLBRpwZ78?si=b7hW1IDZclg7MwCy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        
-          <div class="tags">
+      <div class="podcast-card" data-tags="IA,CES2025" data-video-id="E96YS8IQSHs">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/E96YS8IQSHs?si=qiUW6TjF21g_4AYy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Episódio 1: IA na CES 2025</h3>
+        <p>Exploramos as inovações de IA na maior conferência tech!</p>
+        <div class="tags">
           <a href="/podcasts/ia">#IA</a>
           <a href="/podcasts/ces2025">#CES2025</a>
         </div>
         <details>
-          <summary>Ver Transcrição</summary>
-            <div class="transcript" aria-live="polite"></div>        
+          <summary role="button" tabindex="0">Ver Transcrição</summary>
+          <div class="transcript" role="region" aria-live="polite"></div>
         </details>
-        <!--<a href="/podcasts/1" class="btn">Assistir Agora</a>-->
       </div>
-      <!-- Card de áudio -->
-      <div class="podcast-card" data-tags="Ciberseguranca,BlackHat">
+      <div class="podcast-card" data-tags="Ciberseguranca,BlackHat" data-transcript-url="/transcripts/ep2.txt">
         <audio controls>
           <source src="/audio/ep2.mp3" type="audio/mpeg">
           Seu navegador não suporta áudio.
@@ -135,24 +127,21 @@
           <a href="/podcasts/blackhat">#BlackHat</a>
         </div>
         <details>
-          <summary>Ver Transcrição</summary>
-          <div class="transcript" aria-live="polite"></div>
+          <summary role="button" tabindex="0">Ver Transcrição</summary>
+          <div class="transcript" role="region" aria-live="polite"></div>
         </details>
-        <!--<a href="/podcasts/2" class="btn">Ouvir Agora</a>-->
       </div>
     </section>
   </main>
 
-  <!-- Rodapé -->
   <footer class="footer">
     <p>© 2025 Web Podcast Tech. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Script inline para teste básico -->
   <script>
     console.log('podcasts.html carregado em', new Date().toLocaleString());
   </script>
-  <!-- Script externo -->
-  <script defer src="../script/menu.js"></script>
+  <script defer src="/src/script/menu.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </html>
