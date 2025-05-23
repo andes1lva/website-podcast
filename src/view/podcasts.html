@@ -1,147 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Podcasts sobre tecnologia, IA, cibersegurança e conferências como CES 2025">
-  <meta name="keywords" content="podcast, tecnologia, CES 2025, IA, cibersegurança, conferências">
-  <meta name="google-signin-client_id" content="410645476258-e647i57asbp21nd5jdtkqd5qg35civ93.apps.googleusercontent.com">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Podcasts sobre tecnologia, IA, cibersegurança e conferências como CES 2025"
+    />
+    <meta
+      name="keywords"
+      content="podcast, tecnologia, CES 2025, IA, cibersegurança, conferências"
+    />
+    <meta
+      name="google-signin-client_id"
+      content="410645476258-0pnvj3ae40her7a410tuonsqc1613cb3.apps.googleusercontent.com"
+    />
 
-  <title>Podcasts - Web Podcast Tech</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="/src/css/style.css">
-</head>
-<body>
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-socialmedia">
-      <div class="social-icons">
-        <a class="social-link" href="https://web.whatsapp.com/" target="_blank">
-          <i class="fab fa-whatsapp icon"></i>
-        </a>
-        <a class="social-link" href="https://www.instagram.com" target="_blank">
-          <i class="fab fa-instagram icon"></i>
-        </a>
-      </div>
-      <div class="search-container">
-        <div class="search-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+    <title>Podcasts - Web Podcast Tech</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/src/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-socialmedia">
+        <div class="social-icons">
+          <a
+            class="social-link"
+            href="https://web.whatsapp.com/"
+            target="_blank"
+          >
+            <i class="fab fa-whatsapp icon"></i>
+          </a>
+          <a
+            class="social-link"
+            href="https://www.instagram.com"
+            target="_blank"
+          >
+            <i class="fab fa-instagram icon"></i>
+          </a>
         </div>
-        <input type="text" class="search-input" placeholder="Pesquisar...">
-      </div>
-    </div>
-  </nav>
-
-  <nav class="sidebar-left">
-    <button class="sidebar-toggler" id="sidebarToggle">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-nav">
-      <a class="nav-link" href="/src/view/menu.html" data-tooltip="Home"><i class="fas fa-home"></i></a>
-      <a class="nav-link active" href="/src/view/podcasts.html" data-tooltip="Podcasts"><i class="fas fa-podcast"></i></a>
-      <a class="nav-link" href="/src/view/techconferences.html" data-tooltip="Tech Conferences"><i class="fas fa-calendar-alt"></i></a>
-      <a class="nav-link" href="/src/view/blog.html" data-tooltip="Blog"><i class="fas fa-newspaper"></i></a>
-      <a class="nav-link" href="/src/view/comunidade.html" data-tooltip="Comunidade"><i class="fas fa-users"></i></a>
-      <a class="nav-link" href="/src/view/patrocinadores.html" data-tooltip="Patrocinadores"><i class="fas fa-star"></i></a>
-      <a class="nav-link" href="/src/view/engajamento.html" data-tooltip="Engajamento"><i class="fas fa-bell"></i></a>
-    </div>
-  </nav>
-
-  <div class="sidebar-panel" id="sidebarPanel">
-    <div class="sidebar-menu">
-      <h3>Navegação</h3>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/src/view/menu.html">Home</a>
-          <p class="nav-description">Página inicial do Web Podcast Tech</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/src/view/podcasts.html">Podcasts</a>
-          <p class="nav-description">Episódios sobre IA, cibersegurança e mais</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/src/view/techconferences.html">Tech Conferences</a>
-          <p class="nav-description">Cobertura de eventos como CES 2025</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/src/view/blog.html">Blog</a>
-          <p class="nav-description">Artigos e notícias sobre tecnologia</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/src/view/comunidade.html">Comunidade</a>
-          <p class="nav-description">Conecte-se com outros entusiastas</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/src/view/patrocinadores.html">Patrocinadores</a>
-          <p class="nav-description">Conheça nossos apoiadores</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/src/view/engajamento.html">Engajamento</a>
-          <p class="nav-description">Participe de enquetes e eventos</p>
-        </li>
-      </ul>
-    </div>
-    <div class="sidebar-info">
-      <h3>Publicidade</h3>
-      <div class="adsense-sidebar">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="SEU_CLIENT_ID" data-ad-slot="SEU_SLOT_ID" data-ad-format="auto"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    </div>
-  </div>
-
-  <main class="container mt-5">
-    <h1>Podcasts</h1>
-    <div class="filters">
-      <button data-filter="all">Todos</button>
-      <button data-filter="IA">IA</button>
-      <button data-filter="Ciberseguranca">Cibersegurança</button>
-    </div>
-    
-    <section class="podcast-grid">
-      <div class="podcast-card" data-tags="IA,CES2025" data-video-id="E96YS8IQSHs">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/E96YS8IQSHs?si=qiUW6TjF21g_4AYy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <h3>Episódio 1: IA na CES 2025</h3>
-        <p>Exploramos as inovações de IA na maior conferência tech!</p>
-        <div class="tags">
-          <a href="/podcasts/ia">#IA</a>
-          <a href="/podcasts/ces2025">#CES2025</a>
+        <div class="search-container">
+          <div class="search-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </div>
+          <input type="text" class="search-input" placeholder="Pesquisar..." />
         </div>
-        <details>
-          <summary role="button" tabindex="0">Ver Transcrição</summary>
-          <div class="transcript" role="region" aria-live="polite"></div>
-        </details>
       </div>
-      <div class="podcast-card" data-tags="Ciberseguranca,BlackHat" data-transcript-url="/transcripts/ep2.txt">
-        <audio controls>
-          <source src="/audio/ep2.mp3" type="audio/mpeg">
-          Seu navegador não suporta áudio.
-        </audio>
-        <h3>Episódio 2: Cibersegurança</h3>
-        <p>Hacks éticos revelados na Black Hat 2025.</p>
-        <div class="tags">
-          <a href="/podcasts/ciberseguranca">#Cibersegurança</a>
-          <a href="/podcasts/blackhat">#BlackHat</a>
+    </nav>
+
+    <nav class="sidebar-left">
+      <button class="sidebar-toggler" id="sidebarToggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-nav">
+        <a class="nav-link" href="/src/view/menu.html" data-tooltip="Home"
+          ><i class="fas fa-home"></i
+        ></a>
+        <a
+          class="nav-link active"
+          href="/src/view/podcasts.html"
+          data-tooltip="Podcasts"
+          ><i class="fas fa-podcast"></i
+        ></a>
+        <a
+          class="nav-link"
+          href="/src/view/techconferences.html"
+          data-tooltip="Tech Conferences"
+          ><i class="fas fa-calendar-alt"></i
+        ></a>
+        <a class="nav-link" href="/src/view/blog.html" data-tooltip="Blog"
+          ><i class="fas fa-newspaper"></i
+        ></a>
+        <a
+          class="nav-link"
+          href="/src/view/comunidade.html"
+          data-tooltip="Comunidade"
+          ><i class="fas fa-users"></i
+        ></a>
+        <a
+          class="nav-link"
+          href="/src/view/patrocinadores.html"
+          data-tooltip="Patrocinadores"
+          ><i class="fas fa-star"></i
+        ></a>
+        <a
+          class="nav-link"
+          href="/src/view/engajamento.html"
+          data-tooltip="Engajamento"
+          ><i class="fas fa-bell"></i
+        ></a>
+      </div>
+    </nav>
+
+    <div class="sidebar-panel" id="sidebarPanel">
+      <div class="sidebar-menu">
+        <h3>Navegação</h3>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/src/view/menu.html">Home</a>
+            <p class="nav-description">Página inicial do Web Podcast Tech</p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/src/view/podcasts.html"
+              >Podcasts</a
+            >
+            <p class="nav-description">
+              Episódios sobre IA, cibersegurança e mais
+            </p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/src/view/techconferences.html"
+              >Tech Conferences</a
+            >
+            <p class="nav-description">Cobertura de eventos como CES 2025</p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/src/view/blog.html">Blog</a>
+            <p class="nav-description">Artigos e notícias sobre tecnologia</p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/src/view/comunidade.html">Comunidade</a>
+            <p class="nav-description">Conecte-se com outros entusiastas</p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/src/view/patrocinadores.html"
+              >Patrocinadores</a
+            >
+            <p class="nav-description">Conheça nossos apoiadores</p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/src/view/engajamento.html"
+              >Engajamento</a
+            >
+            <p class="nav-description">Participe de enquetes e eventos</p>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-info">
+        <h3>Publicidade</h3>
+        <div class="adsense-sidebar">
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          ></script>
+          <ins
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="SEU_CLIENT_ID"
+            data-ad-slot="SEU_SLOT_ID"
+            data-ad-format="auto"
+          ></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
         </div>
-        <details>
-          <summary role="button" tabindex="0">Ver Transcrição</summary>
-          <div class="transcript" role="region" aria-live="polite"></div>
-        </details>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <footer class="footer">
-    <p>© 2025 Web Podcast Tech. Todos os direitos reservados.</p>
-  </footer>
+    <main class="container mt-5">
+      <h1>Podcasts</h1>
+      <div class="filters">
+        <button data-filter="all">Todos</button>
+        <button data-filter="IA">IA</button>
+        <button data-filter="Ciberseguranca">Cibersegurança</button>
+      </div>
 
-  <script>
-    console.log('podcasts.html carregado em', new Date().toLocaleString());
-  </script>
-  <script defer src="/src/script/menu.js"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-</body>
+      <section class="podcast-grid">
+        <div
+          class="podcast-card"
+          data-tags="IA,CES2025"
+          data-video-id="E96YS8IQSHs"
+        >
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/E96YS8IQSHs?si=qiUW6TjF21g_4AYy"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <h3>Episódio 1: IA na CES 2025</h3>
+          <p>Exploramos as inovações de IA na maior conferência tech!</p>
+          <div class="tags">
+            <a href="/podcasts/ia">#IA</a>
+            <a href="/podcasts/ces2025">#CES2025</a>
+          </div>
+          <details>
+            <summary role="button" tabindex="0">Ver Transcrição</summary>
+            <div class="transcript" role="region" aria-live="polite"></div>
+          </details>
+        </div>
+        <div
+          class="podcast-card"
+          data-tags="Ciberseguranca,BlackHat"
+          data-transcript-url="/transcripts/ep2.txt"
+        >
+          <audio controls>
+            <source src="/audio/ep2.mp3" type="audio/mpeg" />
+            Seu navegador não suporta áudio.
+          </audio>
+          <h3>Episódio 2: Cibersegurança</h3>
+          <p>Hacks éticos revelados na Black Hat 2025.</p>
+          <div class="tags">
+            <a href="/podcasts/ciberseguranca">#Cibersegurança</a>
+            <a href="/podcasts/blackhat">#BlackHat</a>
+          </div>
+          <details>
+            <summary role="button" tabindex="0">Ver Transcrição</summary>
+            <div class="transcript" role="region" aria-live="polite"></div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 Web Podcast Tech. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+      console.log("podcasts.html carregado em", new Date().toLocaleString());
+    </script>
+    <script defer src="/src/script/menu.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </body>
 </html>

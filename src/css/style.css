@@ -43,7 +43,7 @@ body::before {
 }
 
 /* Conteúdo acima do overlay */
-.navbar, .sidebar-left, .sidebar-panel, .initial-menu-item, .announcement-item, .footer, .podcast-grid, .podcast-card, .filters {
+.navbar, .sidebar-left, .sidebar-panel, .initial-menu-item, .announcement-item, .footer, .podcast-grid, .podcast-card, .filters, .login-container {
     position: relative;
     z-index: 2;
 }
@@ -71,12 +71,17 @@ body::before {
     background-color: #444;
     padding: 20px 10px;
     z-index: 950;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebar-left .navbar-nav {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    width: 100%;
 }
 
 .sidebar-left .nav-link {
@@ -231,6 +236,64 @@ body::before {
 .search-input:focus {
     border-color: #666;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Container */
+.login-container {
+    position: relative;
+    z-index: 2;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffffee;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-container .form-control {
+    border-radius: 5px;
+}
+
+.login-container .btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.login-container .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.login-container .register-link,
+.login-container .forgot-password {
+    display: block;
+    margin: 10px 0;
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+.login-container .register-link:hover,
+.login-container .forgot-password:hover {
+    color: #ff00ff;
+}
+
+.login-container .btn-danger {
+    background-color: #db4437;
+    border: none;
+}
+
+.login-container .btn-danger:hover {
+    background-color: #c1351f;
+}
+
+.login-container .g-signin2 {
+    margin-top: 10px;
 }
 
 /* Seção inicial */

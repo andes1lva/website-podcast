@@ -91,6 +91,59 @@ function setupFilters() {
     });
 }
 
+
+
+
+
+// Função para inicializar o Google Sign-In
+function initGoogleSignIn() {
+    gapi.load('auth2', function() {
+        gapi.auth2.init({
+            client_id: '410645476258-e647i57asbp21nd5jdtkqd5qg35civ93.apps.googleusercontent.com',
+            scope: 'https://www.googleapis.com/auth/youtube.readonly'
+        }).then(function() {
+            console.log('Google Sign-In inicializado');
+            // Verificar se o usuário está autenticado
+            const auth = gapi.auth2.getAuthInstance();
+            if (auth.isSignedIn.get()) {
+                console.log('Usuário já está autenticado');
+                const accessToken = auth.currentUser.get().getAuthResponse().access_token;
+                console.log('Token de acesso:', accessToken);
+                // Armazenar o token para uso nas requisições
+                window.accessToken = accessToken;
+            } else {
+                console.log('Usuário não está autenticado');
+            }
+        });
+    });
+}
+
+// Função para fazer login
+function signIn() {
+    const auth = gapi.auth2.getAuthInstance();
+    auth.signIn().then(function() {
+        console.log('Usuário autenticado com sucesso');
+        const accessToken = auth.currentUser.get().getAuthResponse().access_token;
+        console.log('Token de acesso:', accessToken);
+        window.accessToken = accessToken;
+    }).catch(function(error) {
+        console.error('Erro ao fazer login:', error);
+    });
+}
+
+// Adicionar botão de login no HTML
+document.addEventListener('DOMContentLoaded', function() {
+    const loginButton = document.createElement('button');
+    loginButton.textContent = 'Fazer Login com Google';
+    loginButton.onclick = signIn;
+    document.body.appendChild(loginButton); // Adicione onde desejar no HTML
+    initGoogleSignIn();
+});
+
+
+
+
+
 console.log('transcript.js carregado em', new Date().toLocaleString());
 
 // Função para validar videoId
@@ -110,6 +163,10 @@ async function loadYouTubeTranscript(videoId, container) {
     container.classList.remove('loading');
     return;
   }
+
+
+
+  
 
   const apiKey = 'AIzaSyDJhisJc1nIRttiF_O1HbIodRdfu_Mszy0'; // Substitua pela sua chave ativa
   try {
@@ -169,24 +226,91 @@ async function loadYouTubeTranscript(videoId, container) {
   }
 }
 
-// Função para carregar transcrição de áudio local
-async function loadAudioTranscript(transcriptUrl, container) {
-  console.log(`Iniciando carregamento da transcrição para ${transcriptUrl}`);
-  container.classList.add('loading');
-  try {
-    const response = await fetch(transcriptUrl);
-    if (!response.ok) {
-      throw new Error(`Erro ${response.status}: ${response.statusText}`);
+async function loadYouTubeTranscript(videoId, container) {
+    console.log(`Iniciando carregamento da transcrição para o vídeo ${videoId}`);
+    container.classList.add('loading');
+
+    // Validar videoId
+    if (!videoId || !isValidYouTubeId(videoId)) {
+        console.error(`ID do vídeo inválido: ${videoId}`);
+        container.textContent = 'ID do vídeo inválido.';
+        container.classList.remove('loading');
+        return;
     }
-    const transcriptText = await response.text();
-    console.log(`Transcrição carregada de ${transcriptUrl}:`, transcriptText);
-    container.textContent = transcriptText;
-  } catch (error) {
-    console.error(`Erro ao carregar transcrição de ${transcriptUrl}:`, error);
-    container.textContent = 'Erro ao carregar transcrição. Verifique se o arquivo existe.';
-  } finally {
-    container.classList.remove('loading');
-  }
+
+    // Verificar se há token de acesso
+    if (!window.accessToken) {
+        console.error('Nenhum token de acesso disponível. Faça login com Google.');
+        container.textContent = 'Faça login com Google para acessar a transcrição.';
+        container.classList.remove('loading');
+        return;
+    }
+
+    try {
+        // Buscar legendas disponíveis
+        const response = await fetch(
+            `https://www.googleapis.com/youtube/v3/captions?part=snippet&videoId=${encodeURIComponent(videoId)}&key=${encodeURIComponent('AIzaSyDJhisJc1nIRttiF_O1HbIodRdfu_Mszy0')}`,
+            { method: 'GET', headers: { 'Accept': 'application/json' } }
+        );
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            console.error('Erro na requisição de legendas:', errorData);
+            throw new Error(`Erro ${response.status}: ${response.statusText} - ${JSON.stringify(errorData.error || {})}`);
+        }
+        const data = await response.json();
+        console.log('Resposta da API de legendas:', data);
+
+        // Procurar legenda em português ou inglês
+        let captionTrack = data.items.find(
+            item => item.snippet.language === 'pt' || item.snippet.language === 'en'
+        );
+        if (!captionTrack) {
+            console.warn(`Nenhuma legenda em português ou inglês encontrada para o vídeo ${videoId}`);
+            container.textContent = 'Nenhuma legenda disponível em português ou inglês.';
+            container.classList.remove('loading');
+            return;
+        }
+
+        // Buscar o conteúdo da transcrição
+        const captionId = captionTrack.id;
+        const transcriptResponse = await fetch(
+            `https://www.googleapis.com/youtube/v3/captions/${encodeURIComponent(captionId)}`,
+            {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${window.accessToken}`,
+                    'Accept': 'application/json'
+                }
+            }
+        );
+        if (!transcriptResponse.ok) {
+            const errorData = await transcriptResponse.json().catch(() => ({}));
+            console.error('Erro ao buscar transcrição:', errorData);
+            throw new Error(`Erro ${transcriptResponse.status}: ${transcriptResponse.statusText} - ${JSON.stringify(errorData.error || {})}`);
+        }
+        const transcriptText = await transcriptResponse.text();
+
+        // Processar SRT para remover carimbos de tempo
+        const cleanTranscript = transcriptText
+            .split('\n')
+            .filter(line => !line.match(/^\d+$/) && !line.match(/^\d{2}:\d{2}:\d{2},\d{3} -->/) && line.trim() !== '')
+            .join(' ');
+        console.log(`Transcrição processada para o vídeo ${videoId}:`, cleanTranscript);
+        container.textContent = cleanTranscript;
+    } catch (error) {
+        console.error(`Erro ao carregar transcrição para o vídeo ${videoId}:`, error);
+        let errorMessage = 'Erro ao carregar transcrição. Tente novamente.';
+        if (error.message.includes('403')) {
+            errorMessage = 'Acesso negado. Verifique as permissões do token.';
+        } else if (error.message.includes('401')) {
+            errorMessage = 'Autenticação necessária. Faça login com Google.';
+        } else if (error.message.includes('400')) {
+            errorMessage = 'Requisição inválida. Verifique o ID do vídeo.';
+        }
+        container.textContent = errorMessage;
+    } finally {
+        container.classList.remove('loading');
+    }
 }
 
 // Inicializar transcrições
@@ -230,6 +354,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // Inicializar quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM carregado. Inicializando funcionalidades...');
+    const loginButton = document.getElementById('googleSignInButton');
+    if(loginButton) {
+      loginButton.addEventListener('click', signIn);
+    }
     setupSidebarToggle();
     setupSearch();
     setupFilters();

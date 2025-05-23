@@ -185,8 +185,7 @@ const server = http.createServer(async (req, res) => {
 
           console.log('[SERVIDOR] Buscando usuário...');
           const [users] = await pool.query(
-            'SELECT id, username, password, is_active FROM Users WHERE email = ?',
-            [email]
+            'SELECT id, username, password, is_active FROM Users WHERE email = ?' ,[email]
           );
           console.log('[SERVIDOR] Resultado da busca:', users);
           if (users.length === 0) {
