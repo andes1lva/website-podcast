@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - WebPodcast</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 class="text-2xl font-bold mb-6 text-center">Register</h1>
-        <div id="error" class="hidden text-red-600 mb-4"></div>
-        <form id="registerForm" class="space-y-4">
-            <div>
-                <label for="username" class="block text-sm font-medium">User Name</label>
-                <input type="text" id="username" name="username" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div>
-                <label for="password" class="block text-sm font-medium">Password</label>
-                <input type="password" id="password" name="password" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div>
-                <label for="confirm_password" class="block text-sm font-medium">Confirm Password</label>
-                <input type="password" id="confirm_password" name="confirm_password" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div>
-                <label for="email" class="block text-sm font-medium">Email</label>
-                <input type="email" id="email" name="email" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div>
-                <label for="address" class="block text-sm font-medium">Address (optional)</label>
-                <input type="text" id="address" name="address" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div class="flex space-x-4">
-                <a href="login.html" class="w-full bg-gray-500 text-white p-2 rounded text-center hover:bg-gray-600">Back to Login</a>
-                <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Register </button>
-            </div>
-        </form>
-    </div>
-    <script src="../script/client.js"></script>
+  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Registrar</h1>
+    <div id="error" class="hidden text-red-600 mb-4 text-center"></div>
+    <div id="loading" class="hidden text-blue-600 mb-4 text-center">Carregando...</div>
+    <form id="registerForm" action="/register" method="POST" class="space-y-4">
+      <div>
+        <label for="username" class="block text-sm font-medium">Nome de Usuário</label>
+        <input type="text" id="username" name="username" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <div>
+        <label for="password" class="block text-sm font-medium">Senha</label>
+        <input type="password" id="password" name="password" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <div>
+        <label for="confirm_password" class="block text-sm font-medium">Confirmar Senha</label>
+        <input type="password" id="confirm_password" name="confirm_password" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium">Email</label>
+        <input type="email" id="email" name="email" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <div>
+        <label for="address" class="block text-sm font-medium">Endereço (opcional)</label>
+        <input type="text" id="address" name="address" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      <div class="flex space-x-4">
+        <a href="/login" class="w-full bg-gray-500 text-white p-2 rounded text-center hover:bg-gray-600">Voltar ao Login</a>
+        <button type="submit" id="submitBtn" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Registrar</button>
+      </div>
+    </form>
+  </div>
+  <script src="/script/client.js"></script>
 </body>
 </html>

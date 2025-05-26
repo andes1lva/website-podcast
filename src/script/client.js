@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const showError = (message, errorElement) => {
+    errorElement.textContent = message;
+    errorElement.classList.remove('hidden');
+  };
+
+  const showLoading = (loadingElement, submitBtn) => {
+    loadingElement.classList.remove('hidden');
+    submitBtn.disabled = true;
+  };
+
+  const hideLoading = (loadingElement, submitBtn) => {
+    loadingElement.classList.add('hidden');
+    submitBtn.disabled = false;
+  };
+
   // Registro
   const registerForm = document.getElementById('registerForm');
   if (registerForm) {
@@ -6,7 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       console.log('[CLIENTE] Formulário de registro enviado');
       const error = document.getElementById('error');
+      const loading = document.getElementById('loading');
+      const submitBtn = document.getElementById('submitBtn');
       error.classList.add('hidden');
+      showLoading(loading, submitBtn);
 
       const data = {
         username: document.getElementById('username').value,
@@ -20,38 +38,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (data.password !== data.confirm_password) {
         console.log('[CLIENTE] Validação falhou: senhas não coincidem');
-        error.textContent = 'As senhas não coincidem';
-        error.classList.remove('hidden');
+        showError('As senhas não coincidem', error);
+        hideLoading(loading, submitBtn);
         return;
       }
       if (!data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
         console.log('[CLIENTE] Validação falhou: email inválido');
-        error.textContent = 'Email inválido';
-        error.classList.remove('hidden');
+        showError('Email inválido', error);
+        hideLoading(loading, submitBtn);
         return;
       }
 
       try {
-        console.log('[CLIENTE] Iniciando fetch para http://localhost:3000/register');
-        const response = await fetch('http://localhost:3000/register', {
+        console.log('[CLIENTE] Iniciando fetch para /register');
+        const response = await fetch('/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
         console.log('[CLIENTE] Resposta recebida, status:', response.status);
         const result = await response.json();
-        console.log('[CLIENTE] Resposta do servidor:', result);
         if (!response.ok) {
           console.log('[CLIENTE] Erro na resposta:', result.error);
           throw new Error(result.error);
         }
         console.log('[CLIENTE] Registro bem-sucedido:', result.message);
         alert(result.message);
-        window.location.href = 'login.html';
+        window.location.href = '/login';
       } catch (err) {
         console.error('[CLIENTE] Erro no cliente:', err.message);
-        error.textContent = 'Erro ao conectar ao servidor. Verifique se o servidor está rodando na porta 3000.';
-        error.classList.remove('hidden');
+        showError(err.message || 'Erro ao conectar ao servidor', error);
+      } finally {
+        hideLoading(loading, submitBtn);
       }
     });
   }
@@ -63,7 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       console.log('[CLIENTE] Formulário de login enviado');
       const error = document.getElementById('error');
+      const loading = document.getElementById('loading');
+      const submitBtn = document.getElementById('submitBtn');
       error.classList.add('hidden');
+      showLoading(loading, submitBtn);
+
       const data = {
         email: document.getElementById('email').value,
         password: document.getElementById('password').value
@@ -73,21 +95,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
         console.log('[CLIENTE] Validação falhou: email inválido');
-        error.textContent = 'Email inválido';
-        error.classList.remove('hidden');
+        showError('Email inválido', error);
+        hideLoading(loading, submitBtn);
         return;
       }
 
       try {
-        console.log('[CLIENTE] Iniciando fetch para http://localhost:3000/login');
-        const response = await fetch('http://localhost:3000/login', {
+        console.log('[CLIENTE] Iniciando fetch para /login');
+        const response = await fetch('/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
         console.log('[CLIENTE] Resposta recebida, status:', response.status);
         const result = await response.json();
-        console.log('[CLIENTE] Resposta do servidor:', result);
         if (!response.ok) {
           console.log('[CLIENTE] Erro na resposta:', result.error);
           throw new Error(result.error);
@@ -98,8 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = result.redirectURL;
       } catch (err) {
         console.error('[CLIENTE] Erro no cliente:', err.message);
-        error.textContent = 'Erro ao conectar ao servidor. Verifique se o servidor está rodando na porta 3001.';
-        error.classList.remove('hidden');
+        showError(err.message || 'Erro ao conectar ao servidor', error);
+      } finally {
+        hideLoading(loading, submitBtn);
       }
     });
   }
@@ -111,13 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('[CLIENTE] Token para /menu:', token ? 'Token presente' : 'Sem token');
       if (!token) {
         console.log('[CLIENTE] Redirecionando para login: sem token');
-        window.location.href = 'login.html';
+        window.location.href = '/login';
         return;
       }
 
       try {
-        console.log('[CLIENTE] Iniciando fetch para http://localhost:3000/menu');
-        const response = await fetch('http://localhost:3000/menu', {
+        console.log('[CLIENTE] Iniciando fetch para /menu');
+        const response = await fetch('/menu', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         console.log('[CLIENTE] Resposta recebida, status:', response.status);
@@ -138,9 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('logout')?.addEventListener('click', () => {
       console.log('[CLIENTE] Executando logout: removendo token');
       localStorage.removeItem('jwt');
-      window.location.href = 'login.html';
+      window.location.href = '/login';
     });
-
-   
   }
 });

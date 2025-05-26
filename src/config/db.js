@@ -1,43 +1,43 @@
 const mysql = require('mysql2/promise');
+const { logger } = require('./src/utils/logger');
 
-console.log('[DB] Iniciando configuração do banco de dados...');
+logger.info('[DB] Iniciando configuração do banco de dados...');
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
   user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'A1b2c3d4e5@',
+  password: process.env.DB_PASSWORD || 'A1b2c3d4e5@@@@@',
   port: process.env.DB_PORT || 3306,
+  database: process.env.DB_NAME || 'webpodcast',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
 });
 
-console.log('[DB] Pool de conexões criado. Configuração:', {
+logger.info('[DB] Pool de conexões criado. Configuração:', {
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
-  port: process.env.DB_PORT
+  port: process.env.DB_PORT,
+  database: process.env.DB_NAME
 });
 
 async function initializeDatabase() {
   let connection;
   try {
     connection = await pool.getConnection();
-    console.log('[DB] Conexão com MySQL estabelecida com sucesso!');
+    logger.info('[DB] Conexão com MySQL estabelecida com sucesso!');
 
-    // Criar o banco se não existir
-    console.log('[DB] Verificando existência do banco webpodcast...');
-    await connection.query(`CREATE DATABASE IF NOT EXISTS webpodcast`);
-    await connection.query(`USE webpodcast`);
-    console.log('[DB] Banco webpodcast pronto para uso.');
+    // Criar banco de dados se não existir
+    logger.info('[DB] Verificando existência do banco webpodcast...');
+    await connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME}`);
+    await connection.query(`USE ${process.env.DB_NAME}`);
+    logger.info(`[DB] Banco ${process.env.DB_NAME} pronto para uso.`);
 
-    // Verificar se a tabela Users existe
-    console.log('[DB] Verificando existência da tabela Users...');
+    // Criar tabela Users se não existir
+    logger.info('[DB] Verificando existência da tabela Users...');
     const [tables] = await connection.query(`SHOW TABLES LIKE 'Users'`);
-
-    if (tables.length > 0) {
-      console.log('[DB] Tabela Users encontrada no banco de dados.');
-    } else {
-      console.warn('[DB] Tabela Users não encontrada. Criando...');
+    if (tables.length === 0) {
+      logger.warn('[DB] Tabela Users não encontrada. Criando...');
       await connection.query(`
         CREATE TABLE Users (
           id INT AUTO_INCREMENT PRIMARY KEY,
@@ -50,23 +50,24 @@ async function initializeDatabase() {
           is_active BOOLEAN DEFAULT TRUE
         )
       `);
-      console.log('[DB] Tabela Users criada com sucesso.');
+      logger.info('[DB] Tabela Users criada com sucesso.');
+    } else {
+      logger.info('[DB] Tabela Users encontrada no banco de dados.');
     }
   } catch (error) {
-    console.error('[DB] Erro ao conectar ou configurar o MySQL:', error.message);
-    console.error('[DB] Stack:', error.stack);
+    logger.error(`[DB] Erro ao conectar ou configurar o MySQL: ${error.message}`, { stack: error.stack });
     throw error;
   } finally {
     if (connection) {
       connection.release();
-      console.log('[DB] Conexão liberada.');
+      logger.info('[DB] Conexão liberada.');
     }
   }
 }
 
 // Inicializar o banco
 initializeDatabase().catch(error => {
-  console.error('[DB] Falha na inicialização do banco de dados:', error.message);
+  logger.error(`[DB] Falha na inicialização do banco de dados: ${error.message}`);
   process.exit(1);
 });
 
