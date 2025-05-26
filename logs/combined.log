@@ -1,0 +1,11 @@
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2025-05-26T20:14:28.375Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2025-05-26T20:14:28.381Z"}
+{"level":"info","message":"[SERVIDOR] Configurando servidor...","timestamp":"2025-05-26T20:14:28.542Z"}
+{"level":"info","message":"[SERVIDOR] Porta definida: 3000","timestamp":"2025-05-26T20:14:28.543Z"}
+{"level":"info","message":"[SERVIDOR] Servidor rodando na porta 3000","timestamp":"2025-05-26T20:14:28.547Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2025-05-26T20:14:28.588Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2025-05-26T20:14:28.588Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2025-05-26T20:14:28.598Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2025-05-26T20:14:28.598Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2025-05-26T20:14:28.605Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2025-05-26T20:14:28.606Z"}

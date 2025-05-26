@@ -1,19 +1,24 @@
+// Importa o módulo mysql2 com suporte a Promises para interagir com o MySQL
 const mysql = require('mysql2/promise');
-const { logger } = require('./src/utils/logger');
+// Importa o logger para registrar eventos e erros
+const { logger } = require('../utils/logger'); // Corrigido de './src/utils/logger'
 
+// Loga o início da configuração do banco
 logger.info('[DB] Iniciando configuração do banco de dados...');
 
+// Cria um pool de conexões MySQL para gerenciar múltiplas conexões
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || 'localhost',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'A1b2c3d4e5@@@@@',
-  port: process.env.DB_PORT || 3306,
-  database: process.env.DB_NAME || 'webpodcast',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
+  host: process.env.DB_HOST || 'localhost', // Host do MySQL (padrão: localhost)
+  user: process.env.DB_USER || 'root',       // Usuário do MySQL
+  password: process.env.DB_PASSWORD || 'A1b2c3d4e5@@@@@', // Senha
+  port: process.env.DB_PORT || 3306,        // Porta padrão do MySQL
+  database: process.env.DB_NAME || 'webpodcast', // Nome do banco
+  waitForConnections: true,                 // Aguarda conexões disponíveis
+  connectionLimit: 10,                      // Máximo de conexões simultâneas
+  queueLimit: 0                             // Sem limite na fila de conexões
 });
 
+// Loga as configurações do pool
 logger.info('[DB] Pool de conexões criado. Configuração:', {
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -21,23 +26,26 @@ logger.info('[DB] Pool de conexões criado. Configuração:', {
   database: process.env.DB_NAME
 });
 
+// Função para inicializar o banco de dados
 async function initializeDatabase() {
   let connection;
   try {
+    // Obtém uma conexão do pool
     connection = await pool.getConnection();
     logger.info('[DB] Conexão com MySQL estabelecida com sucesso!');
 
-    // Criar banco de dados se não existir
+    // Cria o banco de dados se não existir
     logger.info('[DB] Verificando existência do banco webpodcast...');
     await connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME}`);
     await connection.query(`USE ${process.env.DB_NAME}`);
     logger.info(`[DB] Banco ${process.env.DB_NAME} pronto para uso.`);
 
-    // Criar tabela Users se não existir
+    // Verifica se a tabela Users existe
     logger.info('[DB] Verificando existência da tabela Users...');
     const [tables] = await connection.query(`SHOW TABLES LIKE 'Users'`);
     if (tables.length === 0) {
       logger.warn('[DB] Tabela Users não encontrada. Criando...');
+      // Cria a tabela Users com os campos necessários
       await connection.query(`
         CREATE TABLE Users (
           id INT AUTO_INCREMENT PRIMARY KEY,
@@ -55,9 +63,11 @@ async function initializeDatabase() {
       logger.info('[DB] Tabela Users encontrada no banco de dados.');
     }
   } catch (error) {
+    // Loga erros de conexão ou criação
     logger.error(`[DB] Erro ao conectar ou configurar o MySQL: ${error.message}`, { stack: error.stack });
     throw error;
   } finally {
+    // Libera a conexão
     if (connection) {
       connection.release();
       logger.info('[DB] Conexão liberada.');
@@ -65,10 +75,11 @@ async function initializeDatabase() {
   }
 }
 
-// Inicializar o banco
+// Executa a inicialização e sai se houver erro
 initializeDatabase().catch(error => {
   logger.error(`[DB] Falha na inicialização do banco de dados: ${error.message}`);
   process.exit(1);
 });
 
+// Exporta o pool para uso em outros módulos
 module.exports = { pool };
