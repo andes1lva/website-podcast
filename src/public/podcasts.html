@@ -26,6 +26,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="/src/css/style.css" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -72,12 +73,12 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-nav">
-        <a class="nav-link" href="/src/view/menu.html" data-tooltip="Home"
+        <a class="nav-link" href="/dashboard" data-tooltip="Home"
           ><i class="fas fa-home"></i
         ></a>
         <a
           class="nav-link active"
-          href="/src/view/podcasts.html"
+          href="/podcasts"
           data-tooltip="Podcasts"
           ><i class="fas fa-podcast"></i
         ></a>
@@ -87,7 +88,7 @@
           data-tooltip="Tech Conferences"
           ><i class="fas fa-calendar-alt"></i
         ></a>
-        <a class="nav-link" href="/src/view/blog.html" data-tooltip="Blog"
+        <a class="nav-link" href="/blog" data-tooltip="Blog"
           ><i class="fas fa-newspaper"></i
         ></a>
         <a
@@ -98,7 +99,7 @@
         ></a>
         <a
           class="nav-link"
-          href="/src/view/patrocinadores.html"
+          href="/src/view//patrocinadores.html"
           data-tooltip="Patrocinadores"
           ><i class="fas fa-star"></i
         ></a>
@@ -120,21 +121,17 @@
             <p class="nav-description">Página inicial do Web Podcast Tech</p>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/src/view/podcasts.html"
-              >Podcasts</a
-            >
+            <a class="nav-link active" href="/src/public/podcasts.html">Podcasts</a>
             <p class="nav-description">
               Episódios sobre IA, cibersegurança e mais
             </p>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/src/view/techconferences.html"
-              >Tech Conferences</a
-            >
+            <a class="nav-link" href="/src/view/techconferences.html">Tech Conferences</a>
             <p class="nav-description">Cobertura de eventos como CES 2025</p>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/src/view/blog.html">Blog</a>
+            <a class="nav-link" href="/src/view//blog.html">Blog</a>
             <p class="nav-description">Artigos e notícias sobre tecnologia</p>
           </li>
           <li class="nav-item">
@@ -142,15 +139,11 @@
             <p class="nav-description">Conecte-se com outros entusiastas</p>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/src/view/patrocinadores.html"
-              >Patrocinadores</a
-            >
+            <a class="nav-link" href="/src/view//patrocinadores.html">Patrocinadores</a>
             <p class="nav-description">Conheça nossos apoiadores</p>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/src/view/engajamento.html"
-              >Engajamento</a
-            >
+            <a class="nav-link" href="/src/view/engajamento.html">Engajamento</a>
             <p class="nav-description">Participe de enquetes e eventos</p>
           </li>
         </ul>
@@ -240,7 +233,6 @@
     <script>
       console.log("podcasts.html carregado em", new Date().toLocaleString());
     </script>
-    <script defer src="/src/script/menu.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script defer src="/dashboard.js"></script>
   </body>
 </html>

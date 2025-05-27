@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Web Podcast Tech - Podcasts, vídeos e conferências sobre tecnologia">
-  <meta name="keywords" content="podcast, tecnologia, CES 2025, IA, cibersegurança">
-  <title>Web Podcast Tech</title>
-  <!-- Bootstrap 4.5.2 CSS (para estilos básicos) -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Font Awesome 6.4.0 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- CSS personalizado -->
-  <link rel="stylesheet" href="/src/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Página inicial do Web Podcast Tech - Explore tecnologia, IA e mais"
+  />
+  <meta
+    name="keywords"
+    content="podcast, tecnologia, IA, cibersegurança, Web Podcast Tech"
+  />
+  <meta
+    name="google-signin-client_id"
+    content="410645476258-0pnvj3ae40her7a410tuonsqc1613cb3.apps.googleusercontent.com"
+  />
+
+  <title>Dashboard - Web Podcast Tech</title>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
   <!-- Navbar (apenas ícones sociais e busca) -->
@@ -27,17 +42,26 @@
       </div>
       <div class="search-container">
         <div class="search-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
           </svg>
         </div>
-        <input type="text" class="search-input" placeholder="Pesquisar...">
+        <input type="text" class="search-input" placeholder="Pesquisar..." />
       </div>
     </div>
   </nav>
 
-  <!-- Sidebar à esquerda (com ícone de hambúrguer para toggle) -->
-  <nav class="sidebar-left">
+ <nav class="sidebar-left">
     <button class="sidebar-toggler" id="sidebarToggle">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -91,7 +115,13 @@
       <h3>Publicidade</h3>
       <div class="adsense-sidebar">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="SEU_CLIENT_ID" data-ad-slot="SEU_SLOT_ID" data-ad-format="auto"></ins>
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="SEU_CLIENT_ID"
+          data-ad-slot="SEU_SLOT_ID"
+          data-ad-format="auto"
+        ></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
     </div>
@@ -99,30 +129,38 @@
 
   <!-- Conteúdo principal -->
   <main class="container mt-5">
-    <section class="initial-menu-apr">
-      <div class="initial-menu-item">
-        <div class="text-content">
-          <h2>Bem-vindo ao Web Podcast Tech</h2>
-          <p>Explore os melhores conteúdos sobre tecnologia, IA, cibersegurança e conferências como a CES 2025.</p>
+    <h1>Bem-vindo ao Dashboard</h1>
+    <p class="lead">Explore o mundo da tecnologia com Web Podcast Tech.</p>
+    <section class="row mt-4">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Últimos Podcasts</h5>
+            <p class="card-text">Acesse os episódios mais recentes.</p>
+            <a href="/podcasts" class="btn btn-primary">Ver Podcasts</a>
+          </div>
         </div>
-        <div class="image-area" style="background-image: url('/images/tech_image.jpg');"></div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Conferências</h5>
+            <p class="card-text">Confira as próximas tech conferences.</p>
+            <a href="/techconferences" class="btn btn-primary">Saiba Mais</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Comunidade</h5>
+            <p class="card-text">Participe e conecte-se com outros.</p>
+            <a href="/comunidade" class="btn btn-primary">Junte-se</a>
+          </div>
+        </div>
       </div>
     </section>
-
-    <section class="announcement">
-      <div class="announcement-item">
-        <h2>Novos Episódios</h2>
-        <p>Confira os últimos podcasts sobre IA e cibersegurança!</p>
-        <a href="/src/view/podcasts.html" class="announcement-btn">Ouvir Agora</a>
-      </div>
-    </section>
-
-    <section class="video-grid">
-      <iframe src="https://www.youtube.com/embed/L87PAAejHPs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/aqhhlmz6gik?si=48snWt0bfj6gjcqA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/WMD-dKFCh48?si=_o2BOoagDxF75ftG"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>/
-    </main>
+  </main>
 
   <!-- Rodapé -->
   <footer class="footer">
@@ -131,9 +169,9 @@
 
   <!-- Script inline para teste básico -->
   <script>
-    console.log('menu.html carregado em', new Date().toLocaleString());
+    console.log('dashboard.html carregado em', new Date().toLocaleString());
   </script>
   <!-- Script externo -->
-  <script defer src="/src/script/menu.js"></script>
+  <script defer src="/dashboard.js"></script>
 </body>
 </html>

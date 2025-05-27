@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Página inicial do Web Podcast Tech - Explore tecnologia, IA e mais"
+  />
+  <meta
+    name="keywords"
+    content="podcast, tecnologia, IA, cibersegurança, Web Podcast Tech"
+  />
+  <meta
+    name="google-signin-client_id"
+    content="410645476258-0pnvj3ae40her7a410tuonsqc1613cb3.apps.googleusercontent.com"
+  />
+
+  <title>Dashboard - Web Podcast Tech</title>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-socialmedia">
+      <div class="social-icons">
+        <a
+          class="social-link"
+          href="https://web.whatsapp.com/"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp icon"></i>
+        </a>
+        <a
+          class="social-link"
+          href="https://www.instagram.com"
+          target="_blank"
+        >
+          <i class="fab fa-instagram icon"></i>
+        </a>
+      </div>
+      <div class="search-container">
+        <div class="search-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </div>
+        <input type="text" class="search-input" placeholder="Pesquisar..." />
+      </div>
+      <div class="navbar-nav">
+        <a class="nav-link" href="/dashboard">Home</a>
+        <a class="nav-link" href="/podcasts">Podcasts</a>
+        <a class="nav-link" href="/techconferences">Tech Conferences</a>
+        <a class="nav-link" href="/blog">Blog</a>
+        <a class="nav-link" href="/comunidade">Comunidade</a>
+        <a class="nav-link" href="/patrocinadores">Patrocinadores</a>
+        <a class="nav-link" href="/engajamento">Engajamento</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5">
+    <h1>Bem-vindo ao Dashboard</h1>
+    <p class="lead">Explore o mundo da tecnologia com Web Podcast Tech.</p>
+    <section class="row mt-4">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Últimos Podcasts</h5>
+            <p class="card-text">Acesse os episódios mais recentes.</p>
+            <a href="/podcasts" class="btn btn-primary">Ver Podcasts</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Conferências</h5>
+            <p class="card-text">Confira as próximas tech conferences.</p>
+            <a href="/techconferences" class="btn btn-primary">Saiba Mais</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Comunidade</h5>
+            <p class="card-text">Participe e conecte-se com outros.</p>
+            <a href="/comunidade" class="btn btn-primary">Junte-se</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Web Podcast Tech. Todos os direitos reservados.</p>
+  </footer>
+  <script src="/dashboard.js"></script>
+</body>
+</html>
