@@ -9,3 +9,21 @@
 {"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2025-05-26T20:14:28.598Z"}
 {"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2025-05-26T20:14:28.605Z"}
 {"level":"info","message":"[DB] Conexão liberada.","timestamp":"2025-05-26T20:14:28.606Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-04-29T20:36:36.022Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-04-29T20:36:36.035Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-04-29T20:36:36.650Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-04-29T20:36:36.869Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-04-29T20:36:36.873Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-04-29T20:36:36.940Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-04-29T20:36:36.944Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-04-29T20:36:37.048Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-04-29T20:36:37.052Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-04-29T20:50:33.956Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-04-29T20:50:33.964Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-04-29T20:50:34.520Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-04-29T20:50:34.590Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-04-29T20:50:34.590Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-04-29T20:50:34.613Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-04-29T20:50:34.614Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-04-29T20:50:34.643Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-04-29T20:50:34.644Z"}

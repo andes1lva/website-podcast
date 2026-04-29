@@ -193,6 +193,7 @@ body::before {
     transition: fill 0.3s, transform 0.3s;
 }
 
+
 .social-link:hover .icon {
     fill: #ddd;
     transform: scale(1.1);
@@ -243,7 +244,7 @@ body::before {
     max-width: 400px;
     margin: 100px auto;
     padding: 20px;
-    background-color: #ffffffee;
+    background-color: #ffffffff;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -272,13 +273,98 @@ body::before {
 .login-container .forgot-password {
     display: block;
     margin: 10px 0;
-    color: #00ffcc;
+    color: #2407df;
     text-decoration: none;
 }
 
 .login-container .register-link:hover,
 .login-container .forgot-password:hover {
-    color: #ff00ff;
+    color: #888888;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+.register-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease;
+}
+
+/* Correção específica para os campos de input */
+.register-card, form#registerForm {
+    position: relative !important;
+    z-index: 999 !important; /* Coloca o formulário na frente de qualquer grid ou sidebar */
+}
+
+input.form-control {
+    pointer-events: auto !important; /* Garante que o mouse consiga interagir */
+    cursor: text !important;         /* Garante que o cursor de texto apareça */
+}
+
+/* Se o formulário estiver centralizado, remova as margens da grid de podcast */
+body.register-page .podcast-grid, 
+body.register-page .filters {
+    margin-left: 0 !important;
+    display: block !important;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #007bff;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.form-control::placeholder {
+    color: #ccc;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #00d4ff; /* Cor de destaque */
+}
+
+.btn-primary {
+    background: #007bff;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.text-muted {
+    color: #aaa !important;
+    text-decoration: none;
+}
+
+.text-muted:hover {
+    color: #fff !important;
 }
 
 .login-container .btn-danger {
@@ -293,6 +379,7 @@ body::before {
 .login-container .g-signin2 {
     margin-top: 10px;
 }
+
 
 /* Seção inicial */
 .initial-menu-apr {

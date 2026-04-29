@@ -1,119 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Página inicial do Web Podcast Tech - Explore tecnologia, IA e mais"
-  />
-  <meta
-    name="keywords"
-    content="podcast, tecnologia, IA, cibersegurança, Web Podcast Tech"
-  />
-  <meta
-    name="google-signin-client_id"
-    content="410645476258-0pnvj3ae40her7a410tuonsqc1613cb3.apps.googleusercontent.com"
-  />
-
-  <title>Dashboard - Web Podcast Tech</title>
-  <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <link rel="stylesheet" href="/src/css/style.css" />
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="410645476258-e647i57asbp21nd5jdtkqd5qg35civ93.apps.googleusercontent.com">
+    <title>Login</title>
+    <link rel="stylesheet" href="/website-podcast/src/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-socialmedia">
-      <div class="social-icons">
-        <a
-          class="social-link"
-          href="https://web.whatsapp.com/"
-          target="_blank"
-        >
-          <i class="fab fa-whatsapp icon"></i>
-        </a>
-        <a
-          class="social-link"
-          href="https://www.instagram.com"
-          target="_blank"
-        >
-          <i class="fab fa-instagram icon"></i>
-        </a>
-      </div>
-      <div class="search-container">
-        <div class="search-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
+    <div class="register-card p-4 ">
+    <h2 class="text-center mb-4">Criar Conta</h2>
+    <form id="registerForm">
+        <!-- Nome Completo -->
+        <div class="form-group mb-3">
+            <label for="username"><i class="fas fa-user"></i> Nome Completo</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Digite seu nome" required />
         </div>
-        <input type="text" class="search-input" placeholder="Pesquisar..." />
-      </div>
-      <div class="navbar-nav">
-        <a class="nav-link" href="/dashboard">Home</a>
-        <a class="nav-link" href="/podcasts">Podcasts</a>
-        <a class="nav-link" href="/techconferences">Tech Conferences</a>
-        <a class="nav-link" href="/blog">Blog</a>
-        <a class="nav-link" href="/comunidade">Comunidade</a>
-        <a class="nav-link" href="/patrocinadores">Patrocinadores</a>
-        <a class="nav-link" href="/engajamento">Engajamento</a>
-      </div>
+
+        <!-- Email -->
+        <div class="form-group mb-3">
+            <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" required />
+        </div>
+
+        <!-- Endereço -->
+        <div class="form-group mb-3">
+            <label for="address"><i class="fas fa-map-marker-alt"></i> Endereço</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Rua, Número, Bairro" required />
+        </div>
+
+        <!-- Senha -->
+        <div class="form-group mb-4">
+            <label for="password"><i class="fas fa-lock"></i> Senha</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Crie uma senha forte" required />
+        </div>
+
+        <button type="submit" id="btnRegister" class="btn btn-primary btn-block py-2">
+            Finalizar Cadastro
+        </button>
+    </form>
+    <div class="text-center mt-3">
+        <a href="/website-podcast/src/public/login.html" class="small text-muted">Já tem uma conta? Faça login aqui</a>
     </div>
-  </nav>
-
-  <main class="container mt-5">
-    <h1>Bem-vindo ao Dashboard</h1>
-    <p class="lead">Explore o mundo da tecnologia com Web Podcast Tech.</p>
-    <section class="row mt-4">
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Últimos Podcasts</h5>
-            <p class="card-text">Acesse os episódios mais recentes.</p>
-            <a href="/podcasts" class="btn btn-primary">Ver Podcasts</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Conferências</h5>
-            <p class="card-text">Confira as próximas tech conferences.</p>
-            <a href="/techconferences" class="btn btn-primary">Saiba Mais</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Comunidade</h5>
-            <p class="card-text">Participe e conecte-se com outros.</p>
-            <a href="/comunidade" class="btn btn-primary">Junte-se</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© 2025 Web Podcast Tech. Todos os direitos reservados.</p>
-  </footer>
-  <script src="/dashboard.js"></script>
+</div>
+    <script src="/src/script/client.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>
