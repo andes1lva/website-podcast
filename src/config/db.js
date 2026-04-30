@@ -48,17 +48,18 @@ async function initializeDatabase() {
       // Cria a tabela Users com os campos necessários
       // ... dentro de initializeDatabase, no bloco do CREATE TABLE:
                   await connection.query(`
-                    CREATE TABLE IF NOT EXISTS Users (
-                      id INT AUTO_INCREMENT PRIMARY KEY,
-                      username VARCHAR(255) NOT NULL,
-                      cpf VARCHAR(14) NOT NULL UNIQUE, -- Faltava este campo aqui!
-                      password VARCHAR(255) NOT NULL,
-                      email VARCHAR(255) NOT NULL UNIQUE,
-                      address TEXT,
-                      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                      updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
-                      is_active BOOLEAN DEFAULT TRUE
-                    )
+                   CREATE TABLE IF NOT EXISTS Users (
+                  id INT AUTO_INCREMENT PRIMARY KEY,
+                  username VARCHAR(255) NOT NULL,
+                  cpf VARCHAR(14) NOT NULL UNIQUE, 
+                  email VARCHAR(255) NOT NULL UNIQUE,
+                  password VARCHAR(255) NOT NULL, 
+                  address TEXT,
+                  role ENUM('user', 'admin', 'podcaster') DEFAULT 'user', 
+                  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                  updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+                  is_active BOOLEAN DEFAULT TRUE
+                )
                   `);
       logger.info('[DB] Tabela Users criada com sucesso.');
     } else {
@@ -78,42 +79,19 @@ async function initializeDatabase() {
 }
 
 
-// Dentro do seu db.js
-
 /**
  * Insere um novo usuário com os campos atualizados
- */
-async function addUser(userData) {
-  const { username, cpf, email, password, address } = userData;
-  
-  // A query agora inclui o campo cpf
-  const sql = `
-    INSERT INTO Users (username, cpf, email, password, address) 
-    VALUES (?, ?, ?, ?, ?)
-  `;
-  
-  try {
-    // O pool gerencia a abertura e fechamento da conexão automaticamente
-    const [result] = await pool.query(sql, [username, cpf, email, password, address]);
-    
-    logger.info(`[DB] Sucesso: Usuário ${username} (CPF: ${cpf}) inserido. ID: ${result.insertId}`);
-    return result;
-  } catch (error) {
-    // Tratamento de erros específicos (ex: CPF ou Email duplicado)
-    if (error.code === 'ER_DUP_ENTRY') {
-        logger.warn(`[DB] Tentativa de cadastro duplicado: ${error.message}`);
-        throw new Error('Usuário ou CPF já cadastrado.');
-    }
-    
-    logger.error(`[DB] Erro na inserção: ${error.message}`);
-    throw error;
-  }
-}
-
-module.exports = { pool, addUser };
-
-
-
+*/
+// Exemplo de como deve estar no seu src/config/db.js
+const addUser = (username, email, address, password) => {
+    return new Promise((resolve, reject) => {
+        const sql = `INSERT INTO Users (username, cpf, email, password, address, role) VALUES (?, ?, ?, ?, ?)`;
+          pool.query(sql, [username, CPF, email, password, address, role], (err, result) => {
+            if (err) return reject(err);
+            resolve(result);
+        });
+    });
+};
 
 
 // Executa a inicialização e sai se houver erro

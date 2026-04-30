@@ -11,7 +11,7 @@
   <!-- Font Awesome 6.4.0 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- CSS personalizado -->
-  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <!-- Navbar (apenas ícones sociais e busca) -->
@@ -42,13 +42,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-nav">
-      <a class="nav-link active" href="/src/view/menu.html" data-tooltip="Home"><i class="fas fa-home"></i></a>
-      <a class="nav-link" href="/src/public/podcasts.html" data-tooltip="Podcasts"><i class="fas fa-podcast"></i></a>
-      <a class="nav-link" href="/src/view/techconferences.html" data-tooltip="Tech Conferences"><i class="fas fa-calendar-alt"></i></a>
-      <a class="nav-link" href="/src/view/blog.html" data-tooltip="Blog"><i class="fas fa-newspaper"></i></a>
-      <a class="nav-link" href="/src/view/comunidade.html" data-tooltip="Comunidade"><i class="fas fa-users"></i></a>
-      <a class="nav-link" href="/src/view/patrocinadores.html" data-tooltip="Patrocinadores"><i class="fas fa-star"></i></a>
-      <a class="nav-link" href="/src/view/engajamento.html" data-tooltip="Engajamento"><i class="fas fa-bell"></i></a>
+      <a class="nav-link active" href="/menu.html" data-tooltip="Home"><i class="fas fa-home"></i></a>
+      <a class="nav-link" href="/podcasts.html" data-tooltip="Podcasts"><i class="fas fa-podcast"></i></a>
+      <a class="nav-link" href="/techconferences.html" data-tooltip="Tech Conferences"><i class="fas fa-calendar-alt"></i></a>
+      <a class="nav-link" href="/blog.html" data-tooltip="Blog"><i class="fas fa-newspaper"></i></a>
+      <a class="nav-link" href="/comunidade.html" data-tooltip="Comunidade"><i class="fas fa-users"></i></a>
+      <a class="nav-link" href="/patrocinadores.html" data-tooltip="Patrocinadores"><i class="fas fa-star"></i></a>
+      <a class="nav-link" href="/engajamento.html" data-tooltip="Engajamento"><i class="fas fa-bell"></i></a>
     </div>
   </nav>
 
@@ -58,31 +58,31 @@
       <h3>Navegação</h3>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="/src/view/menu.html">Home</a>
+          <a class="nav-link active" href="/menu.html">Home</a>
           <p class="nav-description">Página inicial do Web Podcast Tech</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/src/public/podcasts.html">Podcasts</a>
+          <a class="nav-link" href="/techconferences.html">Podcasts</a>
           <p class="nav-description">Episódios sobre IA, cibersegurança e mais</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/src/view/techconferences.html">Tech Conferences</a>
+          <a class="nav-link" href="/techconferences.html">Tech Conferences</a>
           <p class="nav-description">Cobertura de eventos como CES 2025</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/src/view/blog.html">Blog</a>
+          <a class="nav-link" href="/blog.html">Blog</a>
           <p class="nav-description">Artigos e notícias sobre tecnologia</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/src/view/comunidade.html">Comunidade</a>
+          <a class="nav-link" href="/comunidade.html">Comunidade</a>
           <p class="nav-description">Conecte-se com outros entusiastas</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/src/view/patrocinadores.html">Patrocinadores</a>
+          <a class="nav-link" href="/patrocinadores.html">Patrocinadores</a>
           <p class="nav-description">Conheça nossos apoiadores</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/src/view/engajamento.html">Engajamento</a>
+          <a class="nav-link" href="/engajamento.html">Engajamento</a>
           <p class="nav-description">Participe de enquetes e eventos</p>
         </li>
       </ul>
@@ -113,7 +113,7 @@
       <div class="announcement-item">
         <h2>Novos Episódios</h2>
         <p>Confira os últimos podcasts sobre IA e cibersegurança!</p>
-        <a href="/src/view/podcasts.html" class="announcement-btn">Ouvir Agora</a>
+        <a href="/website-podcast/src/public/podcasts.html" class="announcement-btn">Ouvir Agora</a>
       </div>
     </section>
 
@@ -130,10 +130,11 @@
   </footer>
 
   <!-- Script inline para teste básico -->
+   <script defer src="/website-podcast/src/public/js/menu.js"></script>
   <script>
     console.log('menu.html carregado em', new Date().toLocaleString());
   </script>
   <!-- Script externo -->
-  <script defer src="/src/script/menu.js"></script>
+  
 </body>
 </html>
