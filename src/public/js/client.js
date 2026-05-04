@@ -1,24 +1,28 @@
-/** 
- * 1. CAMADA DE CONFIGURAÇÃO E SERVIÇOS (As Ferramentas)
- * Deve vir primeiro para que o restante do código saiba que elas existem.
- */
 const AuthService = {
     async register(userData) {
+        // 1. Verifique se a URL começa com /auth
         const response = await fetch('/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(userData)
         });
 
+        // 2. CORREÇÃO: Leia o texto APENAS UMA VEZ
         const text = await response.text();
-        const serverResponseData = text ? JSON.parse(text) : {};
+        let serverResponseData = {};
+        
+        try {
+            serverResponseData = text ? JSON.parse(text) : {};
+        } catch (e) {
+            console.error("Resposta do servidor não é um JSON válido:", text);
+            serverResponseData = { error: "Erro na resposta do servidor." };
+        }
 
-        return { ok: response.ok, data: serverResponseData};
+        return { ok: response.ok, data: serverResponseData };
     },
 
-
     async login(credentials) {
-        const response = await fetch('/auth/login',{
+        const response = await fetch('/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(credentials)
@@ -27,9 +31,11 @@ const AuthService = {
         const text = await response.text();
         const serverResponseData = text ? JSON.parse(text) : {};
 
-        return { ok: response.ok, data: await response.json() };
-
+        // REMOVIDO: await response.json() que causava erro de leitura dupla
+        return { ok: response.ok, data: serverResponseData };
     },
+
+
     async fetchMenu ( token) {
         return await fetch('/menu',{
             headers: {'Authorization': `Bearer ${token}` 
@@ -91,6 +97,7 @@ if (registerForm) {
         // O ID do botão no seu HTML é btnRegister, então aqui está correto
         UI.toggleLoading(true, 'btnRegister');
 
+        const  cpfEl = document.getElementById('cpf');
         const data = {
             username: usernameEl.value,
             email: emailEl.value,
@@ -106,9 +113,10 @@ if (registerForm) {
             
             alert('Cadastro realizado com sucesso!');
             window.location.href = '/login';
-        } catch (err) {
+       } catch (err) {
             UI.showError(err.message);
-            console.error('[CLIENTE] Detalhes do Erro:', err); // Sem o .message para ver tudo        } finally {
+            console.error('[CLIENTE] Detalhes do Erro:', err); 
+        } finally { // <--- Garanta que a chave do catch esteja fechada antes do finally
             UI.toggleLoading(false, 'btnRegister');
         }
     });
@@ -119,7 +127,7 @@ if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const email = document.getElementById('email').value;
+        const email = document.getElementById('login_email').value;
         const password = document.getElementById('password').value;
 
         try {

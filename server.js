@@ -37,7 +37,7 @@ app.get('/dashboard', (req, res) => res.sendFile(path.join(publicPath, 'dashboar
 
 // --- ROTAS DE API ---
 // Todas as rotas dentro de authRoutes terão o prefixo /auth
-app.use('/auth/register', authRoutes);
+app.use('/auth', authRoutes);
 
 // --- TRATAMENTO DE ERROS ---
 app.use(errorHandler);

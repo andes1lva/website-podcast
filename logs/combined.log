@@ -751,3 +751,551 @@
 {"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-04-30T21:01:27.281Z"}
 {"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-04-30T21:01:27.416Z"}
 {"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-04-30T21:01:44.198Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T14:40:09.363Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-05-04T14:40:09.369Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T14:40:09.406Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T14:40:09.671Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-05-04T14:40:09.671Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-05-04T14:40:09.709Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-05-04T14:40:09.710Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-05-04T14:40:09.853Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-05-04T14:40:09.854Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-04T14:40:59.630Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/client.js","timestamp":"2026-05-04T14:41:04.347Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:41:04.352Z"}
+{"level":"info","message":"[SERVER] POST /website-podcast/src/public/menu.html","timestamp":"2026-05-04T14:41:16.903Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:41:16.904Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/client.js","timestamp":"2026-05-04T14:41:52.209Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:41:52.221Z"}
+{"level":"info","message":"[SERVER] POST /menu.html","timestamp":"2026-05-04T14:41:58.589Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:41:58.590Z"}
+{"level":"info","message":"[SERVER] POST /menu.html","timestamp":"2026-05-04T14:42:05.549Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:05.550Z"}
+{"level":"info","message":"[SERVER] POST /menu.html","timestamp":"2026-05-04T14:42:08.277Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:08.278Z"}
+{"level":"info","message":"[SERVER] POST /menu.html","timestamp":"2026-05-04T14:42:19.013Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:19.014Z"}
+{"level":"info","message":"[SERVER] POST /menu.html","timestamp":"2026-05-04T14:42:22.448Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:22.452Z"}
+{"level":"info","message":"[SERVER] POST /menu.html","timestamp":"2026-05-04T14:42:27.941Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:27.943Z"}
+{"level":"info","message":"[SERVER] POST /menu.html","timestamp":"2026-05-04T14:42:29.780Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:29.780Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-04T14:42:31.990Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:31.991Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-04T14:42:32.120Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:32.130Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-04T14:42:39.933Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:39.944Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-04T14:42:40.138Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:40.204Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-04T14:42:41.019Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:41.070Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-04T14:42:41.179Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:41.255Z"}
+{"level":"info","message":"[SERVER] GET /src/view/techconferences.html","timestamp":"2026-05-04T14:42:43.521Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:43.521Z"}
+{"level":"info","message":"[SERVER] GET /src/view//patrocinadores.html","timestamp":"2026-05-04T14:42:47.174Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:47.174Z"}
+{"level":"info","message":"[SERVER] GET /src/view/menu.html","timestamp":"2026-05-04T14:42:49.981Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:42:49.984Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-04T14:44:51.876Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T14:45:08.258Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-05-04T14:45:08.273Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T14:45:08.349Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T14:45:08.391Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-05-04T14:45:08.398Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-05-04T14:45:08.408Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-05-04T14:45:08.414Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-05-04T14:45:08.422Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-05-04T14:45:08.425Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T14:45:38.473Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:45:38.475Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T14:46:23.395Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T14:46:23.405Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:04:42.789Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:04:42.856Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:06:52.192Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:06:52.228Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T15:06:55.789Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:06:55.790Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:08:02.991Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:08:03.087Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:08:11.075Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:08:11.080Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:25:11.138Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:25:11.142Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:40:20.561Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:40:20.563Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:40:23.014Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:40:23.071Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:40:29.293Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:40:29.299Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T15:41:01.440Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-05-04T15:41:01.447Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T15:41:01.493Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T15:41:01.546Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-05-04T15:41:01.546Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-05-04T15:41:01.555Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-05-04T15:41:01.555Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-05-04T15:41:01.563Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-05-04T15:41:01.564Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:41:01.846Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:41:01.847Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:41:03.210Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:41:03.211Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:41:03.679Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:41:03.680Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:41:03.859Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:41:03.860Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:41:04.011Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:41:04.013Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:41:04.193Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:41:04.193Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:41:04.327Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:41:04.328Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:45:51.375Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:45:51.380Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:45:51.571Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:45:51.628Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:45:51.695Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:45:51.851Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T15:45:56.004Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-05-04T15:45:56.011Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T15:45:56.059Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T15:45:56.107Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-05-04T15:45:56.107Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-05-04T15:45:56.116Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-05-04T15:45:56.116Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-05-04T15:45:56.121Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-05-04T15:45:56.121Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:45:57.572Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:45:57.673Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T15:46:24.776Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:46:24.778Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:46:34.259Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:46:34.309Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:50:17.497Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:50:17.498Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T15:57:26.564Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-05-04T15:57:26.571Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T15:57:26.618Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T15:57:26.663Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-05-04T15:57:26.663Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-05-04T15:57:26.670Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-05-04T15:57:26.670Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-05-04T15:57:26.679Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-05-04T15:57:26.680Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:57:35.083Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:57:35.108Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:57:40.046Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:57:40.048Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:58:04.714Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:58:04.715Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:59:38.055Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:59:38.071Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:59:42.273Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:59:42.274Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:59:44.382Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:59:44.382Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:59:44.538Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:59:44.538Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:59:44.684Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:59:44.684Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:59:44.826Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:59:44.829Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:59:44.953Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:59:44.957Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T15:59:53.739Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-05-04T15:59:53.755Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T15:59:53.900Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T15:59:54.006Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-05-04T15:59:54.013Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-05-04T15:59:54.042Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-05-04T15:59:54.069Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-05-04T15:59:54.104Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-05-04T15:59:54.120Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T15:59:54.915Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:59:55.253Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T15:59:58.452Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T15:59:58.454Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:02:07.769Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:02:08.103Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:02:17.968Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:02:17.969Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:02:46.449Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:02:46.492Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:02:56.286Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:02:56.289Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T16:04:52.212Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-05-04T16:04:52.224Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T16:04:52.302Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T16:04:52.370Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-05-04T16:04:52.378Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-05-04T16:04:52.390Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-05-04T16:04:52.398Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-05-04T16:04:52.412Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-05-04T16:04:52.420Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:04:55.191Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:04:55.244Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:05:02.012Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:05:02.017Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:06:05.616Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:06:05.657Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:06:09.874Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:06:09.883Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:25:46.671Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:25:46.672Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:29:52.561Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:29:52.562Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T16:31:30.426Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-05-04T16:31:30.432Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T16:31:30.489Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T16:31:30.545Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-05-04T16:31:30.546Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-05-04T16:31:30.553Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-05-04T16:31:30.553Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-05-04T16:31:30.561Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-05-04T16:31:30.562Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:33:10.036Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:33:10.037Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:37:31.424Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:37:31.426Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:37:38.471Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:37:38.490Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:37:43.622Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:37:43.623Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:42:36.343Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:36.386Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:42:43.339Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:43.340Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:42:53.374Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:53.384Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:42:53.895Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:53.896Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:42:54.122Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:54.175Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:42:54.279Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:54.345Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:42:54.459Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:54.529Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:42:54.626Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:54.664Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:42:54.792Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:54.836Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:42:55.162Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:55.211Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:42:57.967Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:42:57.969Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T16:43:11.538Z"}
+{"level":"info","message":"[DB] Pool de conexões criado. Configuração:","timestamp":"2026-05-04T16:43:11.565Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T16:43:11.656Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T16:43:11.730Z"}
+{"level":"info","message":"[DB] Verificando existência do banco webpodcast...","timestamp":"2026-05-04T16:43:11.730Z"}
+{"level":"info","message":"[DB] Banco webpodcast pronto para uso.","timestamp":"2026-05-04T16:43:11.739Z"}
+{"level":"info","message":"[DB] Verificando existência da tabela Users...","timestamp":"2026-05-04T16:43:11.739Z"}
+{"level":"info","message":"[DB] Tabela Users encontrada no banco de dados.","timestamp":"2026-05-04T16:43:11.747Z"}
+{"level":"info","message":"[DB] Conexão liberada.","timestamp":"2026-05-04T16:43:11.747Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:43:22.173Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:43:22.175Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:43:26.877Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:43:26.878Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:45:29.053Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:45:29.070Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:45:34.730Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:45:34.731Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:52:46.676Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:52:46.707Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:52:46.972Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:52:46.986Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:52:47.302Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:52:47.312Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:52:47.527Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:52:47.601Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:52:47.707Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:52:47.716Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:52:47.994Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:52:48.214Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:53:11.685Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:53:11.686Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T16:53:40.906Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:53:40.907Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:56:49.261Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:56:49.262Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:56:53.807Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:56:53.808Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:07.776Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:07.778Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:08.838Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:08.838Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:09.617Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:09.618Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:09.768Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:09.769Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:09.934Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:09.934Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:10.097Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:10.098Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:10.357Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:10.358Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:10.501Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:10.502Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:18.250Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:18.250Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:18.859Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:18.860Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:19.040Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:19.040Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:19.294Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:19.295Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:57:20.595Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:20.596Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:25.234Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:25.236Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T16:57:33.164Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:33.164Z"}
+{"level":"info","message":"[SERVER] POST /register","timestamp":"2026-05-04T16:57:37.647Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T16:57:37.649Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:06:25.142Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:06:25.144Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:06:27.618Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:06:27.619Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T17:06:44.709Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:06:44.711Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:09:36.894Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:09:36.895Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:09:37.372Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:09:37.373Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:09:37.917Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:09:37.920Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:09:38.105Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:09:38.106Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:09:38.196Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:09:38.199Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:09:38.411Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:09:38.412Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T17:09:42.685Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:09:42.686Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:24:34.250Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:24:34.268Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:24:34.367Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:24:34.369Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:24:34.621Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:24:34.642Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:24:34.695Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:24:34.695Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:24:34.832Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:24:34.834Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:24:34.963Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:24:34.964Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T17:24:52.948Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:24:52.949Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:32:12.008Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:32:12.025Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T17:32:17.884Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:32:17.885Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:41:44.513Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:41:44.514Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:41:44.831Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:41:44.884Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:41:45.381Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:41:45.394Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:41:45.877Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:41:45.886Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T17:41:56.225Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:41:56.226Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:42:03.870Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:42:03.878Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T17:44:27.621Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T17:44:27.717Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T17:44:27.841Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-04T17:44:27.955Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:44:39.531Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:44:39.538Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T17:44:44.475Z"}
+{"level":"info","message":"[SERVER] GET /login","timestamp":"2026-05-04T17:44:57.663Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:44:58.040Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:44:58.122Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:46:27.005Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:46:27.007Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T17:46:56.814Z"}
+{"level":"info","message":"[SERVER] GET /login","timestamp":"2026-05-04T17:46:59.546Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T17:46:59.758Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:46:59.973Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/client.js","timestamp":"2026-05-04T17:48:50.872Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:48:50.872Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-04T17:48:55.792Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-04T17:48:59.248Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-04T17:49:10.454Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:49:10.455Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-04T17:49:10.609Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:49:10.609Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/podcasts.html","timestamp":"2026-05-04T17:49:16.753Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:49:16.754Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-04T17:49:19.717Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:49:19.721Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-04T17:49:19.828Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:49:19.875Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-04T17:49:20.074Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:49:20.076Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-04T17:49:20.160Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:49:20.189Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-04T17:52:55.943Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:52:55.948Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-04T17:52:56.012Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:52:56.056Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-04T17:52:56.105Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:52:56.158Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-04T17:52:56.249Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:52:56.272Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-04T17:53:03.243Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:53:03.249Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-04T17:53:03.333Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:53:03.373Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-04T17:53:03.572Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:53:03.579Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-04T17:53:03.633Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:53:03.677Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/podcasts.html","timestamp":"2026-05-04T17:55:21.827Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:55:21.827Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/podcasts.html","timestamp":"2026-05-04T17:55:25.332Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:55:25.332Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/podcasts.html","timestamp":"2026-05-04T17:55:45.908Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:55:45.909Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-04T17:55:51.262Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:55:51.264Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-04T17:55:51.344Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:55:51.388Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-04T17:55:52.010Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:55:52.012Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-04T17:55:52.125Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:55:52.150Z"}
+{"level":"info","message":"[SERVER] GET /src/view//patrocinadores.html","timestamp":"2026-05-04T17:55:56.484Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T17:55:56.484Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-04T18:01:00.172Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:53:26.592Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:53:29.998Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:53:36.268Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T18:53:44.866Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T18:53:44.887Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:53:50.565Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:56:21.024Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:56:26.995Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:57:00.081Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:57:24.901Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:57:37.886Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T18:57:40.468Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T18:57:40.503Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:57:42.721Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:57:46.075Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:57:58.696Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T18:58:01.185Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T18:58:01.231Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:58:03.414Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T18:59:38.838Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T18:59:38.924Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T18:59:39.010Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-04T18:59:39.065Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T18:59:41.830Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T18:59:41.955Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:59:45.252Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:59:51.887Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T18:59:59.341Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T19:00:07.231Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T19:00:11.085Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T19:00:26.159Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T19:00:26.174Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T19:00:27.467Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T19:00:33.435Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T19:00:39.410Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T19:06:49.173Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T19:06:49.263Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T19:48:05.155Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:20:29.125Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:20:32.537Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:20:32.586Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T20:20:39.564Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T20:20:39.636Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T20:20:39.705Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-04T20:20:39.746Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:20:41.077Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:20:41.135Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:20:46.405Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:26:08.083Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:26:08.241Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:26:15.421Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T20:26:24.944Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T20:26:25.127Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T20:26:25.261Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-04T20:26:25.288Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:26:27.620Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:26:30.429Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:26:31.915Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:26:31.973Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:26:43.017Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:26:49.419Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:30:28.435Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:30:28.755Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:30:33.281Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T20:30:43.464Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T20:30:43.554Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T20:30:43.724Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-04T20:30:43.751Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:30:44.993Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:30:45.125Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:30:50.859Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-04T20:30:50.927Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:30:51.027Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:30:51.057Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-04T20:30:51.198Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:30:51.199Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-04T20:31:11.299Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-04T20:31:11.429Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-04T20:31:11.551Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-04T20:31:11.582Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-04T20:31:11.666Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:11.765Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:11.766Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-04T20:31:11.768Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:11.770Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:13.595Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:13.599Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:13.863Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:13.864Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:14.057Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:14.060Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:15.700Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:15.728Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:16.694Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:16.701Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:16.978Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:16.987Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:31:23.603Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-04T20:31:23.637Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-04T20:31:23.736Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:23.737Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:23.780Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:23.782Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:40.985Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:40.986Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:42.028Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:42.028Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:42.363Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:42.364Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:42.521Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:42.523Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:31:42.664Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:31:42.665Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:31:44.315Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:31:47.057Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:31:49.577Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:31:53.599Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-04T20:32:17.428Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-04T20:32:17.459Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-04T20:32:17.531Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:32:17.572Z"}
+{"level":"info","message":"[SERVER] GET /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-05-04T20:32:17.620Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-04T20:32:17.657Z"}
+{"level":"info","message":"[SERVER] GET /login","timestamp":"2026-05-04T20:33:44.899Z"}
+{"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T20:34:28.494Z"}
+{"level":"info","message":"[SERVER] GET /login","timestamp":"2026-05-04T20:34:30.720Z"}

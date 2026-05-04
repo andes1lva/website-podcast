@@ -1,22 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const { addUser } = require('../config/db'); 
+const { addUser, findUserByEmail} = require('../config/db'); 
 
 // Rota: POST /auth/register
 router.post('/register', async (req, res) => {
     try {
-        // 1. Desestruturando os dados conforme sua nova tabela
-        const { username, cpf, email, password, address } = req.body;
+        // 1. Extraímos os dados. O CPF já fica como null se não vier no body.
+        const { username, email, password, address, cpf = null } = req.body;
 
-        // Validação básica de segurança
-        if (!username || !cpf || !email || !password) {
-            return res.status(400).json({ error: 'Campos obrigatórios ausentes.' });
+        if (!username || !email || !password || !address) {
+            return res.status(400).json({ error: 'Preencha todos os campos obrigatórios.' });
         }
 
-        // 2. Chamada da função com a nova ordem de parâmetros
         const result = await addUser(username, cpf, email, password, address);
 
-        // 3. Resposta de sucesso (O JSON que o client.js espera)
         return res.status(201).json({ 
             success: true, 
             message: 'Usuário registrado com sucesso!',
@@ -24,8 +21,9 @@ router.post('/register', async (req, res) => {
         });
 
     } catch (error) {
-        console.error('[AUTH ERROR]:', error.message);
-        return res.status(500).json({ error: error.message });
+        // Isso vai imprimir o erro real no seu terminal do VS Code/Node
+        console.error('[AUTH ERROR]:', error); 
+        return res.status(500).json({ error: 'Erro interno no servidor.' });
     }
 });
 
@@ -40,7 +38,7 @@ router.post('/login', async (req, res) => {
         // Aqui você chamaria uma função como findUserByEmail no seu db.js
         const user = await findUserByEmail(email);
 
-        if (!user || user.password !== password) { // Lembre-se de usar bcrypt.compare no futuro
+        if (!user || user.password !== password) { 
             return res.status(401).json({ error: 'Credenciais inválidas.' });
         }
 
@@ -55,8 +53,6 @@ router.post('/login', async (req, res) => {
         return res.status(500).json({ error: 'Erro interno no servidor.' });
     }
 });
-
-
 
 
 module.exports = router;
