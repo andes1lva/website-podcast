@@ -1299,3 +1299,513 @@
 {"level":"info","message":"[SERVER] GET /login","timestamp":"2026-05-04T20:33:44.899Z"}
 {"level":"info","message":"[SERVER] POST /auth/register","timestamp":"2026-05-04T20:34:28.494Z"}
 {"level":"info","message":"[SERVER] GET /login","timestamp":"2026-05-04T20:34:30.720Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T12:49:23.243Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T12:49:23.309Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T12:49:23.529Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T12:49:23.682Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T12:49:27.342Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-05T12:51:56.249Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-05T12:52:02.320Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-05T12:52:11.596Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T12:52:11.626Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T12:52:11.671Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:52:11.680Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T12:53:48.936Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-05T12:55:05.022Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T12:55:05.047Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T12:55:05.103Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:55:05.139Z"}
+{"level":"info","message":"[SERVER] GET /podcasts","timestamp":"2026-05-05T12:55:14.092Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:55:14.093Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T12:55:55.115Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/menu.html","timestamp":"2026-05-05T12:56:02.686Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:56:02.686Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/podcasts.html","timestamp":"2026-05-05T12:56:04.972Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:56:04.973Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/menu.html","timestamp":"2026-05-05T12:57:19.096Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:57:19.096Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/menu.html","timestamp":"2026-05-05T12:58:22.760Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:58:22.782Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/menu.html","timestamp":"2026-05-05T12:58:23.126Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:58:23.127Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/menu.html","timestamp":"2026-05-05T12:58:23.252Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:58:23.253Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T12:58:25.286Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/menu.html","timestamp":"2026-05-05T12:58:27.585Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:58:27.586Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/menu.html","timestamp":"2026-05-05T12:59:58.503Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T12:59:58.504Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T13:00:01.265Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:00:04.173Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:04.184Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:00:04.265Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:04.357Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:00:16.290Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:16.293Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:00:16.389Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:16.410Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:00:26.031Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:26.161Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:00:26.186Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:26.289Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:00:27.112Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:27.129Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:00:27.241Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:27.336Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:00:27.380Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:27.421Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:00:27.508Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:27.525Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:00:33.633Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:33.795Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:00:33.953Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:33.955Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T13:00:35.642Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T13:00:57.725Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:57.727Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-05T13:00:57.850Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:00:57.852Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T13:03:43.199Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:03:43.216Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-05T13:03:43.355Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:03:43.388Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T13:03:44.801Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:03:44.805Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-05T13:03:44.959Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:03:44.969Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T13:03:45.794Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:03:45.810Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-05T13:03:45.916Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:03:45.945Z"}
+{"level":"info","message":"[SERVER] GET /public/podcasts.html","timestamp":"2026-05-05T13:03:52.729Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:03:52.730Z"}
+{"level":"info","message":"[SERVER] GET /public/podcasts.html","timestamp":"2026-05-05T13:04:32.179Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:32.180Z"}
+{"level":"info","message":"[SERVER] GET /public/podcasts.html","timestamp":"2026-05-05T13:04:32.521Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:32.522Z"}
+{"level":"info","message":"[SERVER] GET /public/podcasts.html","timestamp":"2026-05-05T13:04:32.657Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:32.658Z"}
+{"level":"info","message":"[SERVER] GET /public/podcasts.html","timestamp":"2026-05-05T13:04:32.761Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:32.761Z"}
+{"level":"info","message":"[SERVER] GET /public/podcasts.html","timestamp":"2026-05-05T13:04:33.858Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:33.858Z"}
+{"level":"info","message":"[SERVER] GET /public/podcasts.html","timestamp":"2026-05-05T13:04:34.258Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:34.258Z"}
+{"level":"info","message":"[SERVER] GET /public/podcasts.html","timestamp":"2026-05-05T13:04:39.934Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:39.936Z"}
+{"level":"info","message":"[SERVER] GET /public/techconferences.html","timestamp":"2026-05-05T13:04:44.158Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:44.160Z"}
+{"level":"info","message":"[SERVER] GET /public/techconferences.html","timestamp":"2026-05-05T13:04:45.721Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:45.722Z"}
+{"level":"info","message":"[SERVER] GET /public/techconferences.html","timestamp":"2026-05-05T13:04:45.919Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:45.920Z"}
+{"level":"info","message":"[SERVER] GET /public/techconferences.html","timestamp":"2026-05-05T13:04:46.084Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:46.085Z"}
+{"level":"info","message":"[SERVER] GET /public/techconferences.html","timestamp":"2026-05-05T13:04:46.211Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:04:46.212Z"}
+{"level":"info","message":"[SERVER] GET /public/techconferences.html","timestamp":"2026-05-05T13:05:26.670Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:05:26.671Z"}
+{"level":"info","message":"[SERVER] GET /public/menu.html","timestamp":"2026-05-05T13:05:30.363Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:05:30.363Z"}
+{"level":"info","message":"[SERVER] GET /public/techconferences.html","timestamp":"2026-05-05T13:05:32.559Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:05:32.560Z"}
+{"level":"info","message":"[SERVER] GET /public/podcasts.html","timestamp":"2026-05-05T13:05:34.749Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:05:34.750Z"}
+{"level":"info","message":"[SERVER] GET /public/dashboard.html","timestamp":"2026-05-05T13:05:38.418Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:05:38.419Z"}
+{"level":"info","message":"[SERVER] GET /public/dashboard.html","timestamp":"2026-05-05T13:06:13.980Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:06:13.982Z"}
+{"level":"info","message":"[SERVER] GET /public/dashboard.html","timestamp":"2026-05-05T13:06:14.194Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:06:14.195Z"}
+{"level":"info","message":"[SERVER] GET /public/dashboard.html","timestamp":"2026-05-05T13:06:15.611Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:06:15.612Z"}
+{"level":"info","message":"[SERVER] GET /public/dashboard.html","timestamp":"2026-05-05T13:06:15.782Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:06:15.783Z"}
+{"level":"info","message":"[SERVER] GET /podcasts","timestamp":"2026-05-05T13:06:20.701Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:06:20.703Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T13:06:35.620Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T13:06:35.730Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T13:06:35.869Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T13:06:35.979Z"}
+{"level":"info","message":"[SERVER] GET /podcasts","timestamp":"2026-05-05T13:06:39.160Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:06:39.161Z"}
+{"level":"info","message":"[SERVER] GET /podcasts","timestamp":"2026-05-05T13:06:40.472Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:06:40.483Z"}
+{"level":"info","message":"[SERVER] GET /podcasts","timestamp":"2026-05-05T13:08:19.230Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:19.231Z"}
+{"level":"info","message":"[SERVER] GET /podcasts","timestamp":"2026-05-05T13:08:34.572Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:34.573Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:08:37.020Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:37.030Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:08:37.111Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:37.158Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:08:41.125Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:41.140Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:08:41.211Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:41.231Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:08:41.707Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:41.796Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:08:41.804Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:41.847Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:08:43.492Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:43.498Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:08:43.574Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:43.609Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:08:44.413Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:44.425Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:08:44.495Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:44.512Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:08:44.879Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:44.890Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:08:44.936Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:44.974Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:08:45.118Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:45.136Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:08:45.185Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:45.199Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:08:50.065Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:50.080Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:08:50.143Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:50.246Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:08:53.313Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:53.318Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:08:53.474Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:53.510Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:08:53.637Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:53.642Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:08:53.750Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:08:53.770Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T13:16:29.753Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:16:29.764Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T13:16:29.887Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T13:16:29.898Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:02:39.631Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:02:39.722Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:02:39.738Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:02:39.738Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:02:40.508Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:02:40.537Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:02:40.620Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:02:40.653Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:02:43.076Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:02:43.078Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:02:43.236Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:02:43.257Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T14:02:47.778Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T14:02:48.537Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T14:03:30.925Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T14:03:30.988Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T14:03:31.089Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T14:03:31.221Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:05:29.840Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:05:29.843Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:05:29.928Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:05:29.958Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:05:31.310Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:05:31.333Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:05:31.434Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:05:31.476Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:05:58.681Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:05:58.792Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:05:58.836Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:05:58.872Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:06:00.335Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:00.355Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:06:00.409Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:00.427Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T14:06:01.257Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:01.273Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-05T14:06:01.382Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:01.412Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:06:15.063Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:15.180Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:06:15.219Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:15.301Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:06:21.941Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:21.953Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:06:22.092Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:22.121Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:06:23.804Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:23.807Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:06:23.880Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:23.891Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:06:24.141Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:24.146Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:06:24.193Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:24.194Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:06:24.303Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:06:24.320Z"}
+{"level":"info","message":"[SERVER] GET /login","timestamp":"2026-05-05T14:07:53.994Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-05T14:08:02.472Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T14:08:02.525Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:14:54.065Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:14:54.072Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:14:54.243Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:14:54.303Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T14:14:57.145Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:14:57.158Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-05T14:14:57.277Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:14:57.296Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:17:14.415Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:17:14.424Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:17:14.691Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:17:14.702Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T14:17:27.083Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:17:27.087Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T14:17:27.169Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:17:27.204Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T14:17:29.345Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:17:29.363Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-05T14:17:29.454Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T14:17:29.473Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:57:26.855Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:03.384Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:03.903Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:04.061Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:04.169Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:04.948Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:08.464Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:10.166Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T16:58:27.373Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T16:58:27.448Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T16:58:27.561Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T16:58:27.703Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:28.455Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:28.470Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:32.430Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:32.432Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:32.960Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:32.963Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:40.120Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:40.142Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:40.799Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:40.800Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:41.723Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:41.724Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:47.495Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:47.496Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:47.664Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:47.664Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:47.805Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:47.807Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:48.709Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:48.711Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:49.197Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:49.198Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:49.365Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:49.366Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T16:58:54.300Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T16:58:54.361Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T16:58:54.408Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T16:58:54.424Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:59.074Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:59.113Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:58:59.589Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:58:59.590Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:59:00.833Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:59:00.836Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:59:01.287Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:59:01.288Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:59:01.442Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:59:01.443Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:59:01.611Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:59:01.613Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T16:59:57.670Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T16:59:57.671Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:41.727Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:41.806Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:42.195Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:42.196Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:42.353Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:42.354Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:42.604Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:42.606Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:42.735Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:42.736Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:44.555Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:44.556Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:45.029Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:45.030Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:45.142Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:45.143Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:45.281Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:45.282Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T17:00:49.321Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T17:00:49.392Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T17:00:49.439Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T17:00:49.456Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:50.347Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:50.364Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:50.916Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:50.917Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:51.072Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:51.073Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:51.793Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:51.794Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:52.154Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:52.154Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:53.013Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:53.014Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:53.253Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:53.254Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:53.405Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:53.406Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:00:57.248Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:00:57.249Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:01.671Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:01.718Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:07.564Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:07.565Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:09.919Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:09.919Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:10.068Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:10.069Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T17:01:19.835Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T17:01:19.949Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T17:01:20.165Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T17:01:20.186Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:20.882Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:20.888Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:21.029Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:21.034Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:21.179Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:21.183Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:21.326Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:21.327Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:21.444Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:21.444Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:38.304Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:38.336Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:38.689Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:38.689Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:38.856Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:38.856Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:38.983Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:38.983Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:39.127Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:39.127Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:39.269Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:39.269Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:01:41.703Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:01:41.704Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:02:33.234Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:02:33.238Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:03:01.084Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:03:01.155Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:03:02.589Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:03:02.590Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:03:03.036Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:03:03.037Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:03:03.296Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:03:03.297Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T17:03:13.577Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T17:03:13.703Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:03:13.820Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T17:03:13.834Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T17:03:13.937Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:03:22.947Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T17:03:35.091Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T17:03:35.306Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T17:03:35.367Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T17:03:35.387Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:03:36.416Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:03:36.433Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T17:04:33.913Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T17:04:33.988Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T17:04:34.040Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:04:34.073Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T17:04:34.093Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:04:35.793Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T17:04:57.980Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T17:04:58.062Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T17:04:58.110Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T17:04:58.125Z"}
+{"level":"info","message":"[SERVER] GET /","timestamp":"2026-05-05T17:05:01.391Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/client.js","timestamp":"2026-05-05T17:05:13.999Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:05:14.000Z"}
+{"level":"info","message":"[SERVER] POST /forgot-password","timestamp":"2026-05-05T17:05:17.983Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:05:17.984Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-05T17:05:41.848Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:05:41.909Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:05:45.866Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:05:45.876Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:05:46.040Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:05:46.045Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T17:05:50.125Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:05:50.136Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-05T17:05:50.267Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:05:50.295Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:06:22.827Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:07:09.180Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:07:09.194Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:07:09.283Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:07:09.326Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/podcasts.html","timestamp":"2026-05-05T17:07:16.831Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:07:16.832Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:08:21.798Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:21.981Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:08:22.123Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:22.145Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:08:25.470Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:25.626Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:08:25.691Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:25.790Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:08:29.786Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:29.791Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:08:29.895Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:29.926Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:08:32.110Z"}
+{"level":"info","message":"[SERVER] GET /src/css/style.css","timestamp":"2026-05-05T17:08:34.890Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:34.892Z"}
+{"level":"info","message":"[SERVER] GET /audio/ep2.mp3","timestamp":"2026-05-05T17:08:35.009Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:35.014Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:08:42.816Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:42.943Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:08:42.952Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:43.013Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:08:46.054Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:46.058Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:08:46.143Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:08:46.155Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:10:21.635Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:10:22.752Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:10:23.154Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:10:26.934Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:10:27.126Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:10:39.558Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:10:39.577Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:10:39.689Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:10:39.740Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-05T17:10:56.318Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-05T17:10:56.404Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-05T17:10:56.452Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-05T17:10:56.465Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:10:58.769Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:10:59.518Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:10:59.879Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:11:10.584Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:11:10.591Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:11:10.660Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:11:10.723Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:14:08.150Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:14:08.161Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:14:08.379Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:14:08.394Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:14:08.438Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:14:08.455Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:14:08.586Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:14:08.594Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:14:08.695Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:14:08.717Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:14:14.525Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:14:14.703Z"}
+{"level":"info","message":"[SERVER] GET /website-podcast/src/public/js/menu.js","timestamp":"2026-05-05T17:14:26.561Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:14:26.563Z"}
+{"level":"info","message":"[SERVER] GET /images/tech_image.jpg","timestamp":"2026-05-05T17:14:26.696Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-05T17:14:26.709Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:15:15.452Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:15:16.548Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:15:16.758Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:15:16.897Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T17:15:17.038Z"}
+{"level":"info","message":"[SERVER] GET /dashboard","timestamp":"2026-05-05T18:22:13.600Z"}

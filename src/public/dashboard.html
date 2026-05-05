@@ -3,175 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Página inicial do Web Podcast Tech - Explore tecnologia, IA e mais"
-  />
-  <meta
-    name="keywords"
-    content="podcast, tecnologia, IA, cibersegurança, Web Podcast Tech"
-  />
-  <meta
-    name="google-signin-client_id"
-    content="410645476258-0pnvj3ae40her7a410tuonsqc1613cb3.apps.googleusercontent.com"
-  />
+  <meta name="description" content="Página inicial do Web Podcast Tech - Explore tecnologia, IA e mais" />
+  <meta name="keywords" content="podcast, tecnologia, IA, cibersegurança, Web Podcast Tech" />
+  <meta name="google-signin-client_id" content="410645476258-0pnvj3ae40her7a410tuonsqc1613cb3.apps.googleusercontent.com" />
 
   <title>Dashboard - Web Podcast Tech</title>
-  <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <link rel="stylesheet" href="/src/css/style.css" />
+  
+  <!-- Estilos Externos -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  
+  <!-- Scripts de Terceiros -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
-  <!-- Navbar (apenas ícones sociais e busca) -->
+
+  <!-- 1. Navbar Superior -->
   <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-socialmedia">
-      <div class="social-icons">
-        <a class="social-link" href="https://web.whatsapp.com/" target="_blank">
-          <i class="fab fa-whatsapp icon"></i>
-        </a>
-        <a class="social-link" href="https://www.instagram.com" target="_blank">
-          <i class="fab fa-instagram icon"></i>
-        </a>
-      </div>
-      <div class="search-container">
-        <div class="search-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
+    <div class="container-fluid d-flex justify-content-between">
+      <div class="container-socialmedia d-flex align-items-center">
+        <div class="social-icons mr-3">
+          <a class="social-link text-white mr-2" href="https://web.whatsapp.com/" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a class="social-link text-white" href="https://www.instagram.com" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
-        <input type="text" class="search-input" placeholder="Pesquisar..." />
+        <div class="search-container position-relative">
+          <input type="text" class="search-input form-control-sm" placeholder="Pesquisar..." />
+          <i class="fas fa-search position-absolute" style="right: 10px; top: 8px; color: #ccc;"></i>
+        </div>
       </div>
     </div>
   </nav>
 
- <nav class="sidebar-left">
+  <!-- 2. Sidebar Left (Ícones) -->
+<nav class="sidebar-left">
     <button class="sidebar-toggler" id="sidebarToggle">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-nav">
-      <a class="nav-link active" href="/website-podcast/src/public/menu.html" data-tooltip="Home"><i class="fas fa-home"></i></a>
-      <a class="nav-link" href="/website-podcast/src/public/podcasts.html" data-tooltip="Podcasts"><i class="fas fa-podcast"></i></a>
-      <a class="nav-link" href="/website-podcast/src/public/techconferences.html" data-tooltip="Tech Conferences"><i class="fas fa-calendar-alt"></i></a>
-      <a class="nav-link" href="/website-podcast/src/public/blog.html" data-tooltip="Blog"><i class="fas fa-newspaper"></i></a>
-      <a class="nav-link" href="/website-podcast/src/public/comunidade.html" data-tooltip="Comunidade"><i class="fas fa-users"></i></a>
-      <a class="nav-link" href="/website-podcast/src/public/patrocinadores.html" data-tooltip="Patrocinadores"><i class="fas fa-star"></i></a>
-      <a class="nav-link" href="/website-podcast/src/public/engajamento.html" data-tooltip="Engajamento"><i class="fas fa-bell"></i></a>
+      <a class="nav-link active" href="/menu.html" data-tooltip="Home"><i class="fas fa-home"></i></a>
+      <a class="nav-link" href="/podcasts.html" data-tooltip="Podcasts"><i class="fas fa-podcast"></i></a>
+      <a class="nav-link" href="/techconferences.html" data-tooltip="Tech Conferences"><i class="fas fa-calendar-alt"></i></a>
+      <a class="nav-link" href="/blog.html" data-tooltip="Blog"><i class="fas fa-newspaper"></i></a>
+      <a class="nav-link" href="/comunidade.html" data-tooltip="Comunidade"><i class="fas fa-users"></i></a>
+      <a class="nav-link" href="/patrocinadores.html" data-tooltip="Patrocinadores"><i class="fas fa-star"></i></a>
+      <a class="nav-link" href="/engajamento.html" data-tooltip="Engajamento"><i class="fas fa-bell"></i></a>
     </div>
   </nav>
 
-  <!-- Painel lateral com todas as páginas -->
-  <div class="sidebar-panel" id="sidebarPanel">
-    <div class="sidebar-menu">
-      <h3>Navegação</h3>
-      <ul class="navbar-nav">
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  </nav>
+
+  <!-- 3. Sidebar Panel (Menu de Navegação Detalhado) -->
+  <aside class="sidebar-panel" id="sidebarPanel">
+    <div class="sidebar-menu p-3">
+      <h3 class="h5">Navegação</h3>
+      <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="/website-podcast/src/public/menu.html">Home</a>
-          <p class="nav-description">Página inicial do Web Podcast Tech</p>
+          <a class="nav-link active p-0" href="/dashboard.html">Home</a>
+          <p class="small text-muted mb-2">Página inicial do Web Podcast Tech</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/website-podcast/src/public/podcasts.html">Podcasts</a>
-          <p class="nav-description">Episódios sobre IA, cibersegurança e mais</p>
+          <a class="nav-link p-0" href="/podcasts.html">Podcasts</a>
+          <p class="small text-muted mb-2">Episódios sobre IA, cibersegurança e mais</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/website-podcast/src/public/techconferences.html">Tech Conferences</a>
-          <p class="nav-description">Cobertura de eventos como CES 2025</p>
+          <a class="nav-link p-0" href="/techconferences.html">Tech Conferences</a>
+          <p class="small text-muted mb-2">Cobertura de eventos como CES 2025</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/website-podcast/src/public/blog.html">Blog</a>
-          <p class="nav-description">Artigos e notícias sobre tecnologia</p>
+          <a class="nav-link p-0" href="/blog.html">Blog</a>
+          <p class="small text-muted mb-2">Artigos e notícias sobre tecnologia</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/website-podcast/src/public/comunidade.html">Comunidade</a>
-          <p class="nav-description">Conecte-se com outros entusiastas</p>
+          <a class="nav-link p-0" href="/comunidade.html">Comunidade</a>
+          <p class="small text-muted mb-2">Conecte-se com outros entusiastas</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/website-podcast/src/public/patrocinadores.html">Patrocinadores</a>
-          <p class="nav-description">Conheça nossos apoiadores</p>
+          <a class="nav-link p-0" href="/patrocinadores.html">Patrocinadores</a>
+          <p class="small text-muted mb-2">Conheça nossos apoiadores</p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/website-podcast/src/public/engajamento.html">Engajamento</a>
-          <p class="nav-description">Participe de enquetes e eventos</p>
+          <a class="nav-link p-0" href="/engajamento.html">Engajamento</a>
+          <p class="small text-muted mb-2">Participe de enquetes e eventos</p>
         </li>
       </ul>
     </div>
-    <div class="sidebar-info">
-      <h3>Publicidade</h3>
-      <div class="adsense-sidebar">
+
+    <div class="sidebar-info p-3 border-top">
+      <h3 class="h5">Publicidade</h3>
+      <div class="adsense-sidebar shadow-sm p-2 bg-light text-center">
+        <!-- Google AdSense -->
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins
-          class="adsbygoogle"
-          style="display:block"
-          data-ad-client="SEU_CLIENT_ID"
-          data-ad-slot="SEU_SLOT_ID"
-          data-ad-format="auto"
-        ></ins>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="SEU_CLIENT_ID"
+             data-ad-slot="SEU_SLOT_ID"
+             data-ad-format="auto"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
     </div>
-  </div>
+  </aside>
 
-  <!-- Conteúdo principal -->
-  <main class="container mt-5">
-    <h1>Bem-vindo ao Dashboard</h1>
-    <p class="lead">Explore o mundo da tecnologia com Web Podcast Tech.</p>
+  <!-- 4. Conteúdo Principal -->
+  <main class="main-content container mt-5 pt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="display-4">Bem-vindo ao Dashboard</h1>
+        <p class="lead">Explore o mundo da tecnologia com Web Podcast Tech.</p>
+      </div>
+    </div>
+
     <section class="row mt-4">
+      <!-- Card Podcasts -->
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Últimos Podcasts</h5>
-            <p class="card-text">Acesse os episódios mais recentes.</p>
-            <a href="/podcasts" class="btn btn-primary">Ver Podcasts</a>
+            <h5 class="card-title"><i class="fas fa-play-circle mr-2"></i>Últimos Podcasts</h5>
+            <p class="card-text">Acesse os episódios mais recentes sobre o universo tech.</p>
+            <a href="/podcasts" class="btn btn-primary btn-block">Ver Podcasts</a>
           </div>
         </div>
       </div>
+
+      <!-- Card Conferências -->
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Conferências</h5>
-            <p class="card-text">Confira as próximas tech conferences.</p>
-            <a href="/techconferences" class="btn btn-primary">Saiba Mais</a>
+            <h5 class="card-title"><i class="fas fa-calendar-check mr-2"></i>Conferências</h5>
+            <p class="card-text">Confira o cronograma das próximas tech conferences mundiais.</p>
+            <a href="/techconferences" class="btn btn-primary btn-block">Saiba Mais</a>
           </div>
         </div>
       </div>
+
+      <!-- Card Comunidade -->
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Comunidade</h5>
-            <p class="card-text">Participe e conecte-se com outros.</p>
-            <a href="/comunidade" class="btn btn-primary">Junte-se</a>
+            <h5 class="card-title"><i class="fas fa-user-friends mr-2"></i>Comunidade</h5>
+            <p class="card-text">Participe de discussões e conecte-se com outros desenvolvedores.</p>
+            <a href="/comunidade" class="btn btn-primary btn-block">Junte-se</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p>© 2025 Web Podcast Tech. Todos os direitos reservados.</p>
+  <!-- 5. Rodapé -->
+  <footer class="footer bg-dark text-white text-center py-3 mt-auto">
+    <div class="container">
+      <p class="mb-0">© 2025 Web Podcast Tech. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
-  <!-- Script inline para teste básico -->
-  <script>
-    console.log('dashboard.html carregado em', new Date().toLocaleString());
-  </script>
-  <!-- Script externo -->
-  <script defer src="/dashboard.js"></script>
+  <!-- Scripts Finais -->
+  <script defer src="./dashboard.js"></script>
 </body>
 </html>
