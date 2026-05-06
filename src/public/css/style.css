@@ -1,729 +1,118 @@
-/* Remova a borda vermelha em produção */
-body {
-    border: 2px solid red; /* Debug: Remova antes de publicar */
-}
-
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Definir altura total */
+/* --- RESET E FUNDO ESCURO OBRIGATÓRIO --- */
 html, body {
     height: 100%;
     margin: 0;
-    padding: 0;
+    background-color: #0a0a0a !important; /* Fundo sempre escuro */
 }
 
-/* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    min-height: 100vh;
-    background-image: url("/src/images/podcast_technology.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
+    color: white;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* --- CENTRALIZAÇÃO TOTAL --- */
+.auth-page .auth-wrapper {
     display: flex;
-    flex-direction: column;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-/* Conteúdo acima do overlay */
-.navbar, .sidebar-left, .sidebar-panel, .initial-menu-item, .announcement-item, .footer, .podcast-grid, .podcast-card, .filters, .login-container {
-    position: relative;
-    z-index: 2;
-}
-
-/* Navbar */
-.navbar {
-    padding: 8px 15px;
-    background-color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-/* Sidebar Esquerda */
-.sidebar-left {
-    position: fixed;
-    top: 40px;
-    left: 0;
-    width: 60px;
-    height: calc(100vh - 40px);
-    background-color: #444;
-    padding: 20px 10px;
-    z-index: 950;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.sidebar-left .navbar-nav {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
     width: 100%;
+    min-height: 100vh;
+    background-color: #0a0a0a;
 }
 
-.sidebar-left .nav-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.sidebar-left .nav-link:hover,
-.sidebar-left .nav-link:focus {
-    color: #ddd;
-    transform: scale(1.2);
-}
-
-.sidebar-left .sidebar-toggler {
-    background: none;
-    border: none;
-    padding: 0;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.sidebar-left .sidebar-toggler:hover,
-.sidebar-left .sidebar-toggler:focus {
-    color: #ddd;
-    transform: scale(1.2);
-}
-
-.sidebar-left .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Painel Lateral */
-.sidebar-panel {
-    position: fixed;
-    top: 40px;
-    left: -400px;
-    width: 400px;
-    height: calc(100vh - 40px);
-    background-color: #555;
-    z-index: 960;
-    transition: left 0.3s ease;
-}
-
-.sidebar-panel.active {
-    left: 60px;
-}
-
-.sidebar-menu {
-    width: 200px;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.sidebar-menu .navbar-nav {
-    flex-direction: column;
-    gap: 10px;
-}
-
-.sidebar-menu .nav-link {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.sidebar-menu .nav-link:hover,
-.sidebar-menu .nav-link:focus {
-    color: #ddd;
-}
-
-.sidebar-menu .nav-description {
-    color: #ccc;
-    font-size: 0.8rem;
-    margin: 5px 0 10px;
-}
-
-.sidebar-info {
-    width: 200px;
-    padding: 20px;
-    background-color: #666;
-    color: #fff;
-}
-
-.sidebar-info h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-
-/* Ícones sociais e busca */
-.container-socialmedia {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 12px;
-}
-
-.social-icons .icon {
-    width: 24px;
-    height: 24px;
-    fill: #fff;
-    transition: fill 0.3s, transform 0.3s;
-}
-
-
-.social-link:hover .icon {
-    fill: #ddd;
-    transform: scale(1.1);
-}
-
-.search-container {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-}
-
-.search-container .search-icon {
-    cursor: pointer;
-}
-
-.search-container .search-icon svg {
-    width: 18px;
-    height: 18px;
-    stroke: #fff;
-}
-
-.search-input {
-    width: 0;
-    padding: 0;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    color: #333;
-    background-color: #fff;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-
-.search-input.active {
-    width: 200px;
-    padding: 0.1rem 2rem 0.1rem 0.65rem;
-    border: 1px solid #ccc;
-    opacity: 0.9;
-}
-
-.search-input:focus {
-    border-color: #666;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Login Container */
-.login-container {
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #ffffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.auth-page .auth-card {
+    background-color: #161616; /* Card cinza muito escuro */
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 45px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
     text-align: center;
 }
 
-.login-container h1 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 20px;
+/* --- INPUTS BRANCOS (image_ae5b13.png) --- */
+.auth-page .legacy-input {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #ddd !important;
+    height: 50px !important;
+    border-radius: 10px !important;
+    font-size: 1rem;
+    padding-left: 15px;
 }
 
-.login-container .form-control {
-    border-radius: 5px;
-}
-
-.login-container .btn-primary {
+.auth-page .btn-login-main {
     background-color: #007bff;
     border: none;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 10px;
 }
 
-.login-container .btn-primary:hover {
-    background-color: #0056b3;
+/* --- GRID SOCIAL E CORES --- */
+.auth-page .social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
-.login-container .register-link,
-.login-container .forgot-password {
-    display: block;
-    margin: 10px 0;
-    color: #2407df;
-    text-decoration: none;
-}
-
-.login-container .register-link:hover,
-.login-container .forgot-password:hover {
-    color: #888888;
-}
-
-body {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    min-height: 100vh;
+.auth-page .btn-social {
+    background-color: #ffffff; /* Fundo branco para os ícones coloridos brilharem */
+    border: 1px solid #333;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
+    border-radius: 12px;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
-.register-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+.auth-page .btn-social:hover {
+    transform: translateY(-3px);
+    background-color: #f8f9fa;
+}
+
+.auth-page .btn-social img { width: 24px; }
+
+/* Cores específicas para ícones de fonte */
+.auth-page .btn-social-github i { color: #24292e; font-size: 1.5rem; }
+.auth-page .btn-social-linkedin i { color: #0077b5; font-size: 1.5rem; }
+
+/* --- DIVISOR --- */
+.auth-page .divider-text {
+    text-align: center;
+    position: relative;
+    margin: 25px 0;
+}
+.auth-page .divider-text::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
     width: 100%;
-    max-width: 450px;
-    transition: transform 0.3s ease;
+    height: 1px;
+    background: #333;
 }
-
-/* Correção específica para os campos de input */
-.register-card, form#registerForm {
-    position: relative !important;
-    z-index: 999 !important; /* Coloca o formulário na frente de qualquer grid ou sidebar */
-}
-
-input.form-control {
-    pointer-events: auto !important; /* Garante que o mouse consiga interagir */
-    cursor: text !important;         /* Garante que o cursor de texto apareça */
-}
-
-/* Se o formulário estiver centralizado, remova as margens da grid de podcast */
-body.register-page .podcast-grid, 
-body.register-page .filters {
-    margin-left: 0 !important;
-    display: block !important;
-}
-
-.form-control {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    padding: 12px;
-}
-
-.form-control:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #007bff;
-    color: #fff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-}
-
-.form-control::placeholder {
-    color: #ccc;
-}
-
-label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 5px;
-    color: #00d4ff; /* Cor de destaque */
-}
-
-.btn-primary {
-    background: #007bff;
-    border: none;
-    font-weight: bold;
+.auth-page .divider-text span {
+    background: #161616;
+    padding: 0 15px;
+    color: #666;
+    position: relative;
+    z-index: 2;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.btn-primary:hover {
-    background: #0056b3;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-}
-
-.text-muted {
-    color: #aaa !important;
-    text-decoration: none;
-}
-
-.text-muted:hover {
-    color: #fff !important;
-}
-
-.login-container .btn-danger {
-    background-color: #db4437;
-    border: none;
-}
-
-.login-container .btn-danger:hover {
-    background-color: #c1351f;
-}
-
-.login-container .g-signin2 {
-    margin-top: 10px;
-}
-
-
-/* Seção inicial */
-.initial-menu-apr {
-    margin: 60px auto 20px;
-    max-width: 100%;
-}
-
-.initial-menu-item {
-    display: flex;
-    justify-content: space-between;
-    background-color: #ffffffee;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    min-height: 200px;
-}
-
-.image-area {
-    width: 400px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 0.25rem;
-}
-
-.text-content {
-    flex: 1;
-    padding-right: 20px;
-}
-
-.initial-menu-item h2 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.initial-menu-item p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Anúncios */
-.announcement {
-    margin: 20px auto;
-    max-width: 63%;
-}
-
-.announcement-item {
-    background-color: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    text-align: center;
-}
-
-.announcement-item h2 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.announcement-item p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.announcement-btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 0.25rem;
-}
-
-.announcement-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Vídeos */
-.video-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.video-grid iframe {
-    width: 400px;
-    height: 315px;
-}
-
-/* Podcast Grid */
-.podcast-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    margin-left: 60px;
-    min-height: calc(100vh - 200px);
-}
-
-/* Estilo dos cards de podcast */
-.podcast-card {
-    background: #222;
-    border: 2px solid #00ffcc;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.podcast-card:hover {
-    transform: scale(1.05);
-}
-
-.podcast-card iframe {
-    width: 400px;
-    height: 315px;
-}
-
-.podcast-card audio {
-    width: 100%;
-    background: #333;
-}
-
-.podcast-card h3 {
-    color: #fff;
-    padding: 10px;
-    font-size: 1.2rem;
-}
-
-.podcast-card p {
-    color: #ccc;
-    padding: 0 10px 10px;
+.auth-page .auth-link {
+    color: #007bff;
     font-size: 0.9rem;
-}
-
-.podcast-card .tags {
-    padding: 0 10px;
-}
-
-.podcast-card .tags a {
-    color: #00ffcc;
-    text-decoration: none;
-    margin-right: 10px;
-    font-size: 0.8rem;
-}
-
-.podcast-card .tags a:hover {
-    color: #ff00ff;
-}
-
-.podcast-card details {
-    padding: 10px;
-    color: #ccc;
-}
-
-.podcast-card details summary {
-    cursor: pointer;
-    color: #00ffcc;
-}
-
-.podcast-card .btn {
-    display: block;
-    background: #00ffcc;
-    color: #000;
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
+    font-weight: 500;
     text-decoration: none;
 }
 
-.podcast-card .btn:hover {
-    background: #ff00ff;
-}
-
-/* Estilo para transcrição */
-.transcript {
-    max-height: 300px;
-    overflow-y: auto;
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #333;
-    margin: 10px;
-}
-
-.transcript.loading::before {
-    content: 'Carregando transcrição...';
-    color: #00ffcc;
-    font-style: italic;
-}
-
-.transcript::-webkit-scrollbar {
-    width: 8px;
-}
-
-.transcript::-webkit-scrollbar-thumb {
-    background: #00ffcc;
-    border-radius: 4px;
-}
-
-/* Filtros */
-.filters {
-    padding: 10px;
-    margin-left: 60px;
-    text-align: center;
-}
-
-.filters button {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    margin: 5px;
-    border: 1px solid #00ffcc;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.filters button:hover {
-    background: #00ffcc;
-    color: #000;
-}
-
-/* AdSense */
-.adsense-sidebar {
-    margin-top: 20px;
-    text-align: center;
-}
-
-/* Rodapé */
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    margin-top: auto;
-}
-
-/* Tooltips */
-.nav-link[data-tooltip] {
-    position: relative;
-}
-
-.nav-link[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s;
-}
-
-.nav-link[data-tooltip]:hover::after {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .sidebar-left {
-        width: 50px;
-    }
-
-    main {
-        margin-left: 50px;
-        margin-top: 100px;
-    }
-
-    .podcast-grid {
-        margin-left: 50px;
-        padding: 15px;
-        grid-template-columns: 1fr;
-    }
-
-    .podcast-card {
-        max-width: 100%;
-    }
-
-    .podcast-card iframe {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 4/3;
-    }
-
-    .filters {
-        margin-left: 50px;
-    }
-
-    .sidebar-panel {
-        width: 300px;
-        left: -300px;
-    }
-
-    .sidebar-panel.active {
-        left: 50px;
-    }
-
-    .sidebar-menu {
-        width: 150px;
-    }
-
-    .sidebar-info {
-        width: 150px;
-    }
-
-    .initial-menu-apr {
-        margin: 50px auto 15px;
-    }
-
-    .announcement {
-        width: 95%;
-    }
-
-    .video-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .video-grid iframe {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .navbar {
-        flex-wrap: wrap;
-    }
-
-    .container-socialmedia {
-        margin-left: 10px;
-    }
-}
+/* --- BLOQUEIO DASHBOARD --- */
+.app-container .auth-wrapper { display: none !important; }

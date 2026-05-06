@@ -3,31 +3,57 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-signin-client_id" content="410645476258-e647i57asbp21nd5jdtkqd5qg35civ93.apps.googleusercontent.com">
-    <title>Login</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <title>Login - Web Podcast Tech</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm" action="menu.html" method="post">
-            <input type="email" class="form-control mb-3" id="login_email" name="email" placeholder="Email address or username"/>
-            <input type="password" class="form-control mb-3" id="password" name="password" placeholder="Password"/>
-            <button type="submit" id="btLogin" class="btn btn-primary btn-block">Log In</button>
-        </form>
-        <a href="register.html" class="register-link">You still don't have an account? Click here</a>
-        <a href="forgot-password.html" class="forgot-password">Forgot your password?</a>
-        <div class="social-login">
-            <div id="googleSignInButton" class="g-signin2" data-onsuccess="onSignIn"></div>
-            <button type="button" class="btn btn-danger btn-block redirectAccountGoogle" id="redirectAccountGoogle">Continue with Google Account</button>
+<body class="auth-page">
+
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header mb-4">
+                <h1 class="font-weight-bold">Login</h1>
+                <p class="text-muted">Acesse a plataforma Web Podcast Tech</p>
+            </div>
+            
+            <form id="loginForm" action="./dashboard.html" method="post">
+                <div class="form-group">
+                    <input type="email" class="form-control legacy-input" placeholder="E-mail ou usuário" required/>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control legacy-input" placeholder="Senha" required/>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-login-main">Log In</button>
+            </form>
+
+            <div class="auth-footer-links d-flex justify-content-between mt-3 mb-4">
+                <a href="register.html" class="auth-link">Criar conta</a>
+                <a href="forgot-password.html" class="auth-link">Esqueceu a senha?</a>
+            </div>
+
+            <div class="divider-text mb-4">
+                <span>ou entrar com</span>
+            </div>
+
+            <!-- Grid Social com Ícones Coloridos -->
+            <div class="social-grid">
+                <button type="button" class="btn btn-social btn-google" title="Google">
+                    <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google">
+                </button>
+                <button type="button" class="btn btn-social btn-github" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </button>
+                <button type="button" class="btn btn-social btn-microsoft" title="Microsoft">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+                </button>
+                <button type="button" class="btn btn-social btn-linkedin" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </button>
+            </div>
         </div>
     </div>
-    <script src="/js/client.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>

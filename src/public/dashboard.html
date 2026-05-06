@@ -1,180 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Página inicial do Web Podcast Tech - Explore tecnologia, IA e mais" />
-  <meta name="keywords" content="podcast, tecnologia, IA, cibersegurança, Web Podcast Tech" />
-  <meta name="google-signin-client_id" content="410645476258-0pnvj3ae40her7a410tuonsqc1613cb3.apps.googleusercontent.com" />
-
-  <title>Dashboard - Web Podcast Tech</title>
-  
-  <!-- Estilos Externos -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="/css/style.css" />
-  
-  <!-- Scripts de Terceiros -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Web Podcast Tech</title>
+    
+    <!-- Bibliotecas Externas -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- 1. Navbar Superior -->
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid d-flex justify-content-between">
-      <div class="container-socialmedia d-flex align-items-center">
-        <div class="social-icons mr-3">
-          <a class="social-link text-white mr-2" href="https://web.whatsapp.com/" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-          <a class="social-link text-white" href="https://www.instagram.com" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
+    <!-- Navbar Superior -->
+    <nav class="navbar navbar-dark navbar-top fixed-top">
+        <div class="container-fluid">
+            <div class="social-icons">
+                <a class="text-white mr-3" href="#"><i class="fab fa-whatsapp"></i></a>
+                <a class="text-white" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="ml-auto">
+                <button class="btn btn-sm btn-outline-danger" id="btnLogout" style="display:none;">Sair</button>
+            </div>
         </div>
-        <div class="search-container position-relative">
-          <input type="text" class="search-input form-control-sm" placeholder="Pesquisar..." />
-          <i class="fas fa-search position-absolute" style="right: 10px; top: 8px; color: #ccc;"></i>
+    </nav>
+
+    <div class="app-container">
+        <!-- Sidebar Apple Style -->
+        <aside class="sidebar-apple">
+            <div class="sidebar-scroll-content">
+                <div class="sidebar-header mb-4 px-2">
+                    <h5><i class="fas fa-podcast mr-2 text-primary"></i>Web Podcast</h5>
+                </div>
+
+                <div class="search-box-apple mb-4">
+                    <i class="fas fa-search text-muted"></i>
+                    <input type="text" placeholder="Buscar">
+                </div>
+
+                <nav class="nav flex-column" id="mainNavigation">
+                    <a href="dashboard.html" class="nav-item-apple active">
+                        <i class="fas fa-home"></i> <span>Início</span>
+                    </a>
+                    <button type="button" class="nav-item-apple btn-link border-0 text-left bg-transparent btn-protected" data-url="podcasts.html">
+                        <i class="fas fa-play-circle"></i> <span>Novidades</span>
+                    </button>
+                    <button type="button" class="nav-item-apple btn-link border-0 text-left bg-transparent btn-protected" data-url="top-charts.html">
+                        <i class="fas fa-chart-line"></i> <span>Top Charts</span>
+                    </button>
+                    <hr class="border-dark w-100">
+                    <a href="blog.html" class="nav-item-apple">
+                        <i class="fas fa-newspaper"></i> <span>Blog</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="radiocast-container">
+                <div class="player-card">
+                    <div class="visor-led" id="radioVisor">
+                        <span class="freq">88.1 MHz</span>
+                        <span class="status">READY</span>
+                    </div>
+                    <div class="player-controls">
+                        <button class="ctrl-btn" id="prevFreq"><i class="fas fa-backward"></i></button>
+                        <button class="ctrl-btn play-btn" id="playBtn"><i class="fas fa-play"></i></button>
+                        <button class="ctrl-btn" id="nextFreq"><i class="fas fa-forward"></i></button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <div class="container-fluid">
+                <header class="mb-5">
+                    <h1 class="display-4 font-weight-bold">Dashboard</h1>
+                    <p class="lead text-muted">Gestão HEXTEC ativa.</p>
+                </header>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark border-secondary h-100 shadow-lg">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-primary font-weight-bold">Podcasts Exclusivos</h5>
+                                <p class="card-text text-muted small">Acesso restrito para assinantes.</p>
+                                <button class="btn btn-outline-primary btn-block mt-auto btn-protected" data-url="podcasts.html">Abrir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL GATEKEEPER COMPLETO (ESTILO LOGIN.HTML) -->
+    <div class="modal fade" id="loginInterceptorModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content auth-card-modal">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body px-5 pb-5">
+                    <div class="auth-header text-center mb-4">
+                        <h1>Entrar</h1>
+                        <p>Escolha sua forma de acesso</p>
+                    </div>
+
+                    <!-- Botões Sociais -->
+                    <div class="social-login-grid mb-4">
+                        <button class="btn btn-social btn-google">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                            Google
+                        </button>
+                        <button class="btn btn-social btn-github">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </button>
+                    </div>
+
+                    <div class="divider-text mb-4">
+                        <span>ou com e-mail</span>
+                    </div>
+                    
+                    <form id="modalLoginForm">
+                        <div class="form-group mb-3">
+                            <label class="text-light small mb-2">E-mail</label>
+                            <input type="email" class="form-control auth-input" placeholder="nome@exemplo.com" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="text-light small mb-2">Senha</label>
+                            <input type="password" class="form-control auth-input" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg shadow-sm">Entrar</button>
+                    </form>
+
+                    <div class="auth-footer-links mt-4 pt-3 border-top border-dark text-center">
+                        <a href="#" class="small text-primary mx-2">Esqueci a senha</a>
+                        <span class="text-muted small">|</span>
+                        <a href="#" class="small text-primary mx-2">Criar conta</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- 2. Sidebar Left (Ícones) -->
-<nav class="sidebar-left">
-    <button class="sidebar-toggler" id="sidebarToggle">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-nav">
-      <a class="nav-link active" href="/menu.html" data-tooltip="Home"><i class="fas fa-home"></i></a>
-      <a class="nav-link" href="/podcasts.html" data-tooltip="Podcasts"><i class="fas fa-podcast"></i></a>
-      <a class="nav-link" href="/techconferences.html" data-tooltip="Tech Conferences"><i class="fas fa-calendar-alt"></i></a>
-      <a class="nav-link" href="/blog.html" data-tooltip="Blog"><i class="fas fa-newspaper"></i></a>
-      <a class="nav-link" href="/comunidade.html" data-tooltip="Comunidade"><i class="fas fa-users"></i></a>
-      <a class="nav-link" href="/patrocinadores.html" data-tooltip="Patrocinadores"><i class="fas fa-star"></i></a>
-      <a class="nav-link" href="/engajamento.html" data-tooltip="Engajamento"><i class="fas fa-bell"></i></a>
-    </div>
-  </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  </nav>
-
-  <!-- 3. Sidebar Panel (Menu de Navegação Detalhado) -->
-  <aside class="sidebar-panel" id="sidebarPanel">
-    <div class="sidebar-menu p-3">
-      <h3 class="h5">Navegação</h3>
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active p-0" href="/dashboard.html">Home</a>
-          <p class="small text-muted mb-2">Página inicial do Web Podcast Tech</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link p-0" href="/podcasts.html">Podcasts</a>
-          <p class="small text-muted mb-2">Episódios sobre IA, cibersegurança e mais</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link p-0" href="/techconferences.html">Tech Conferences</a>
-          <p class="small text-muted mb-2">Cobertura de eventos como CES 2025</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link p-0" href="/blog.html">Blog</a>
-          <p class="small text-muted mb-2">Artigos e notícias sobre tecnologia</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link p-0" href="/comunidade.html">Comunidade</a>
-          <p class="small text-muted mb-2">Conecte-se com outros entusiastas</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link p-0" href="/patrocinadores.html">Patrocinadores</a>
-          <p class="small text-muted mb-2">Conheça nossos apoiadores</p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link p-0" href="/engajamento.html">Engajamento</a>
-          <p class="small text-muted mb-2">Participe de enquetes e eventos</p>
-        </li>
-      </ul>
     </div>
 
-    <div class="sidebar-info p-3 border-top">
-      <h3 class="h5">Publicidade</h3>
-      <div class="adsense-sidebar shadow-sm p-2 bg-light text-center">
-        <!-- Google AdSense -->
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="SEU_CLIENT_ID"
-             data-ad-slot="SEU_SLOT_ID"
-             data-ad-format="auto"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    </div>
-  </aside>
-
-  <!-- 4. Conteúdo Principal -->
-  <main class="main-content container mt-5 pt-4">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="display-4">Bem-vindo ao Dashboard</h1>
-        <p class="lead">Explore o mundo da tecnologia com Web Podcast Tech.</p>
-      </div>
-    </div>
-
-    <section class="row mt-4">
-      <!-- Card Podcasts -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-play-circle mr-2"></i>Últimos Podcasts</h5>
-            <p class="card-text">Acesse os episódios mais recentes sobre o universo tech.</p>
-            <a href="/podcasts" class="btn btn-primary btn-block">Ver Podcasts</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card Conferências -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-calendar-check mr-2"></i>Conferências</h5>
-            <p class="card-text">Confira o cronograma das próximas tech conferences mundiais.</p>
-            <a href="/techconferences" class="btn btn-primary btn-block">Saiba Mais</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card Comunidade -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-user-friends mr-2"></i>Comunidade</h5>
-            <p class="card-text">Participe de discussões e conecte-se com outros desenvolvedores.</p>
-            <a href="/comunidade" class="btn btn-primary btn-block">Junte-se</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- 5. Rodapé -->
-  <footer class="footer bg-dark text-white text-center py-3 mt-auto">
-    <div class="container">
-      <p class="mb-0">© 2025 Web Podcast Tech. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- Scripts Finais -->
-  <script defer src="./dashboard.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
