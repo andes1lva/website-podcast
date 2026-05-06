@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Web Podcast Tech</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="auth-page">
@@ -17,14 +17,14 @@
                 <p class="text-muted">Acesse a plataforma Web Podcast Tech</p>
             </div>
             
-            <form id="loginForm" action="./dashboard.html" method="post">
+            <form id="loginForm">
                 <div class="form-group">
-                    <input type="email" class="form-control legacy-input" placeholder="E-mail ou usuário" required/>
+                    <input type="email" class="form-control legacy-input" placeholder="E-mail ou usuário" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control legacy-input" placeholder="Senha" required/>
+                    <input type="password" class="form-control legacy-input" placeholder="Senha" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block btn-login-main">Log In</button>
+                <button type="submit" class="btn btn-primary btn-block btn-login-main">Entrar</button>
             </form>
 
             <div class="auth-footer-links d-flex justify-content-between mt-3 mb-4">
@@ -32,28 +32,25 @@
                 <a href="forgot-password.html" class="auth-link">Esqueceu a senha?</a>
             </div>
 
-            <div class="divider-text mb-4">
-                <span>ou entrar com</span>
-            </div>
+            <div class="divider-text mb-4"><span>ou entrar com</span></div>
 
-            <!-- Grid Social com Ícones Coloridos -->
             <div class="social-grid">
-                <button type="button" class="btn btn-social btn-google" title="Google">
+                <button type="button" class="btn-social" title="Google">
                     <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google">
                 </button>
-                <button type="button" class="btn btn-social btn-github" title="GitHub">
+                <button type="button" class="btn-social" title="GitHub">
                     <i class="fab fa-github"></i>
                 </button>
-                <button type="button" class="btn btn-social btn-microsoft" title="Microsoft">
+                <button type="button" class="btn-social" title="Microsoft">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
                 </button>
-                <button type="button" class="btn btn-social btn-linkedin" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
+                <button type="button" class="btn-social" title="LinkedIn">
+                    <i class="fab fa-linkedin-in text-primary"></i>
                 </button>
             </div>
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>

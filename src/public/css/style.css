@@ -1,118 +1,86 @@
-/* --- RESET E FUNDO ESCURO OBRIGATÓRIO --- */
-html, body {
-    height: 100%;
-    margin: 0;
-    background-color: #0a0a0a !important; /* Fundo sempre escuro */
+/* RESET E CORES GLOBAIS */
+html, body { height: 100%; margin: 0; background-color: #0a0a0a !important; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+/* --- AJUSTE NAS WRAPPERS --- */
+.auth-page .auth-wrapper, 
+.auth-page .auth-wrapper-register { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    width: 100%; /* Use 100% da largura disponível */
+    padding: 20px; 
+    animation: slideIn 0.6s ease-out; 
 }
 
-body {
-    color: white;
-    font-family: 'Inter', -apple-system, sans-serif;
+/* Garante que o card de registro siga o padrão do card de login */
+.auth-page .auth-card { 
+    background-color: #161616; 
+    border: 1px solid #2a2a2a; 
+    border-radius: 20px; 
+    padding: 40px; 
+    width: 100%; 
+    max-width: 400px; 
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6); 
 }
 
-/* --- CENTRALIZAÇÃO TOTAL --- */
-.auth-page .auth-wrapper {
+
+/* --- SEÇÃO AUTH (LOGIN) --- */
+.auth-page .auth-wrapper { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; animation: slideIn 0.6s ease-out; }
+.auth-page .auth-card { background-color: #161616; border: 1px solid #2a2a2a; border-radius: 20px; padding: 40px; width: 100%; max-width: 400px; box-shadow: 0 25px 50px rgba(0,0,0,0.6); }
+.auth-page .legacy-input { background-color: #ffffff !important; color: #000 !important; border-radius: 8px !important; margin-bottom: 15px; height: 48px !important; border: 1px solid #ddd !important; }
+.auth-page .btn-login-main { background-color: #007bff; border: none; height: 48px; font-weight: 700; border-radius: 8px; transition: 0.3s; }
+.auth-page .btn-login-main:hover { background-color: #0056b3; transform: translateY(-2px); }
+.auth-page .divider-text { text-align: center; position: relative; margin: 25px 0; border-bottom: 1px solid #333; line-height: 0.1em; }
+.auth-page .divider-text span { background: #161616; padding: 0 10px; color: #666; font-size: 0.8rem; text-transform: uppercase; }
+
+/* FIX LOGOS SOCIAIS */
+.auth-page .social-grid { display: flex; justify-content: center; gap: 12px; }
+.auth-page .btn-social { background: #fff !important; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 0; border: 1px solid #ddd; transition: 0.2s; cursor: pointer; }
+.auth-page .btn-social:hover { transform: scale(1.1); box-shadow: 0 5px 15px rgba(255,255,255,0.1); }
+.auth-page .btn-social img { width: 22px !important; height: 22px !important; object-fit: contain; pointer-events: none; }
+.auth-page .btn-social i { font-size: 22px; color: #333; pointer-events: none; }
+
+/* --- SEÇÃO DASHBOARD --- */
+.dashboard-page .app-container { display: flex; min-height: 100vh; transition: opacity 0.5s ease; }
+.dashboard-page .sidebar-apple { width: 280px; background-color: #111; border-right: 1px solid #222; height: 100vh; position: fixed; padding: 30px 20px; display: flex; flex-direction: column; z-index: 100; }
+.dashboard-page .main-content { flex: 1; margin-left: 280px; padding: 50px; animation: fadeIn 0.8s ease; }
+.dashboard-page .nav-item-apple { display: flex; align-items: center; padding: 12px 15px; color: #888; text-decoration: none; border-radius: 10px; margin-bottom: 8px; transition: 0.3s; }
+.dashboard-page .nav-item-apple:hover, .dashboard-page .nav-item-apple.active { background-color: #1a1a1a; color: #007bff; text-decoration: none; }
+.dashboard-page .card-podcast { background-color: #161616; border: 1px solid #222; border-radius: 15px; padding: 25px; transition: 0.3s; }
+.dashboard-page .card-podcast:hover { border-color: #007bff; }
+.dashboard-page .visor-led { background: #000; padding: 15px; border-radius: 10px; text-align: center; border: 1px solid #333; }
+.dashboard-page .visor-led .freq { font-family: monospace; color: #00ff41; font-size: 1.1rem; display: block; }
+
+/* --- NOVA MELHORIA: SESSÃO ATIVA (LED VERDE) --- */
+.dashboard-page .session-status {
+    font-size: 0.65rem;
+    color: #00ff41; /* Verde HEXTEC */
+    font-family: monospace;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #0a0a0a;
-}
-
-.auth-page .auth-card {
-    background-color: #161616; /* Card cinza muito escuro */
-    border: 1px solid #2a2a2a;
-    border-radius: 20px;
-    padding: 45px;
-    width: 100%;
-    max-width: 420px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-    text-align: center;
-}
-
-/* --- INPUTS BRANCOS (image_ae5b13.png) --- */
-.auth-page .legacy-input {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border: 1px solid #ddd !important;
-    height: 50px !important;
-    border-radius: 10px !important;
-    font-size: 1rem;
-    padding-left: 15px;
-}
-
-.auth-page .btn-login-main {
-    background-color: #007bff;
-    border: none;
-    height: 50px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-top: 10px;
 }
 
-/* --- GRID SOCIAL E CORES --- */
-.auth-page .social-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+.dashboard-page .session-status::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #00ff41;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 8px #00ff41;
+    animation: hextec-pulse 2s infinite ease-in-out;
 }
 
-.auth-page .btn-social {
-    background-color: #ffffff; /* Fundo branco para os ícones coloridos brilharem */
-    border: 1px solid #333;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    transition: transform 0.2s, background-color 0.2s;
-}
+/* ANIMAÇÕES */
+@keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-.auth-page .btn-social:hover {
-    transform: translateY(-3px);
-    background-color: #f8f9fa;
+/* Animação do Led Pulsante */
+@keyframes hextec-pulse {
+    0% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px #00ff41; }
+    50% { opacity: 0.3; transform: scale(1.1); box-shadow: 0 0 15px #00ff41; }
+    100% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px #00ff41; }
 }
-
-.auth-page .btn-social img { width: 24px; }
-
-/* Cores específicas para ícones de fonte */
-.auth-page .btn-social-github i { color: #24292e; font-size: 1.5rem; }
-.auth-page .btn-social-linkedin i { color: #0077b5; font-size: 1.5rem; }
-
-/* --- DIVISOR --- */
-.auth-page .divider-text {
-    text-align: center;
-    position: relative;
-    margin: 25px 0;
-}
-.auth-page .divider-text::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: #333;
-}
-.auth-page .divider-text span {
-    background: #161616;
-    padding: 0 15px;
-    color: #666;
-    position: relative;
-    z-index: 2;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.auth-page .auth-link {
-    color: #007bff;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-}
-
-/* --- BLOQUEIO DASHBOARD --- */
-.app-container .auth-wrapper { display: none !important; }

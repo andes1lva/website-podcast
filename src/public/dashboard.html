@@ -4,148 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Web Podcast Tech</title>
-    
-    <!-- Bibliotecas Externas -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="dashboard-page">
 
-    <!-- Navbar Superior -->
-    <nav class="navbar navbar-dark navbar-top fixed-top">
-        <div class="container-fluid">
-            <div class="social-icons">
-                <a class="text-white mr-3" href="#"><i class="fab fa-whatsapp"></i></a>
-                <a class="text-white" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="ml-auto">
-                <button class="btn btn-sm btn-outline-danger" id="btnLogout" style="display:none;">Sair</button>
-            </div>
-        </div>
-    </nav>
-
-    <div class="app-container">
-        <!-- Sidebar Apple Style -->
+    <div class="app-container" id="mainContainer">
         <aside class="sidebar-apple">
-            <div class="sidebar-scroll-content">
-                <div class="sidebar-header mb-4 px-2">
-                    <h5><i class="fas fa-podcast mr-2 text-primary"></i>Web Podcast</h5>
-                </div>
-
-                <div class="search-box-apple mb-4">
-                    <i class="fas fa-search text-muted"></i>
-                    <input type="text" placeholder="Buscar">
-                </div>
-
-                <nav class="nav flex-column" id="mainNavigation">
-                    <a href="dashboard.html" class="nav-item-apple active">
-                        <i class="fas fa-home"></i> <span>Início</span>
-                    </a>
-                    <button type="button" class="nav-item-apple btn-link border-0 text-left bg-transparent btn-protected" data-url="podcasts.html">
-                        <i class="fas fa-play-circle"></i> <span>Novidades</span>
-                    </button>
-                    <button type="button" class="nav-item-apple btn-link border-0 text-left bg-transparent btn-protected" data-url="top-charts.html">
-                        <i class="fas fa-chart-line"></i> <span>Top Charts</span>
-                    </button>
-                    <hr class="border-dark w-100">
-                    <a href="blog.html" class="nav-item-apple">
-                        <i class="fas fa-newspaper"></i> <span>Blog</span>
-                    </a>
-                </nav>
+            <div class="sidebar-header mb-5">
+                <h4 class="font-weight-bold"><i class="fas fa-podcast text-primary"></i> HEXTEC Podcast</h4>
+                <!-- Indicador de Sessão HEXTEC -->
+                <div class="session-status mt-2">Sessão Ativa</div>
             </div>
+            
+            <nav class="nav flex-column">
+                <a href="#" class="nav-item-apple active"><i class="fas fa-home mr-3"></i> Início</a>
+                <a href="#" class="nav-item-apple"><i class="fas fa-bolt mr-3"></i> Novidades</a>
+                <a href="#" class="nav-item-apple mt-4"><i class="fas fa-book mr-3"></i> Blog</a>
+            </nav>
 
-            <div class="radiocast-container">
-                <div class="player-card">
-                    <div class="visor-led" id="radioVisor">
-                        <span class="freq">88.1 MHz</span>
-                        <span class="status">READY</span>
-                    </div>
-                    <div class="player-controls">
-                        <button class="ctrl-btn" id="prevFreq"><i class="fas fa-backward"></i></button>
-                        <button class="ctrl-btn play-btn" id="playBtn"><i class="fas fa-play"></i></button>
-                        <button class="ctrl-btn" id="nextFreq"><i class="fas fa-forward"></i></button>
-                    </div>
+            <div class="radiocast-container mt-auto">
+                <div class="visor-led mb-3">
+                    <span class="freq">95.5 MHz</span>
+                    <span class="status small d-block">ON AIR</span>
+                </div>
+                <div class="player-controls d-flex justify-content-between">
+                    <button class="btn btn-sm btn-dark"><i class="fas fa-step-backward"></i></button>
+                    <button class="btn btn-sm btn-primary px-3" id="playerPlay"><i class="fas fa-play"></i></button>
+                    <button class="btn btn-sm btn-dark"><i class="fas fa-step-forward"></i></button>
                 </div>
             </div>
         </aside>
 
-        <!-- Conteúdo Principal -->
         <main class="main-content">
-            <div class="container-fluid">
-                <header class="mb-5">
-                    <h1 class="display-4 font-weight-bold">Dashboard</h1>
-                    <p class="lead text-muted">Gestão HEXTEC ativa.</p>
-                </header>
-                
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark border-secondary h-100 shadow-lg">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title text-primary font-weight-bold">Podcasts Exclusivos</h5>
-                                <p class="card-text text-muted small">Acesso restrito para assinantes.</p>
-                                <button class="btn btn-outline-primary btn-block mt-auto btn-protected" data-url="podcasts.html">Abrir</button>
-                            </div>
-                        </div>
+            <div class="d-flex justify-content-end mb-4">
+                <div class="user-badge p-2 px-3 border border-secondary rounded-pill">
+                    <small class="text-muted"><i class="fas fa-user-shield text-primary mr-2"></i> Anderson Oliveira (HEXTEC Admin)</small>
+                </div>
+            </div>
+
+            <header class="mb-5">
+                <h1 class="display-4 font-weight-bold">Best Channels</h1>
+                <p class="lead text-muted">Best Channels now</p>
+            </header>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-podcast" id="cardAcesso">
+                        <h5 class="text-primary font-weight-bold mb-3">Conteúdo Restrito</h5>
+                        <p class="text-muted small">Clique abaixo para validar sua sessão e liberar os arquivos.</p>
+                        <hr class="border-secondary">
+                        <button id="btnAbrirConteudo" class="btn btn-outline-primary btn-block">Abrir Conteúdo</button>
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- MODAL GATEKEEPER COMPLETO (ESTILO LOGIN.HTML) -->
-    <div class="modal fade" id="loginInterceptorModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content auth-card-modal">
-                <div class="modal-header border-0 pb-0">
-                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body px-5 pb-5">
-                    <div class="auth-header text-center mb-4">
-                        <h1>Entrar</h1>
-                        <p>Escolha sua forma de acesso</p>
-                    </div>
-
-                    <!-- Botões Sociais -->
-                    <div class="social-login-grid mb-4">
-                        <button class="btn btn-social btn-google">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
-                            Google
-                        </button>
-                        <button class="btn btn-social btn-github">
-                            <i class="fab fa-github"></i>
-                            GitHub
-                        </button>
-                    </div>
-
-                    <div class="divider-text mb-4">
-                        <span>ou com e-mail</span>
-                    </div>
-                    
-                    <form id="modalLoginForm">
-                        <div class="form-group mb-3">
-                            <label class="text-light small mb-2">E-mail</label>
-                            <input type="email" class="form-control auth-input" placeholder="nome@exemplo.com" required>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label class="text-light small mb-2">Senha</label>
-                            <input type="password" class="form-control auth-input" placeholder="••••••••" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block btn-lg shadow-sm">Entrar</button>
-                    </form>
-
-                    <div class="auth-footer-links mt-4 pt-3 border-top border-dark text-center">
-                        <a href="#" class="small text-primary mx-2">Esqueci a senha</a>
-                        <span class="text-muted small">|</span>
-                        <a href="#" class="small text-primary mx-2">Criar conta</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
 </html>
