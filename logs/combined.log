@@ -2576,3 +2576,12 @@
 {"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-06T17:16:58.365Z"}
 {"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-06T17:17:20.032Z"}
 {"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-06T17:17:39.260Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-05-06T17:19:53.261Z"}
+{"level":"info","message":"[SERVER] Servidor rodando em http://localhost:3000","timestamp":"2026-05-06T17:19:53.399Z"}
+{"level":"info","message":"[DB] Conexão com MySQL estabelecida com sucesso!","timestamp":"2026-05-06T17:19:53.667Z"}
+{"level":"info","message":"[DB] Tabela Users pronta.","timestamp":"2026-05-06T17:19:53.984Z"}
+{"level":"info","message":"[SERVER] POST /auth/login","timestamp":"2026-05-06T17:20:06.694Z"}
+{"level":"info","message":"[SERVER] POST /forgot-password","timestamp":"2026-05-06T18:57:08.478Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-06T18:57:08.495Z"}
+{"level":"info","message":"[SERVER] POST /forgot-password","timestamp":"2026-05-06T19:59:36.377Z"}
+{"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-06T19:59:36.440Z"}
