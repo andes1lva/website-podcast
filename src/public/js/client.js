@@ -97,12 +97,12 @@ if (registerForm) {
         // O ID do botão no seu HTML é btnRegister, então aqui está correto
         UI.toggleLoading(true, 'btnRegister');
 
-        const  cpfEl = document.getElementById('cpf');
         const data = {
             username: usernameEl.value,
             email: emailEl.value,
             address: addressEl.value,
-            password: passwordEl.value
+            password: passwordEl.value,
+            cpf:null
         };
 
         try {
