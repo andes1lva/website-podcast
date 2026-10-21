@@ -85,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 UI.showError('Por favor, preencha todos os campos.');
                 return;
             }
-
+ 
+            
             UI.clearError();
             UI.toggleLoading(true, 'btnRegister');
 
