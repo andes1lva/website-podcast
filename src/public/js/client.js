@@ -1,6 +1,5 @@
 // Configuração dinâmica da URL do Back-end com base no domínio do Front-end
-const API_URL = 'https://onrender.com';
-
+const API_URL = 'https://webpodcast-staging.onrender.com';
 const AuthService = {
     async register(userData) {
         const response = await fetch(`${API_URL}/auth/register`, {
