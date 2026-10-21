@@ -1,7 +1,5 @@
 // Configuração dinâmica da URL do Back-end com base no domínio do Front-end
-const API_URL = window.location.hostname.includes('website-podcast')
-    ? 'https://onrender.com' // Endereço do Back-end de Staging
-    : ''; // Em produção unificada, caminhos relativos funcionam
+const API_URL = 'https://onrender.com';
 
 const AuthService = {
     async register(userData) {
