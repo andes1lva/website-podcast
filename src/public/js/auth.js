@@ -10,10 +10,12 @@ router.post('/register', async (req, res, next) => {
     try {
         const { username, email, address, password } = req.body;
 
+        // Validação preventiva
         if (!username || !email || !address || !password) {
             return res.status(400).json({ error: 'Preencha todos os campos obrigatórios.' });
         }
 
+        // 1. Chamada correta no plural alinhada ao banco
         const usuarioExiste = await prisma.users.findUnique({
             where: { email: email }
         });
@@ -25,21 +27,23 @@ router.post('/register', async (req, res, next) => {
         const salt = await bcrypt.genSalt(10);
         const passwordHash = await bcrypt.hash(password, salt);
 
+        // 2. Criação na tabela 'users' (plural) com chaves idênticas às colunas do Supabase
         const novoUsuario = await prisma.users.create({
             data: {
-                username: username,
-                email: email,    
-                address: address,
-                password: passwordHash
+                username: username, // varchar
+                email: email,       // varchar (NON-NULLABLE)
+                address: address,   // text
+                password: passwordHash // varchar
             }
         });
 
-        console.log(`[BACKEND] Novo usuário cadastrado ID: ${novoUsuario.id}`);
-
+        console.log(`[BACKEND] Usuário criado com sucesso no Supabase! ID: ${novoUsuario.id}`);
         return res.status(201).json({ success: true, message: 'Usuário cadastrado com sucesso!' });
 
     } catch (error) {
-        next(error); 
+        console.error("[ERRO NO PRISMA/SUPABASE]:", error);
+        // Retorna o texto real da falha para o front-end conseguir capturar no Inspecionar
+        return res.status(500).json({ error: `Erro no banco: ${error.message || error}` });
     }
 });
 
