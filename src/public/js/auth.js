@@ -1,9 +1,14 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
-const { addUser, findUserByEmail } = require('../db');
+
+const {
+  addUser,
+  findUserByEmail,
+} = require('../config/db');
 
 const router = express.Router();
 
+// Cadastro
 router.post('/register', async (req, res) => {
   try {
     const username = String(req.body.username || '').trim();
@@ -33,12 +38,14 @@ router.post('/register', async (req, res) => {
 
     const passwordHash = await bcrypt.hash(password, 10);
 
-    const novoUsuario = await addUser({
+    // A ordem deve corresponder à assinatura de addUser em src/config/db.js:
+    // addUser(username, email, password, address)
+    const novoUsuario = await addUser(
       username,
       email,
       passwordHash,
-      address,
-    });
+      address
+    );
 
     return res.status(201).json({
       success: true,
@@ -46,7 +53,6 @@ router.post('/register', async (req, res) => {
       user: novoUsuario,
     });
   } catch (error) {
-    // PostgreSQL: 23505 significa violação de uma restrição UNIQUE.
     if (error.code === '23505') {
       return res.status(409).json({
         error: 'Este e-mail já está cadastrado no sistema.',
@@ -64,6 +70,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
+// Login
 router.post('/login', async (req, res) => {
   try {
     const email = String(req.body.email || '').trim().toLowerCase();
@@ -83,7 +90,10 @@ router.post('/login', async (req, res) => {
       });
     }
 
-    const senhaValida = await bcrypt.compare(password, usuario.password);
+    const senhaValida = await bcrypt.compare(
+      password,
+      usuario.password
+    );
 
     if (!senhaValida) {
       return res.status(401).json({

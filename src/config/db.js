@@ -67,25 +67,38 @@ async function initializeDatabase() {
 
 // Função para inserir no Banco
 const addUser = async (username, email, password, address) => {
-    // CORREÇÃO: Se for undefined ou vazio, vira NULL para o Postgres aceitar
-    const validCpf = (cpf && String(cpf).trim() !== "") ? cpf : null;
-    const validAddress = (address && String(address).trim() !== "") ? address : null;
+  const validAddress =
+    address && String(address).trim() !== ''
+      ? String(address).trim()
+      : null;
 
-    const sql = `INSERT INTO users (username, cpf, email, password, address, role) VALUES (\$1, \$2, \$3, \$4, \$5, \$6) RETURNING *`;
-    const values = [username, validCpf, email, password, validAddress, 'user'];
+  const sql = `
+    INSERT INTO public.users
+      (username, email, password, address, role)
+    VALUES ($1, $2, $3, $4, $5)
+    RETURNING id, username, email, address, role
+  `;
 
-    try {
-        // No pacote 'pg', usamos pool.query ao invés de pool.execute
-        const result = await pool.query(sql, values);
-        return result.rows[0]; // Retorna o usuário inserido direto
-    } catch (err) {
-        console.error('[ERRO SQL NO BACKEND]:', {
-            mensagem: err.message,
-            codigo: err.code
-        });
-        throw err; 
-    }
+  try {
+    const result = await pool.query(sql, [
+      username,
+      email,
+      password, // A rota deve passar o hash da senha, não a senha original.
+      validAddress,
+      'user',
+    ]);
+
+    return result.rows[0];
+  } catch (error) {
+    console.error('[ERRO SQL NO CADASTRO]', {
+      code: error.code,
+      message: error.message,
+      detail: error.detail,
+    });
+    throw error;
+  }
 };
+
 
 // Função para consulta ao banco
 const findUserByEmail = async (email) => {
