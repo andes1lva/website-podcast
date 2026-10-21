@@ -1,72 +1,116 @@
+// Importa o módulo pg (PostgreSQL) para interagir com o Supabase
 const { Pool } = require('pg');
+// Importa o logger para registrar eventos e erros
+const { logger } = require('../utils/logger');
 
-const ssl =
-  process.env.NODE_ENV === 'production'
-    ? { rejectUnauthorized: false }
-    : undefined;
+// Loga o início da configuração do banco
+logger.info('[DB] Iniciando configuração do banco de dados...');
 
-let pool;
-
-if (process.env.DATABASE_URL) {
-  pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl,
-  });
-} else {
-  const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
-
-  if (!DB_HOST || !DB_USER || !DB_PASSWORD || !DB_NAME) {
-    throw new Error(
-      'Configure DATABASE_URL ou DB_HOST, DB_USER, DB_PASSWORD e DB_NAME no Render.'
-    );
-  }
-
-  pool = new Pool({
-    host: DB_HOST,
-    user: DB_USER,
-    password: DB_PASSWORD,
-    port: Number(process.env.DB_PORT) || 5432,
-    database: DB_NAME,
-    ssl,
-  });
-}
-
-pool.on('error', (error) => {
-  console.error('[DB] Erro inesperado no pool:', error.message);
+// Cria um pool de conexões PostgreSQL para gerenciar múltiplas conexões
+const pool = new Pool({
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'postgres',
+  password: process.env.DB_PASSWORD || 'A1b2c3d4e5@',
+  port: parseInt(process.env.DB_PORT) || 5432,
+  database: process.env.DB_NAME || 'postgres',
+  // O Supabase exige SSL ativado quando o código está rodando no Render (produção)
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 });
 
-async function testarConexao() {
-  await pool.query('SELECT 1');
-  console.log('[DB] Conexão com PostgreSQL estabelecida.');
+// Função para inicializar o banco de dados
+async function initializeDatabase() {
+  let connection;
+  try {
+    connection = await pool.connect();
+    logger.info('[DB] Conexão com PostgreSQL (Supabase) estabelecida com sucesso!');
+    
+    // No Supabase/Postgres o banco 'postgres' já vem criado por padrão, não precisamos de CREATE DATABASE ou USE.
+    
+    // Checa se a tabela 'users' já existe no schema público do Postgres
+    const tableCheck = await connection.query(`
+      SELECT EXISTS (
+        SELECT FROM information_schema.tables 
+        WHERE table_schema = 'public' 
+        AND table_name = 'users'
+      );
+    `);
+
+    const tableExists = tableCheck.rows[0].exists;
+
+    if (!tableExists) {
+      logger.warn('[DB] Tabela users não encontrada. Criando...');
+      
+      // Criação da tabela adaptada para a sintaxe do PostgreSQL
+      await connection.query(`
+        CREATE TABLE users (
+          id SERIAL PRIMARY KEY,
+          username VARCHAR(255) NOT NULL,
+          email VARCHAR(255) NOT NULL UNIQUE,
+          password VARCHAR(255) NOT NULL, 
+          address TEXT,
+          role VARCHAR(50) DEFAULT 'user', 
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+          updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+          is_active BOOLEAN DEFAULT TRUE
+        )
+      `);
+      logger.info('[DB] Tabela users criada com sucesso.');
+    } else {
+      logger.info('[DB] Tabela users pronta.');
+    }
+  } catch (error) {
+    logger.error(`[DB] Erro na configuração: ${error.message}`);
+    throw error;
+  } finally {
+    if (connection) connection.release();
+  }
 }
 
-async function findUserByEmail(email) {
-  const resultado = await pool.query(
-    `SELECT id, username, email, password, address, role
-     FROM public.users
-     WHERE email = $1
-     LIMIT 1`,
-    [email]
-  );
+// Função para inserir no Banco
+const addUser = async (username, email, password, address) => {
+    // CORREÇÃO: Se for undefined ou vazio, vira NULL para o Postgres aceitar
+    const validCpf = (cpf && String(cpf).trim() !== "") ? cpf : null;
+    const validAddress = (address && String(address).trim() !== "") ? address : null;
 
-  return resultado.rows[0] || null;
-}
+    const sql = `INSERT INTO users (username, cpf, email, password, address, role) VALUES (\$1, \$2, \$3, \$4, \$5, \$6) RETURNING *`;
+    const values = [username, validCpf, email, password, validAddress, 'user'];
 
-async function addUser({ username, email, passwordHash, address }) {
-  const resultado = await pool.query(
-    `INSERT INTO public.users
-       (username, email, password, address, role)
-     VALUES ($1, $2, $3, $4, $5)
-     RETURNING id, username, email, address, role`,
-    [username, email, passwordHash, address || null, 'user']
-  );
+    try {
+        // No pacote 'pg', usamos pool.query ao invés de pool.execute
+        const result = await pool.query(sql, values);
+        return result.rows[0]; // Retorna o usuário inserido direto
+    } catch (err) {
+        console.error('[ERRO SQL NO BACKEND]:', {
+            mensagem: err.message,
+            codigo: err.code
+        });
+        throw err; 
+    }
+};
 
-  return resultado.rows[0];
-}
+// Função para consulta ao banco
+const findUserByEmail = async (email) => {
+  // No PostgreSQL mudamos o "?" por "\$1"
+  const sql = `SELECT * FROM users WHERE email = \$1 LIMIT 1`;
+ 
+  try {
+    const result = await pool.query(sql, [email]);
+    return result.rows.length > 0 ? result.rows[0] : null;
+  } catch (err) {
+    console.log("ERRO SQL NO LOGIN: ", err.message);
+    throw err;
+  }
+};
 
-module.exports = {
-  pool,
-  testarConexao,
-  findUserByEmail,
-  addUser,
+// Inicialização automática
+initializeDatabase().catch(error => {
+  logger.error(`[DB] Falha crítica: ${error.message}`);
+  process.exit(1);
+});
+
+module.exports = { 
+    addUser, 
+    pool,
+    initializeDatabase,
+    findUserByEmail
 };
