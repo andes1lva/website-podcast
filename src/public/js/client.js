@@ -1,16 +1,19 @@
+// Configuração dinâmica da URL do Back-end com base no domínio do Front-end
+const API_URL = window.location.hostname.includes('website-podcast')
+    ? 'https://onrender.com' // Endereço do Back-end de Staging
+    : ''; // Em produção unificada, caminhos relativos funcionam
+
 const AuthService = {
     async register(userData) {
-        // 1. Verifique se a URL começa com /auth
-        const response = await fetch('/auth/register', {
+        const response = await fetch(`${API_URL}/auth/register`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)
         });
 
-        // 2. CORREÇÃO: Leia o texto APENAS UMA VEZ
         const text = await response.text();
         let serverResponseData = {};
-        
+
         try {
             serverResponseData = text ? JSON.parse(text) : {};
         } catch (e) {
@@ -22,33 +25,32 @@ const AuthService = {
     },
 
     async login(credentials) {
-        const response = await fetch('/auth/login', {
+        const response = await fetch(`${API_URL}/auth/login`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(credentials)
         });
 
         const text = await response.text();
-        const serverResponseData = text ? JSON.parse(text) : {};
+        let serverResponseData = {};
 
-        // REMOVIDO: await response.json() que causava erro de leitura dupla
+        try {
+            serverResponseData = text ? JSON.parse(text) : {};
+        } catch (e) {
+            console.error("Resposta do servidor não é um JSON válido:", text);
+            serverResponseData = { error: "Erro na resposta do servidor." };
+        }
+
         return { ok: response.ok, data: serverResponseData };
     },
 
-
-    async fetchMenu ( token) {
-        return await fetch('/menu',{
-            headers: {'Authorization': `Bearer ${token}` 
-        }
-    });
-   }
+    async fetchMenu(token) {
+        return await fetch(`${API_URL}/menu`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+    }
 };
 
-
-/**
- * 2. CAMADA DE INTERFACE (UI)
- * Centraliza a manipulação do HTML para evitar repetição de código.
- */
 const UI = {
     showError: (message) => {
         const errEl = document.getElementById('error');
@@ -69,89 +71,78 @@ const UI = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Localize o formulário primeiro
     const registerForm = document.getElementById('registerForm');
     const loginForm = document.getElementById('loginForm');
 
+    if (registerForm) {
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
+            const username = document.getElementById('username')?.value;
+            const email = document.getElementById('email')?.value;
+            const address = document.getElementById('address')?.value;
+            const password = document.getElementById('password')?.value;
 
-if (registerForm) {
-    registerForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Captura direta usando o operador '?' para evitar crash se o ID mudar
-        const username = document.getElementById('username')?.value;
-        const email = document.getElementById('email')?.value;
-        const address = document.getElementById('address')?.value;
-        const password = document.getElementById('password')?.value;
-
-
-        // Validação direta das strings
-        if (!username || !email || !address || !password) {
-            console.error('[ERRO] Preencha todos os campos obrigatórios.');
-            return;
-        }
-
-        UI.clearError();
-        UI.toggleLoading(true, 'btnRegister');
-
-        const data = {
-            username: username,
-            email: email,
-            address: address,
-            password: password,
-            cpf: null
-        };
-        try {
-            // Chama o serviço de registro passando apenas esses 4 campos
-            const res = await AuthService.register(data);
-            
-            if (!res.ok) throw new Error(res.data.error || 'Erro no cadastro');
-            
-            alert('Cadastro realizado com sucesso!');
-            window.location.href = '/login';
-       } catch (err) {
-            UI.showError(err.message);
-            console.error('[CLIENTE] Detalhes do Erro:', err); 
-        } finally { // <--- Garanta que a chave do catch esteja fechada antes do finally
-            UI.toggleLoading(false, 'btnRegister');
-        }
-    });
-}
-   // Exemplo de como deve estar no client.js
-
-if (loginForm) {
-    loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const email = document.getElementById('login_email').value;
-        const password = document.getElementById('password').value;
-
-        try {
-            // CORRETO: Aponta para a rota de API, não para o arquivo .html
-            const response = await fetch('/auth/login', { 
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password })
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-                // Se o login funcionar, salvamos o token e redirecionamos via JS
-                localStorage.setItem('jwt', result.token);
-                window.location.href = '/dashboard'; // O servidor entregará o dashboard.html
-            } else {
-                alert('Erro: ' + result.error);
+            if (!username || !email || !address || !password) {
+                console.error('[ERRO] Preencha todos os campos obrigatórios.');
+                UI.showError('Por favor, preencha todos os campos.');
+                return;
             }
-        } catch (err) {
-            console.error('Erro na autenticação:', err);
-        }
-    });
-}
 
+            UI.clearError();
+            UI.toggleLoading(true, 'btnRegister');
 
-// --- LOGOUT ---
+            const data = {
+                username: username,
+                email: email,
+                address: address,
+                password: password,
+                cpf: null
+            };
+
+            try {
+                const res = await AuthService.register(data);
+
+                if (!res.ok) throw new Error(res.data.error || 'Erro no cadastro');
+
+                alert('Cadastro realizado com sucesso!');
+                window.location.href = '/login';
+            } catch (err) {
+                UI.showError(err.message);
+                console.error('[CLIENTE] Detalhes do Erro:', err);
+            } finally {
+                UI.toggleLoading(false, 'btnRegister');
+            }
+        });
+    }
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('login_email')?.value;
+            const password = document.getElementById('password')?.value;
+
+            if (!email || !password) {
+                alert('Por favor, preencha e-mail e senha.');
+                return;
+            }
+
+            try {
+                const res = await AuthService.login({ email, password });
+
+                if (res.ok) {
+                    localStorage.setItem('jwt', res.data.token);
+                    window.location.href = '/dashboard';
+                } else {
+                    alert('Erro: ' + res.data.error);
+                }
+            } catch (err) {
+                console.error('Erro na autenticação:', err);
+            }
+        });
+    }
+
     document.getElementById('logout')?.addEventListener('click', () => {
         localStorage.removeItem('jwt');
         window.location.href = '/login';

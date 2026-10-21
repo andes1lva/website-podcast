@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs'); // Biblioteca para criptografar senhas
-const { PrismaClient } = require('@prisma/client'); // Conexão com o banco de dados
+const bcrypt = require('bcryptjs'); 
+const { PrismaClient } = require('@prisma/client'); 
 
 const prisma = new PrismaClient();
 
@@ -28,6 +28,7 @@ router.post('/register', async (req, res, next) => {
         const novoUsuario = await prisma.user.create({
             data: {
                 name: username,
+                email: email,    
                 address: address,
                 password: passwordHash
             }
@@ -38,9 +39,10 @@ router.post('/register', async (req, res, next) => {
         return res.status(201).json({ success: true, message: 'Usuário cadastrado com sucesso!' });
 
     } catch (error) {
-        next(error);
+        next(error); 
     }
 });
+
 
 router.post('/login', async (req, res, next) => {
     try {
@@ -67,6 +69,7 @@ router.post('/login', async (req, res, next) => {
         return res.status(200).json({
             success: true,
             message: 'Login realizado com sucesso!',
+            token: 'mock-jwt-token-utilitário', // Substitua pelo seu JWT real se necessário
             user: { id: usuario.id, name: usuario.name, email: usuario.email }
         });
 
