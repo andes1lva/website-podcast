@@ -13,7 +13,6 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD || 'A1b2c3d4e5@',
   port: parseInt(process.env.DB_PORT) || 5432,
   database: process.env.DB_NAME || 'postgres',
-  // O Supabase exige SSL ativado quando o código está rodando no Render (produção)
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 });
 
