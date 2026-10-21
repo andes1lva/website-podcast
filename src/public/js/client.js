@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 email: email,
                 address: address,
                 password: password,
-                cpf: null
             };
 
             try {
