@@ -2585,3 +2585,4 @@
 {"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-06T18:57:08.495Z"}
 {"level":"info","message":"[SERVER] POST /forgot-password","timestamp":"2026-05-06T19:59:36.377Z"}
 {"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-06T19:59:36.440Z"}
+{"level":"info","message":"[DB] Iniciando configuração do banco de dados...","timestamp":"2026-10-21T00:52:04.248Z"}

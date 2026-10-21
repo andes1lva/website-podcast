@@ -925,3 +925,4 @@
 {"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-06T17:16:58.365Z"}
 {"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-06T18:57:08.495Z"}
 {"level":"error","message":"[ERROR] Erro no servidor: undefined","timestamp":"2026-05-06T19:59:36.440Z"}
+{"level":"error","message":"[DB] Erro na configuração: ","timestamp":"2026-10-21T00:52:04.338Z"}
