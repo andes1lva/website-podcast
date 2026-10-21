@@ -81,30 +81,28 @@ if (registerForm) {
     registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // 1. Captura apenas o que existe no seu formulário
-        const usernameEl = document.getElementById('username');
-        const emailEl = document.getElementById('email');
-        const addressEl = document.getElementById('address');
-        const passwordEl = document.getElementById('password');
+        // Captura direta usando o operador '?' para evitar crash se o ID mudar
+        const username = document.getElementById('username')?.value;
+        const email = document.getElementById('email')?.value;
+        const address = document.getElementById('address')?.value;
+        const password = document.getElementById('password')?.value;
 
-        // 2. Validação de segurança (Anti-Null)
-        if (!usernameEl || !emailEl || !addressEl || !passwordEl) {
-            console.error('[ERRO] Verifique se os IDs no HTML mudaram.');
+        // Validação direta das strings
+        if (!username || !email || !address || !password) {
+            console.error('[ERRO] Preencha todos os campos obrigatórios.');
             return;
         }
 
         UI.clearError();
-        // O ID do botão no seu HTML é btnRegister, então aqui está correto
         UI.toggleLoading(true, 'btnRegister');
 
         const data = {
-            username: usernameEl.value,
-            email: emailEl.value,
-            address: addressEl.value,
-            password: passwordEl.value,
-            cpf:null
+            username: username,
+            email: email,
+            address: address,
+            password: password,
+            cpf: null
         };
-
         try {
             // Chama o serviço de registro passando apenas esses 4 campos
             const res = await AuthService.register(data);
