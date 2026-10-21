@@ -33,7 +33,7 @@ router.post('/register', async (req, res) => {
 
     const passwordHash = await bcrypt.hash(password, 10);
 
-    const novoUsuario = await addUser({
+    const usuario = await addUser({
       username,
       email,
       passwordHash,
@@ -43,10 +43,10 @@ router.post('/register', async (req, res) => {
     return res.status(201).json({
       success: true,
       message: 'Usuário cadastrado com sucesso!',
-      user: novoUsuario,
+      user: usuario,
     });
   } catch (error) {
-    // PostgreSQL: 23505 significa violação de uma restrição UNIQUE.
+    // Código PostgreSQL 23505: valor duplicado em coluna UNIQUE, como email.
     if (error.code === '23505') {
       return res.status(409).json({
         error: 'Este e-mail já está cadastrado no sistema.',
