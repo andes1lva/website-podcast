@@ -1,7 +1,7 @@
 const AuthService = {
     async register(userData) {
         // 1. Verifique se a URL começa com /auth
-        const response = await fetch('/auth/register', {
+        const response = await fetch('https://webpodcast-staging.onrender.com/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(userData)
@@ -74,9 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
 
 
-    console.log('[CLIENTE] Sistema iniciado e DOM carregado.');
 
-// --- LÓGICA DE REGISTRO (Sincronizada com seu HTML) ---
 if (registerForm) {
     registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -86,6 +84,7 @@ if (registerForm) {
         const email = document.getElementById('email')?.value;
         const address = document.getElementById('address')?.value;
         const password = document.getElementById('password')?.value;
+
 
         // Validação direta das strings
         if (!username || !email || !address || !password) {
