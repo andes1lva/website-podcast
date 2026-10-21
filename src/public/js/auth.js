@@ -1,6 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
-const { addUser, findUserByEmail } = require('../db');
+const { addUser, findUserByEmail } = require('../config/db');
 
 const router = express.Router();
 
@@ -46,7 +46,6 @@ router.post('/register', async (req, res) => {
       user: usuario,
     });
   } catch (error) {
-    // Código PostgreSQL 23505: valor duplicado em coluna UNIQUE, como email.
     if (error.code === '23505') {
       return res.status(409).json({
         error: 'Este e-mail já está cadastrado no sistema.',

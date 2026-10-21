@@ -1,18 +1,38 @@
 const { Pool } = require('pg');
 
-if (!process.env.DATABASE_URL) {
-  throw new Error('Configure DATABASE_URL nas variáveis de ambiente do Render.');
+const ssl =
+  process.env.NODE_ENV === 'production'
+    ? { rejectUnauthorized: false }
+    : undefined;
+
+let pool;
+
+if (process.env.DATABASE_URL) {
+  pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl,
+  });
+} else {
+  const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
+
+  if (!DB_HOST || !DB_USER || !DB_PASSWORD || !DB_NAME) {
+    throw new Error(
+      'Configure DATABASE_URL ou DB_HOST, DB_USER, DB_PASSWORD e DB_NAME no Render.'
+    );
+  }
+
+  pool = new Pool({
+    host: DB_HOST,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    port: Number(process.env.DB_PORT) || 5432,
+    database: DB_NAME,
+    ssl,
+  });
 }
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === 'production'
-    ? { rejectUnauthorized: false }
-    : undefined,
-});
-
 pool.on('error', (error) => {
-  console.error('[DB] Erro no pool:', error.message);
+  console.error('[DB] Erro inesperado no pool:', error.message);
 });
 
 async function testarConexao() {

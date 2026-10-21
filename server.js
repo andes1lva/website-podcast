@@ -2,18 +2,20 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
-const { testarConexao } = require('./db');
+const { testarConexao } = require('./config/db');
 const authRoutes = require('./routes/auth');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const publicPath = path.join(__dirname, 'public');
 
-app.use(cors({
-  origin: process.env.FRONTEND_URL || true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
