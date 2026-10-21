@@ -73,7 +73,7 @@ const addUser = async (username, cpf, email, password, address) => {
     const validAddress = (address && address.trim() !== "") ? address : null;
 
     // No PostgreSQL mudamos os "?" por "\$1, \$2, \$3..."
-    const sql = `INSERT INTO users (username, cpf, email, password, address, role) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
+    const sql = `INSERT INTO users (username, cpf, email, password, address, role) VALUES (\$1, \$2, \$3, \$4, \$5, \$6) RETURNING *`;
     const values = [username, validCpf, email, password, validAddress, 'user'];
 
     try {
@@ -92,7 +92,7 @@ const addUser = async (username, cpf, email, password, address) => {
 // Função para consulta ao banco
 const findUserByEmail = async (email) => {
   // No PostgreSQL mudamos o "?" por "\$1"
-  const sql = `SELECT * FROM users WHERE email = $1 LIMIT 1`;
+  const sql = `SELECT * FROM users WHERE email = \$1 LIMIT 1`;
  
   try {
     const result = await pool.query(sql, [email]);
