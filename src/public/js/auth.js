@@ -14,7 +14,7 @@ router.post('/register', async (req, res, next) => {
             return res.status(400).json({ error: 'Preencha todos os campos obrigatórios.' });
         }
 
-        const usuarioExiste = await prisma.user.findUnique({
+        const usuarioExiste = await prisma.users.findUnique({
             where: { email: email }
         });
 
@@ -25,9 +25,9 @@ router.post('/register', async (req, res, next) => {
         const salt = await bcrypt.genSalt(10);
         const passwordHash = await bcrypt.hash(password, salt);
 
-        const novoUsuario = await prisma.user.create({
+        const novoUsuario = await prisma.users.create({
             data: {
-                name: username,
+                username: username,
                 email: email,    
                 address: address,
                 password: passwordHash
@@ -52,7 +52,7 @@ router.post('/login', async (req, res, next) => {
             return res.status(400).json({ error: 'E-mail e senha são obrigatórios.' });
         }
 
-        const usuario = await prisma.user.findUnique({
+        const usuario = await prisma.users.findUnique({
             where: { email: email }
         });
 
