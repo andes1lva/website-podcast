@@ -1,13 +1,12 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-
-const { testarConexao } = require('./config/db');
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./src/routes/auth');
+const { testarConexao } = require('./src/db');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const publicPath = path.join(__dirname, 'public');
+const publicPath = path.join(__dirname, 'src', 'public');
 
 app.use(
   cors({
@@ -39,7 +38,7 @@ async function iniciarServidor() {
       console.log(`[SERVER] Servidor iniciado na porta ${PORT}.`);
     });
   } catch (error) {
-    console.error('[SERVER] Falha ao conectar ao banco:', error.message);
+    console.error('[SERVER] Não foi possível conectar ao banco:', error.message);
     process.exit(1);
   }
 }
