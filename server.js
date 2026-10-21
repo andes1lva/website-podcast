@@ -11,34 +11,36 @@ dotenv.config();
 const app = express();
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 
-// --- CONFIGURAÇÃO DE CAMINHOS ---
-// Define o caminho exato da pasta public dentro de src
 const publicPath = path.join(__dirname, 'src', 'public');
 
 // --- MIDDLEWARES ---
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:${PORT}` }));
+
+//  Ele vai ler a variável FRONTEND_URL criado no Render
+app.use(cors({
+    origin: process.env.FRONTEND_URL, 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
+
+// 2. TRADUTORES DE DADOS (Evitam o erro "undefined")
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve arquivos estáticos (CSS, JS, Imagens)
 app.use(express.static(publicPath));
 
-// Logger de requisições para Debug
 app.use((req, res, next) => {
     logger.info(`[SERVER] ${req.method} ${req.url}`);
     next();
 });
 
-// --- ROTAS DE PÁGINAS (HTML) ---
+// --- ROTAS ---
 app.get('/', (req, res) => res.sendFile(path.join(publicPath, 'login.html')));
 app.get('/register', (req, res) => res.sendFile(path.join(publicPath, 'register.html')));
 app.get('/dashboard', (req, res) => res.sendFile(path.join(publicPath, 'dashboard.html')));
 
-// --- ROTAS DE API ---
-// Todas as rotas dentro de authRoutes terão o prefixo /auth
 app.use('/auth', authRoutes);
 
-// --- TRATAMENTO DE ERROS ---
 app.use(errorHandler);
 
 app.listen(PORT, () => {
@@ -48,4 +50,3 @@ app.listen(PORT, () => {
 process.on('unhandledRejection', (err) => {
     logger.error(`[SERVER] Erro crítico (Promise): ${err.message}`);
 });
-
