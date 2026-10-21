@@ -69,10 +69,10 @@ async function initializeDatabase() {
 
 // Função para inserir no Banco
 const addUser = async (username, cpf, email, password, address) => {
-    const validCpf = (cpf && cpf.trim() !== "") ? cpf : null;
-    const validAddress = (address && address.trim() !== "") ? address : null;
+    // CORREÇÃO: Se for undefined ou vazio, vira NULL para o Postgres aceitar
+    const validCpf = (cpf && String(cpf).trim() !== "") ? cpf : null;
+    const validAddress = (address && String(address).trim() !== "") ? address : null;
 
-    // No PostgreSQL mudamos os "?" por "\$1, \$2, \$3..."
     const sql = `INSERT INTO users (username, cpf, email, password, address, role) VALUES (\$1, \$2, \$3, \$4, \$5, \$6) RETURNING *`;
     const values = [username, validCpf, email, password, validAddress, 'user'];
 
