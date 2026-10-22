@@ -1,110 +1,48 @@
 const express = require('express');
-const bcrypt = require('bcryptjs');
+const path = require('path');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const { logger } = require('./src/utils/logger');
+const authRoutes = require('./src/routes/auth');
+const errorHandler = require('./src/middleware/errorHandler');
 
-const {addUser,findUserByEmail,} = require('./src/config/db');
+dotenv.config();
 
-const router = express.Router();
+const app = express();
+const PORT = parseInt(process.env.PORT, 10) || 3000;
 
-// Cadastro (com 'next' incluído nos parâmetros)
-router.post('/register', async (req, res, next) => {
-  try {
-    const username = String(req.body.username || '').trim();
-    const email = String(req.body.email || '').trim().toLowerCase();
-    const address = String(req.body.address || '').trim();
-    const password = String(req.body.password || '');
+// --- CONFIGURAÇÃO DE CAMINHOS ---
+const publicPath = path.join(__dirname, 'src', 'public');
 
-    if (!username || !email || !address || !password) {
-      return res.status(400).json({
-        error: 'Preencha todos os campos obrigatórios.',
-      });
-    }
+// --- MIDDLEWARES ---
+app.use(cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:${PORT}` }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-    if (password.length < 8) {
-      return res.status(400).json({
-        error: 'A senha deve ter pelo menos 8 caracteres.',
-      });
-    }
+// Serve ficheiros estáticos (CSS, JS, Imagens)
+app.use(express.static(publicPath));
 
-    const usuarioExistente = await findUserByEmail(email);
-
-    if (usuarioExistente) {
-      return res.status(409).json({
-        error: 'Este e-mail já está cadastrado no sistema.',
-      });
-    }
-
-    const passwordHash = await bcrypt.hash(password, 10);
-
-    const novoUsuario = await addUser(
-      username,
-      email,
-      passwordHash,
-      address
-    );
-
-    return res.status(201).json({
-      success: true,
-      message: 'Usuário cadastrado com sucesso!',
-      user: novoUsuario,
-    });
-  } catch (error) {
-    if (error.code === '23505') {
-      return res.status(409).json({
-        error: 'Este e-mail já está cadastrado no sistema.',
-      });
-    }
-
-    // Repassa o erro de forma segura para o errorHandler.js
-    return next(error);
-  }
+// Logger de requisições para Debug
+app.use((req, res, next) => {
+    logger.info(`[SERVER] ${req.method} ${req.url}`);
+    next();
 });
 
-// Login (com 'next' incluído nos parâmetros)
-router.post('/login', async (req, res, next) => {
-  try {
-    const email = String(req.body.email || '').trim().toLowerCase();
-    const password = String(req.body.password || '');
+// --- ROTAS DE PÁGINAS (HTML) ---
+app.get('/', (req, res) => res.sendFile(path.join(publicPath, 'login.html')));
+app.get('/register', (req, res) => res.sendFile(path.join(publicPath, 'register.html')));
+app.get('/dashboard', (req, res) => res.sendFile(path.join(publicPath, 'dashboard.html')));
 
-    if (!email || !password) {
-      return res.status(400).json({
-        error: 'E-mail e senha são obrigatórios.',
-      });
-    }
+// --- ROTAS DE API ---
+app.use('/auth', authRoutes);
 
-    const usuario = await findUserByEmail(email);
+// --- TRATAMENTO DE ERROS ---
+app.use(errorHandler);
 
-    if (!usuario) {
-      return res.status(401).json({
-        error: 'E-mail ou senha incorretos.',
-      });
-    }
-
-    const senhaValida = await bcrypt.compare(
-      password,
-      usuario.password
-    );
-
-    if (!senhaValida) {
-      return res.status(401).json({
-        error: 'E-mail ou senha incorretos.',
-      });
-    }
-
-    return res.status(200).json({
-      success: true,
-      message: 'Login realizado com sucesso!',
-      user: {
-        id: usuario.id,
-        username: usuario.username,
-        email: usuario.email,
-        address: usuario.address,
-        role: usuario.role,
-      },
-    });
-  } catch (error) {
-    // Repassa o erro para o errorHandler.js
-    return next(error);
-  }
+app.listen(PORT, () => {
+    logger.info(`[SERVER] Servidor rodando em http://localhost:${PORT}`);
 });
 
-module.exports = router;
+process.on('unhandledRejection', (err) => {
+    logger.error(`[SERVER] Erro crítico (Promise): ${err.message}`);
+});
