@@ -1,11 +1,11 @@
 // Configuração dinâmica da URL do Back-end com base no domínio do Front-end
 const API_URL = 'https://webpodcast-staging.onrender.com';
 const AuthService = {
-    async register(userData) {
+    async register(data) {
         const response = await fetch(`${API_URL}/auth/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(data)
         });
 
         const text = await response.text();
@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 UI.showError('Por favor, preencha todos os campos.');
                 return;
             }
+ 
 
             UI.clearError();
             UI.toggleLoading(true, 'btnRegister');

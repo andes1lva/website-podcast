@@ -1,9 +1,14 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
-const { addUser, findUserByEmail } = require('../config/db');
+
+const {
+  addUser,
+  findUserByEmail,
+} = require('../config/db');
 
 const router = express.Router();
 
+// Cadastro
 router.post('/register', async (req, res) => {
   try {
     const username = String(req.body.username || '').trim();
@@ -33,17 +38,19 @@ router.post('/register', async (req, res) => {
 
     const passwordHash = await bcrypt.hash(password, 10);
 
-    const usuario = await addUser({
+    // A ordem deve corresponder à assinatura de addUser em src/config/db.js:
+    // addUser(username, email, password, address)
+    const novoUsuario = await addUser(
       username,
       email,
       passwordHash,
-      address,
-    });
+      address
+    );
 
     return res.status(201).json({
       success: true,
       message: 'Usuário cadastrado com sucesso!',
-      user: usuario,
+      user: novoUsuario,
     });
   } catch (error) {
     if (error.code === '23505') {
@@ -55,14 +62,18 @@ router.post('/register', async (req, res) => {
     console.error('[ERRO NO CADASTRO]', {
       code: error.code,
       message: error.message,
+      detail: error.detail,
     });
 
+    // Retorna a mensagem real para ajudar no diagnóstico no Render
     return res.status(500).json({
       error: 'Erro interno ao cadastrar usuário.',
+      details: error.message 
     });
   }
 });
 
+// Login
 router.post('/login', async (req, res) => {
   try {
     const email = String(req.body.email || '').trim().toLowerCase();
@@ -82,7 +93,10 @@ router.post('/login', async (req, res) => {
       });
     }
 
-    const senhaValida = await bcrypt.compare(password, usuario.password);
+    const senhaValida = await bcrypt.compare(
+      password,
+      usuario.password
+    );
 
     if (!senhaValida) {
       return res.status(401).json({
