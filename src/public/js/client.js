@@ -13,7 +13,6 @@ const AuthService = {
 
         try {
             serverResponseData = text ? JSON.parse(text) : {};
-            window.location.href = "menu.html"; 
 
         } catch (e) {
             console.error("Resposta do servidor não é um JSON válido:", text);
