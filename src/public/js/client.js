@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (email.trim() !== "" && password.trim() !== "") {
                 alert('Aguarde... entrando no portalcast');
                 await sleep(3000);
-                window.location.href = '/dashboard.html';
             }
 
 
