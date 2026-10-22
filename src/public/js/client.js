@@ -20,7 +20,7 @@ const AuthService = {
         }
 
         return { ok: response.ok, data: serverResponseData };
-        
+
     },
 
     async login(credentials) {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 UI.showError('Por favor, preencha todos os campos.');
                 return;
             }
- 
+
 
             UI.clearError();
             UI.toggleLoading(true, 'btnRegister');
@@ -122,10 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('login_email')?.value;
             const password = document.getElementById('password')?.value;
 
-            if (!email || !password) {
-                alert('E-mail ou senha incorretos!!');
-                return;
+            if (email.trim() !== "" && password.trim() !== "") {
+                alert('Aguarde... entrando no portalcast');
+                await sleep(3000);
+            } else {
+                alert('Email ou senha incorretos!');
             }
+
 
             try {
                 const res = await AuthService.login({ email, password });
