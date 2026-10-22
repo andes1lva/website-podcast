@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!res.ok) throw new Error(res.data.error || 'Erro no cadastro');
 
                 alert('Cadastro realizado com sucesso!');
-                window.location.href = '/login';
+                window.location.href = '/dashboard';
             } catch (err) {
                 UI.showError(err.message);
                 console.error('[CLIENTE] Detalhes do Erro:', err);
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (res.ok) {
                     localStorage.setItem('jwt', res.data.token);
-                    window.location.href = '/dashboard';
+                    //window.location.href = '/dashboard';
                 } else {
                     alert('Erro: ' + res.data.error);
                 }
