@@ -13,12 +13,14 @@ const AuthService = {
 
         try {
             serverResponseData = text ? JSON.parse(text) : {};
+
         } catch (e) {
             console.error("Resposta do servidor não é um JSON válido:", text);
             serverResponseData = { error: "Erro na resposta do servidor." };
         }
 
         return { ok: response.ok, data: serverResponseData };
+        
     },
 
     async login(credentials) {
@@ -103,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!res.ok) throw new Error(res.data.error || 'Erro no cadastro');
 
                 alert('Cadastro realizado com sucesso!');
-                window.location.href = '/login';
+                window.location.href = '/login.html';
             } catch (err) {
                 UI.showError(err.message);
                 console.error('[CLIENTE] Detalhes do Erro:', err);
@@ -121,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('password')?.value;
 
             if (!email || !password) {
-                alert('Por favor, preencha e-mail e senha.');
+                alert('E-mail ou senha incorretos!!');
                 return;
             }
 
@@ -130,12 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (res.ok) {
                     localStorage.setItem('jwt', res.data.token);
-                    window.location.href = '/dashboard';
+                    window.location.href = '/dashboard.html';
                 } else {
                     alert('Erro: ' + res.data.error);
                 }
             } catch (err) {
-                console.error('Erro na autenticação:', err);
+                console.error('Erro na autenticação do usuário:', err);
             }
         });
     }

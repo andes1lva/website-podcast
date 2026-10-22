@@ -30,7 +30,9 @@ app.use((req, res, next) => {
 
 // --- ROTAS DE PÁGINAS (HTML) ---
 app.get('/', (req, res) => res.sendFile(path.join(publicPath, 'login.html')));
+app.get('/login', (req, res) => res.sendFile(path.join(publicPath, 'login.html')));
 app.get('/register', (req, res) => res.sendFile(path.join(publicPath, 'register.html')));
+app.get('/forgot-password',(req, res) => res.sendFile(path.join(publicPath,'forgot-password.html')));
 app.get('/dashboard', (req, res) => res.sendFile(path.join(publicPath, 'dashboard.html')));
 
 // --- ROTAS DE API ---
