@@ -13,12 +13,15 @@ const AuthService = {
 
         try {
             serverResponseData = text ? JSON.parse(text) : {};
+            window.location.href = "menu.html"; 
+
         } catch (e) {
             console.error("Resposta do servidor não é um JSON válido:", text);
             serverResponseData = { error: "Erro na resposta do servidor." };
         }
 
         return { ok: response.ok, data: serverResponseData };
+        
     },
 
     async login(credentials) {
