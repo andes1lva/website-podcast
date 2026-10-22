@@ -62,10 +62,13 @@ router.post('/register', async (req, res) => {
     console.error('[ERRO NO CADASTRO]', {
       code: error.code,
       message: error.message,
+      detail: error.detail,
     });
 
+    // Retorna a mensagem real para ajudar no diagnóstico no Render
     return res.status(500).json({
       error: 'Erro interno ao cadastrar usuário.',
+      details: error.message 
     });
   }
 });
