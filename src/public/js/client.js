@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const email = document.getElementById('login_email')?.value;
+            const email = document.getElementById('email')?.value;
             const password = document.getElementById('password')?.value;
 
             if (email.trim() !== "" && password.trim() !== "") {
