@@ -53,22 +53,17 @@ router.post('/register', async (req, res) => {
       user: novoUsuario,
     });
   } catch (error) {
-    if (error.code === '23505') {
-      return res.status(409).json({
-        error: 'Este e-mail já está cadastrado no sistema.',
-      });
-    }
-
-    console.error('[ERRO NO CADASTRO]', {
-      code: error.code,
+    console.error('[ERRO REAL DO CADASTRO]', {
+      name: error.name,
       message: error.message,
+      code: error.code,
       detail: error.detail,
+      stack: error.stack
     });
 
-    // Retorna a mensagem real para ajudar no diagnóstico no Render
     return res.status(500).json({
       error: 'Erro interno ao cadastrar usuário.',
-      details: error.message 
+      details: error.message // <--- Envia o detalhe real para o front-end ver
     });
   }
 });
