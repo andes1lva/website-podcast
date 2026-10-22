@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (email.trim() !== "" && password.trim() !== "") {
                 alert('Aguarde... entrando no portalcast');
+                const sleep = ms => new Promise(res => setTimeout(res, ms));
                 await sleep(3000);
             } else {
                 alert('Email ou senha incorretos!');
