@@ -1,10 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 
-const {
-  addUser,
-  findUserByEmail,
-} = require('../config/db');
+const {addUser,findUserByEmail,} = require('./src/config/db');
 
 const router = express.Router();
 
