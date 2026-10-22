@@ -12,7 +12,6 @@ const app = express();
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 
 // --- CONFIGURAÇÃO DE CAMINHOS ---
-// Define o caminho exato da pasta public dentro de src
 const publicPath = path.join(__dirname, 'src', 'public');
 
 // --- MIDDLEWARES ---
@@ -20,7 +19,7 @@ app.use(cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:${PORT}` }
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve arquivos estáticos (CSS, JS, Imagens)
+// Serve ficheiros estáticos (CSS, JS, Imagens)
 app.use(express.static(publicPath));
 
 // Logger de requisições para Debug
@@ -35,7 +34,6 @@ app.get('/register', (req, res) => res.sendFile(path.join(publicPath, 'register.
 app.get('/dashboard', (req, res) => res.sendFile(path.join(publicPath, 'dashboard.html')));
 
 // --- ROTAS DE API ---
-// Todas as rotas dentro de authRoutes terão o prefixo /auth
 app.use('/auth', authRoutes);
 
 // --- TRATAMENTO DE ERROS ---
@@ -48,4 +46,3 @@ app.listen(PORT, () => {
 process.on('unhandledRejection', (err) => {
     logger.error(`[SERVER] Erro crítico (Promise): ${err.message}`);
 });
-
